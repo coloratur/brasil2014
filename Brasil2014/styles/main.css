@@ -1,4 +1,16 @@
 /* IMAGES */
+body {
+    background: #000 url("../styles/images/background.png") center center no-repeat !important;
+    background-size: cover !important;
+} 
+
+h2 {
+    font-family: "Roboto" !important;
+    font-weight: 300 !important;
+    font-size: 18px !important;
+    margin: 0 !important;
+}
+
 .welcome-image {
     background-image: url(../styles/images/appbuilder.png);
     background-repeat: no-repeat;
@@ -7,21 +19,65 @@
     display: block;
     margin: 0px auto;
 }
-.logo-image {
-    background-image: url(../styles/images/logo.png);
-    background-repeat: no-repeat;
-    width: 319px;
-    height: 60px;
-    display: block;
-    margin: 0px auto;
-}
 
 /* LOGIN VIEW STYLES */
-.login-button {
-    margin: 0 auto;
-    display: block;
-    width: 80%;
+#tabstrip-login .login-form{
+    position: absolute;
+    left: 30px;
+    right: 30px;
+    bottom: 30px;
 }
+
+#tabstrip-login .login-button {
+    width: 100% !important;
+    height: 90px !important;
+    background-color: transparent !important;
+    border: 1px solid #FFF;
+    border-radius: 0  !important;
+    
+    margin-top: 0;
+    
+    font-family: "Roboto";
+    font-size: 16px !important;
+    font-weight: 300 !important;
+    font-style: italic !important;
+    //line-height: 90px !important;
+    text-align: center !important;
+    vertical-align: middle !important;
+    color: #FFF  !important;
+}
+
+#tabstrip-login .km-widget.km-listview.km-list {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+#tabstrip-login .km-widget.km-listview.km-list li {
+    margin-bottom: 15px !important;
+    padding: 0 15px !important;
+}
+
+.km-flat .km-list>li {
+    border: 0 !important;
+    box-shadow: none !important;
+	-webkit-box-shadow: none !important;
+}
+
+#tabstrip-login .km-widget.km-listview.km-list li input { 
+    font-family: "Roboto";
+    font-size: 16px !important;
+    font-weight: 300 !important;
+    font-style: italic !important;
+    
+    left: 0;
+    top: 35%;
+	padding: 0 !important;
+	margin: 0 15px !important;
+}
+
+
+/* START VIEW STYLES */
+
 
 /* LOCATION VIEW STYLES */
 .map {
@@ -156,4 +212,106 @@
         background-image: url(../styles/images/search_active2x.png);
         background-size: 100%;
     }
+}
+
+/* THEME */
+[href*=index], #back-button
+{
+    visibility: hidden;
+}
+
+.km-flat, .km-flat .km-navbar, .km-flat .km-content {
+    background: none;
+    
+    font-family: "Roboto" !important;
+    font-weight: 300;
+}
+
+.km-flat .km-header .km-navbar {
+    background-color: #96aa39;
+}
+
+.km-flat .km-navbar {
+    border: 0 !important;
+}
+
+.km-navbar .km-view-title {
+    text-align: left;
+    color: #FFF;
+    margin-left: 15px;
+    
+    font-family: "Roboto";
+    font-weight: 300;
+    font-style: italic;
+}
+
+.km-widget.km-listview.km-list {
+    //margin: 15px;
+    padding: 15px;
+}
+
+.km-widget.km-listview.km-list li {
+    margin-bottom: 5px !important;
+    height: 90px;
+    //line-height: 90px !important;
+    padding: 0 !important;
+    background-color: rgba(255, 255, 255, 0.7);
+    font-style: italic;
+    border-radius: 0 !important;
+}
+
+.km-widget.km-listview.km-list li.major {
+    background-color: #c94a43 !important;
+    color: #FFF;
+}
+
+.list-item h2 {
+    line-height: 90px !important;
+    vertical-align: middle !important;
+    display: inline-block !important;
+    margin-left: 5px !important;
+}
+
+.list-item .list-image {
+    background-size: 100%;
+    display: block;
+    float: left;
+    width: 90px;
+    height: 90px;
+}
+
+#top-list {
+    width: 100%;
+	display: inline-block;
+	padding-bottom: 0;
+}
+
+#top-list li {
+    width: 49%;
+	display: inline-block;
+}
+
+#top-list li:last-child {
+    float: right;
+}
+
+#top-list li {
+    background-color: #f6f6f6;
+    height: 180px;
+}
+
+#top-list .list-item .list-image {
+     float: none;
+ 	margin: 0 auto;
+ 	margin-top: 15px;
+}
+
+#top-list .km-listview-link:after {
+    display: none;
+}
+
+
+
+#start-list {
+    padding-top: 0;
 }

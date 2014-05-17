@@ -20,6 +20,7 @@
             }
 
             that.set("isLoggedIn", true);
+            app.application.navigate("#tabstrip-home", "slide"); 
         },
 
         onLogout: function () {
