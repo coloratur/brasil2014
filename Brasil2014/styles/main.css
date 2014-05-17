@@ -69,6 +69,43 @@ h2 {
 
 
 /* START VIEW STYLES */
+#top-list {
+    width: 100%;
+	display: inline-block;
+	padding-bottom: 0;
+}
+
+#top-list li {
+    width: 49%;
+	display: inline-block;
+}
+
+#top-list li:last-child {
+    float: right;
+}
+
+
+#top-list li {
+    background-color: #f6f6f6;
+    height: 180px;
+}
+
+#top-list .list-item .list-image {
+     float: none;
+ 	margin: 0 auto;
+ 	margin-top: 15px;
+    
+    width: 70px;
+    height: 70px;
+}
+
+#top-list .km-listview-link:after {
+    display: none;
+}
+
+#start-list {
+    padding-top: 0;
+}
 
 
 /* RETINA DISPLAY STYLES */
@@ -114,6 +151,7 @@ h2 {
     
     font-family: "Roboto" !important;
     font-weight: 300;
+    color: #333 !important;
 }
 
 .km-flat .km-header .km-navbar {
@@ -155,7 +193,7 @@ h2 {
 }
 
 .km-flat .km-listview-link:after {
-    color: #4c5356;
+    color: #333333;
     right: 2rem;
 }
 
@@ -174,42 +212,40 @@ h2 {
     height: 90px;
 }
 
-#top-list {
-    width: 100%;
-	display: inline-block;
-	padding-bottom: 0;
+.km-flat .km-switch-handle,
+.km-flat .k-slider-selection,
+.km-flat .km-switch-background
+{
+    color: #96aa39;
 }
 
-#top-list li {
-    width: 49%;
-	display: inline-block;
+.km-flat .km-loader,
+.km-flat .km-rowinsert,
+.km-flat .km-state-active,
+.km-flat .km-scroller-pull,
+.km-flat .k-slider-selection,
+.km-flat .km-touch-scrollbar,
+.km-flat .km-pages .km-current-page,
+.km-flat .k-slider .k-draghandle,
+.km-flat .k-slider .k-draghandle:hover,
+.km-flat .km-tabstrip .km-state-active,
+.km-flat .km-scroller-refresh.km-load-more,
+.km-flat .km-popup .k-state-hover,
+.km-flat .km-popup .k-state-focused,
+.km-flat .km-popup .k-state-selected,
+.km-flat .km-actionsheet > li > a:active,
+.km-flat .km-actionsheet > li > a:hover,
+.km-flat li.km-state-active .km-listview-link,
+.km-flat li.km-state-active .km-listview-label,
+.km-flat .km-listview-label input[type=radio]:checked,
+.km-flat .km-listview-label input[type=checkbox]:checked
+{
+    background: #96aa39;
 }
 
-#top-list li:last-child {
-    float: right;
+.km-flat .km-filter-wrap > input:focus
+{
+    border-color: #96aa39;
 }
 
 
-#top-list li {
-    background-color: #f6f6f6;
-    height: 180px;
-}
-
-#top-list .list-item .list-image {
-     float: none;
- 	margin: 0 auto;
- 	margin-top: 15px;
-    
-    width: 70px;
-    height: 70px;
-}
-
-#top-list .km-listview-link:after {
-    display: none;
-}
-
-
-
-#start-list {
-    padding-top: 0;
-}
