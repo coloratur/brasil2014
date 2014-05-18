@@ -1,12 +1,13 @@
 function rankingViewInit() {
     var listviews = this.element.find("ul.km-listview");
 
-    $("#select-section").kendoMobileButtonGroup({
-        select: function(e) {
+    $("#sub-navigation").kendoMobileButtonGroup({
+        select: function(event) {
+            //console.log(event.sender.selectedIndex);
+            
             listviews.hide()
-            .eq(e.index)
+            .eq(event.sender.selectedIndex)
             .show();
-        },
-        index: 0
+        }
     });
 }

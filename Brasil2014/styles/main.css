@@ -4,6 +4,26 @@ body {
     background-size: cover !important;
 } 
 
+::-webkit-input-placeholder {
+   color: #333;
+   opacity: 0.7;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #333;  
+    opacity: 0.7;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #333;  
+    opacity: 0.7;
+}
+
+:-ms-input-placeholder {  
+   color: #333;  
+    opacity: 0.7;
+}
+
 h2 {
     font-family: "Roboto" !important;
     font-weight: 300 !important;
@@ -29,7 +49,7 @@ h2 {
     margin-top: 0;
     
     font-family: "Roboto";
-    font-size: 18px !important;
+    font-size: 20px !important;
     font-weight: 300 !important;
     font-style: italic !important;
     //line-height: 90px !important;
@@ -56,7 +76,7 @@ h2 {
 
 #tabstrip-login .km-widget.km-listview.km-list li input { 
     font-family: "Roboto";
-    font-size: 18px !important;
+    font-size: 20px !important;
     font-weight: 300 !important;
     font-style: italic !important;
     
@@ -87,7 +107,7 @@ h2 {
 
 #top-list li {
     background-color: #f6f6f6;
-    height: 180px;
+    height: auto;
 }
 
 #top-list .list-item .list-image {
@@ -99,6 +119,15 @@ h2 {
     height: 70px;
 }
 
+#top-list .list-item .list-detail {
+    background-color: #FFF;
+	padding: 10px;
+	font-size: 12px;
+	margin-top: 15px;
+    
+    font-style: normal;
+}
+
 #top-list .km-listview-link:after {
     display: none;
 }
@@ -107,38 +136,32 @@ h2 {
     padding-top: 0;
 }
 
-
-/* RETINA DISPLAY STYLES */
-@media only screen and (-webkit-min-device-pixel-ratio: 2),(min-resolution: 192dpi) {
-    .welcome-image {
-        background-image: url(../styles/images/appbuilder2x.png);
-        background-size: 100%;
-    }
-    .logo-image {
-        background-image: url(../styles/images/logo2x.png);
-        background-size: 100%;
-    }
-    .w-icon {
-        background-image: url(../styles/images/sprite-weather2x.png);
-        background-size: 100%;
-    }
-    .map-tools .map-tools-button:before.home {
-        background-image: url(../styles/images/location2x.png);
-        background-size: 100%;
-    }
-    .map-tools .map-tools-button:before.home:active {
-        background-image: url(../styles/images/location_active2x.png);
-        background-size: 100%;
-    }
-    .map-tools .map-tools-button:before.search {
-        background-image: url(../styles/images/search2x.png);
-        background-size: 100%;
-    }
-    .map-tools .map-tools-button:before.search:active {
-        background-image: url(../styles/images/search_active2x.png);
-        background-size: 100%;
-    }
+p {
+    margin: 0 !important;
+    padding: 0 !important;
 }
+
+
+
+/* RULES VIEW */
+#tabstrip-rules .content-container {
+    padding: 20px;
+    color: #FFF !important;
+    font-weight: 300 !important;
+    font-family: "Roboto" !important;
+}
+
+#tabstrip-rules .content-container ul {
+    padding: 0;
+    margin-top: 40px;
+}
+
+#tabstrip-rules .content-container ul li {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+
 
 /* THEME */
 [href*=index], #back-button
@@ -166,6 +189,7 @@ h2 {
     text-align: left;
     color: #FFF;
     margin-left: 15px;
+    padding: 5px 0;
     
     font-family: "Roboto";
     font-weight: 300;
@@ -193,15 +217,19 @@ h2 {
 }
 
 .km-flat .km-listview-link:after {
-    color: #333333;
+    color: #333;
     right: 2rem;
+}
+
+.km-flat .major .km-listview-link:after {
+    color: #FFF;
 }
 
 .list-item h2 {
     line-height: 90px !important;
     vertical-align: middle !important;
     display: inline-block !important;
-    margin-left: 5px !important;
+    margin-left: 10px !important;
 }
 
 .list-item .list-image {
@@ -211,6 +239,95 @@ h2 {
     width: 90px;
     height: 90px;
 }
+
+.score-group .list-item h2 {
+    position: absolute;
+    text-align: center !important;
+    margin-left: 0 !important;
+    margin-top: 10px !important;
+    font-size: 14px !important;
+	width: 90px;
+    display: block !important;
+    line-height: normal !important;
+}
+
+.score-group .km-widget.km-listview.km-list li {
+    height: 110px !important;
+}
+
+.score-group .list-item .list-image {
+    margin-top: 20px !important;
+}
+
+.score-group .list-item .right-side {
+    float: right;
+}
+
+.score-group .list-item .left-side {
+    float: left;
+}
+
+.score-group .list-item .game-info {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 30px;
+}
+
+.score-group .list-item .game-info .game-result:after {
+    content: "/";
+    padding: 0 5px 0 10px;
+}
+
+.score-group .list-item .game-info .game-result,
+.score-group .list-item .game-info .game-tip {
+    font-style: normal;
+    font-size: 30px;
+    font-weight: 100;
+    display: inline-block;
+}
+
+.score-group .list-item .game-info .game-date {
+    font-size: 12px;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.ranking-group .list-item h2 {
+    position: absolute;
+    text-align: center !important;
+    margin-left: 0 !important;
+    margin-top: 10px !important;
+    font-size: 14px !important;
+	width: 90px;
+    display: block !important;
+    line-height: normal !important;
+}
+
+.ranking-group .km-widget.km-listview.km-list li {
+    height: 110px !important;
+}
+
+.ranking-group .list-item .list-image {
+    margin-top: 20px !important;
+}
+
+.table {
+    float: right;
+    width: 65%;
+    text-align: center;
+    border-spacing: 10px;
+    margin-right: 5px;
+}
+
+.table th {
+    font-size: 14px;
+}
+
+.table td {
+    font-size: 20px;
+}
+
 
 .km-flat .km-switch-handle,
 .km-flat .k-slider-selection,
@@ -246,6 +363,77 @@ h2 {
 .km-flat .km-filter-wrap > input:focus
 {
     border-color: #96aa39;
+}
+
+.km-navbar .km-leftitem {
+    float: left;
+    position: relative;
+    padding: 5px 0;
+} 
+
+#backbutton {
+    background-color: transparent;
+    border: 0;
+}
+
+.km-badge {
+    right: 0 !important;
+}
+
+.km-back:before {
+    content: " ";
+    display: inline-block!important;
+    color: #FFF;
+    width: .8em;
+    height: .8em;
+    border-width: 0;
+    -webkit-box-shadow: inset .25rem -0.25rem 0 #007aff;
+    box-shadow: inset .25rem -0.25rem 0 #FFF;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.sub-navigation .km-button {
+	//padding: 0 !important;
+	background: rgba(0,0,0,0) !important;
+	border: 0;
+	border-radius: 0 !important;
+	-moz-border-radius: 0 !important;;
+	-webkit-border-radius: 0 !important;
+}
+
+.sub-navigation {
+	border-bottom: 1px solid #FFF;
+    padding: 10px 0;
+}
+
+.sub-navigation .selected-button {
+    font-weight: 900;
+}
+
+.sub-navigation a {
+    //margin: 0 15px !important;
+    //padding: 0 15px !important;
+    color: #FFF !important;
+    text-decoration: none;
+    font-weight: 300;
+    font-family: "Roboto" !important;
+    font-size: 14px;
+    border: 0;
+    background: none !important;
+    border-right: 1px solid #FFF !important;
+    padding: 0 15px 0 10px !important;
+}
+
+.sub-navigation a:first-child {
+    padding: 0 15px !important;
+}
+
+.sub-navigation a:last-child {
+    border-right: 0 !important;
 }
 
 

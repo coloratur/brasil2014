@@ -13,8 +13,8 @@
                 password = that.get("password").trim();
 
             if (username === "" || password === "") {
-                navigator.notification.alert("Both fields are required!",
-                    function () { }, "Login failed", 'OK');
+                navigator.notification.alert("Beide Felder müssen ausgefüllt werden!",
+                    function () { }, "Login falsch!", 'OK');
 
                 return;
             }

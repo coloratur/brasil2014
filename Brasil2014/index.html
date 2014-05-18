@@ -47,23 +47,32 @@
         data-title="Brasil 2014"
         data-transition="slide">
         
+        <div data-role="header">
+            <div data-role="navbar">
+            	<span data-role="view-title"></span>
+            </div>
+        </div>
+        
         <ul data-role="listview" id="top-list">
             <li>
                 <a href="#tabstrip-schedule">
                     <div class="list-item">
                         <span class="list-image" style="background-image: url('styles/images/Icons/user.png')"></span>
-                        <p>Username</p>
-                        <strong>Score 88%</strong>
+                        <div class="list-detail">
+                        	<p>Username</p>
+                        	<strong>Score 88%</strong>
+                        </div>
                     </div>
                 </a>
             </li>
-            
             <li>
                 <a href="#tabstrip-result">
                     <div class="list-item">
                         <span class="list-image" style="background-image: url('styles/images/Icons/tip.png')"></span>
-                        <p>Tip abgeben</p>
-                        <strong>4 von 8 Tipps offen</strong>
+                        <div class="list-detail">
+                            <p>Tip abgeben</p>
+                            <strong>4 von 8 Tipps offen</strong>
+                        </div>
                     </div>
                 </a>
             </li>
@@ -79,7 +88,7 @@
                  </a>
              </li>
              <li>
-                 <a href="#tabstrip-result" class="parent km-listview-link" data-role="listview-link">
+                 <a href="#tabstrip-ranking" class="parent km-listview-link" data-role="listview-link">
                      <div class="list-item">
                          <span class="list-image" style="background-image: url('styles/images/Icons/price.png')"></span>
                 		 <h2>Rangliste & Preise</h2>
@@ -111,9 +120,16 @@
         data-title="Spielplan & Ergebnisse"
         data-transition="slide">
         
+        <div data-role="header">
+            <div data-role="navbar">
+                <a data-role="backbutton" id="backbutton" data-align="left" href="#tabstrip-home"></a>
+            	<span data-role="view-title"></span>
+            </div>
+        </div>
+        
 	 	<ul data-role="listview">
-             <li>
-                 <a href="tabstrip-schedule?parent=2" class="parent km-listview-link" data-role="listview-link">
+             <li class="major">
+                 <a href="#tabstrip-groups" class="parent km-listview-link" data-role="listview-link">
                      <div class="list-item">
                          <span class="list-image" style="background-image: url('styles/images/Icons/schedule.png')"></span>
                 		 <h2>Spiele heute</h2>
@@ -121,7 +137,7 @@
                  </a>
              </li>
              <li>
-                 <a href="#tabstrip-schedule?parent=2" class="parent km-listview-link" data-role="listview-link">
+                 <a href="#tabstrip-group" class="parent km-listview-link" data-role="listview-link">
                      <div class="list-item">
                          <span class="list-image" style="background-image: url('styles/images/Icons/1-32_round.png')"></span>
                 		 <h2>Vorrunde</h2>
@@ -129,7 +145,7 @@
                  </a>
              </li>
              <li>
-                 <a href="#tabstrip-schedule?parent=2" class="parent km-listview-link" data-role="listview-link">
+                 <a href="#tabstrip-final-8" class="parent km-listview-link" data-role="listview-link">
                      <div class="list-item">
                          <span class="list-image" style="background-image: url('styles/images/Icons/1-8_round.png')"></span>
                 		 <h2>Achtelfinale</h2>
@@ -137,7 +153,7 @@
                  </a>
              </li>
              <li>
-                 <a href="#tabstrip-schedule?parent=2" class="parent km-listview-link" data-role="listview-link">
+                 <a href="#tabstrip-final-4" class="parent km-listview-link" data-role="listview-link">
                      <div class="list-item">
                          <span class="list-image" style="background-image: url('styles/images/Icons/1-4_round.png')"></span>
                 		 <h2>Viertelfinale</h2>
@@ -145,7 +161,7 @@
                  </a>
              </li>
               <li>
-                 <a href="#tabstrip-schedule?parent=2" class="parent km-listview-link" data-role="listview-link">
+                 <a href="#tabstrip-final-2" class="parent km-listview-link" data-role="listview-link">
                      <div class="list-item">
                          <span class="list-image" style="background-image: url('styles/images/Icons/1-2_round.png')"></span>
                 		 <h2>Halbfinale</h2>
@@ -153,7 +169,7 @@
                  </a>
              </li>
               <li>
-                 <a href="#tabstrip-schedule?parent=2" class="parent km-listview-link" data-role="listview-link">
+                 <a href="#tabstrip-final" class="parent km-listview-link" data-role="listview-link">
                      <div class="list-item">
                          <span class="list-image" style="background-image: url('styles/images/Icons/final.png')"></span>
                 		 <h2>Finale</h2>
@@ -163,32 +179,2438 @@
 		 </ul>
     </div>
     
-    
-    <!--Ranking View-->
-    <div data-role="view" id="tabstrip-result" data-show="rankingViewInit" data-title="Ranking & Preise">
-        <div class="sub-navigation">
-            <a data-role="button" href="">Ranking</a>
-        	<a data-role="button" href="">Preise</a>
-        </div>
-     
+    <!--Groups View-->
+    <div id="tabstrip-group"
+        data-role="view"
+        data-title="Vorrunde"
+        data-transition="slide">
         
-        <ul data-role="listview">
-            
-            
-        </ul>
+        <div data-role="header">
+            <div data-role="navbar">
+                <a data-role="backbutton" id="backbutton" data-align="left" href="#tabstrip-schedule"></a>
+            	<span data-role="view-title"></span>
+            </div>
+        </div>
+        
+	 	<ul data-role="listview">
+             <li>
+                 <a href="#score-group-a" class="parent km-listview-link" data-role="listview-link">
+                     <div class="list-item">
+                         <span class="list-image" style="background-image: url('styles/images/Icons/group_a.png')"></span>
+                		 <h2>Gruppe A</h2>
+                     </div>
+                 </a>
+             </li>
+             <li>
+                 <a href="#score-group-b" class="parent km-listview-link" data-role="listview-link">
+                     <div class="list-item">
+                         <span class="list-image" style="background-image: url('styles/images/Icons/group_b.png')"></span>
+                		 <h2>Gruppe B</h2>
+                     </div>
+                 </a>
+             </li>
+             <li>
+                 <a href="#score-group-c" class="parent km-listview-link" data-role="listview-link">
+                     <div class="list-item">
+                         <span class="list-image" style="background-image: url('styles/images/Icons/group_c.png')"></span>
+                		 <h2>Gruppe C</h2>
+                     </div>
+                 </a>
+             </li>
+             <li>
+                 <a href="#score-group-d" class="parent km-listview-link" data-role="listview-link">
+                     <div class="list-item">
+                         <span class="list-image" style="background-image: url('styles/images/Icons/group_d.png')"></span>
+                		 <h2>Gruppe D</h2>
+                     </div>
+                 </a>
+             </li>
+              <li>
+                 <a href="#score-group-e" class="parent km-listview-link" data-role="listview-link">
+                     <div class="list-item">
+                         <span class="list-image" style="background-image: url('styles/images/Icons/group_e.png')"></span>
+                		 <h2>Gruppe E</h2>
+                     </div>
+                 </a>
+             </li>
+              <li>
+                 <a href="#score-group-f" class="parent km-listview-link" data-role="listview-link">
+                     <div class="list-item">
+                         <span class="list-image" style="background-image: url('styles/images/Icons/group_f.png')"></span>
+                		 <h2>Gruppe F</h2>
+                     </div>
+                 </a>
+             </li>
+             <li>
+                 <a href="#score-group-g" class="parent km-listview-link" data-role="listview-link">
+                     <div class="list-item">
+                         <span class="list-image" style="background-image: url('styles/images/Icons/group_g.png')"></span>
+                		 <h2>Gruppe G</h2>
+                     </div>
+                 </a>
+             </li>
+             <li>
+                 <a href="#score-group-h" class="parent km-listview-link" data-role="listview-link">
+                     <div class="list-item">
+                         <span class="list-image" style="background-image: url('styles/images/Icons/group_h.png')"></span>
+                		 <h2>Gruppe H</h2>
+                     </div>
+                 </a>
+             </li>
+		 </ul>
     </div>
     
-    <!--
-    <div id="tabstrip-result"
+    <!--1/8 Final View-->
+    <div id="tabstrip-final-8"
         data-role="view"
-        data-title="Ranking & Preise"
+        data-title="Achtelfinale"
         data-transition="slide"
-        data-show="rankingViewInit">
+        class="score-group">
         
-        <ul id="select-section" data-role="buttongroup">
-        	<li>Ranking</li>
-        	<li>Preise</li>
-    	</ul>
+        <div data-role="header">
+            <div data-role="navbar">
+                <a data-role="backbutton" id="backbutton" data-align="left" href="#tabstrip-schedule"></a>
+            	<span data-role="view-title"></span>
+            </div>
+        </div>
+        
+	 	<ul data-role="listview">
+             <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.png')"></span>
+            		 	<h2>?</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">-</div>
+                         <div class="game-tip">-</div>
+                         <div class="game-date">28.06 (18 Uhr) - Belo Horizonte</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.png')"></span>
+            		 	<h2>?</h2>
+                     </div>
+                 </div>
+             </li>
+             <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.png')"></span>
+            		 	<h2>?</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">-</div>
+                         <div class="game-tip">-</div>
+                         <div class="game-date">28.06 (22 Uhr) - Rio De Janeiro</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.png')"></span>
+            		 	<h2>?</h2>
+                     </div>
+                 </div>
+             </li>
+             <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.png')"></span>
+            		 	<h2>?</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">-</div>
+                         <div class="game-tip">-</div>
+                         <div class="game-date">29.06 (18 Uhr) - Fortaleza</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.png')"></span>
+            		 	<h2>?</h2>
+                     </div>
+                 </div>
+             </li>
+             <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.png')"></span>
+            		 	<h2>?</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">-</div>
+                         <div class="game-tip">-</div>
+                         <div class="game-date">29.06 (22 Uhr) - Recife</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.png')"></span>
+            		 	<h2>?</h2>
+                     </div>
+                 </div>
+             </li>
+             <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.png')"></span>
+            		 	<h2>?</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">-</div>
+                         <div class="game-tip">-</div>
+                         <div class="game-date">30.06 (18 Uhr) - Brasília</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.png')"></span>
+            		 	<h2>?</h2>
+                     </div>
+                 </div>
+             </li>
+             <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.png')"></span>
+            		 	<h2>?</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">-</div>
+                         <div class="game-tip">-</div>
+                         <div class="game-date">30.06 (22 Uhr) - Porto Alegre</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.png')"></span>
+            		 	<h2>?</h2>
+                     </div>
+                 </div>
+             </li>
+             <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.png')"></span>
+            		 	<h2>?</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">-</div>
+                         <div class="game-tip">-</div>
+                         <div class="game-date">01.07 (18 Uhr) - São Paulo</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.png')"></span>
+            		 	<h2>?</h2>
+                     </div>
+                 </div>
+             </li>
+             <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.png')"></span>
+            		 	<h2>?</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">-</div>
+                         <div class="game-tip">-</div>
+                         <div class="game-date">01.07 (22 Uhr) - Salvador</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.png')"></span>
+            		 	<h2>?</h2>
+                     </div>
+                 </div>
+             </li>
+		 </ul>
+    </div>
+    
+    <!--1/4 Final View-->
+    <div id="tabstrip-final-4"
+        data-role="view"
+        data-title="Viertelfinale"
+        data-transition="slide"
+        class="score-group">
+        
+        <div data-role="header">
+            <div data-role="navbar">
+                <a data-role="backbutton" id="backbutton" data-align="left" href="#tabstrip-schedule"></a>
+            	<span data-role="view-title"></span>
+            </div>
+        </div>
+        
+	 	<ul data-role="listview">
+             <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.png')"></span>
+            		 	<h2>?</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">-</div>
+                         <div class="game-tip">-</div>
+                         <div class="game-date">04.07 (22 Uhr) - Brasília</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.png')"></span>
+            		 	<h2>?</h2>
+                     </div>
+                 </div>
+             </li>
+             <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.png')"></span>
+            		 	<h2>?</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">-</div>
+                         <div class="game-tip">-</div>
+                         <div class="game-date">04.07 (22 Uhr) - Fortaleza</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.png')"></span>
+            		 	<h2>?</h2>
+                     </div>
+                 </div>
+             </li>
+             <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.png')"></span>
+            		 	<h2>?</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">-</div>
+                         <div class="game-tip">-</div>
+                         <div class="game-date">05.07 (18 Uhr) - Brasília</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.png')"></span>
+            		 	<h2>?</h2>
+                     </div>
+                 </div>
+             </li>
+             <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.png')"></span>
+            		 	<h2>?</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">-</div>
+                         <div class="game-tip">-</div>
+                         <div class="game-date">05.07 (22 Uhr) - Salvador</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.png')"></span>
+            		 	<h2>?</h2>
+                     </div>
+                 </div>
+             </li>
+		 </ul>
+    </div>
+    
+    <!--1/2 Final View-->
+    <div id="tabstrip-final-2"
+        data-role="view"
+        data-title="Halbfinale"
+        data-transition="slide"
+        class="score-group">
+        
+        <div data-role="header">
+            <div data-role="navbar">
+                <a data-role="backbutton" id="backbutton" data-align="left" href="#tabstrip-schedule"></a>
+            	<span data-role="view-title"></span>
+            </div>
+        </div>
+        
+	 	<ul data-role="listview">
+             <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.png')"></span>
+            		 	<h2>?</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">-</div>
+                         <div class="game-tip">-</div>
+                         <div class="game-date">08.07 (22 Uhr) - Belo Horizontes</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.png')"></span>
+            		 	<h2>?</h2>
+                     </div>
+                 </div>
+             </li>
+             <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.png')"></span>
+            		 	<h2>?</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">-</div>
+                         <div class="game-tip">-</div>
+                         <div class="game-date">09.07 (22 Uhr) - São Paulo</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.png')"></span>
+            		 	<h2>?</h2>
+                     </div>
+                 </div>
+             </li>
+		 </ul>
+    </div>
+    
+    <!--Final View-->
+    <div id="tabstrip-final"
+        data-role="view"
+        data-title="Finale"
+        data-transition="slide"
+        class="score-group">
+        
+        <div data-role="header">
+            <div data-role="navbar">
+                <a data-role="backbutton" id="backbutton" data-align="left" href="#tabstrip-schedule"></a>
+            	<span data-role="view-title"></span>
+            </div>
+        </div>
+        
+	 	<ul data-role="listview">
+             <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.png')"></span>
+            		 	<h2>?</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">-</div>
+                         <div class="game-tip">-</div>
+                         <div class="game-date">13.07 (21 Uhr) - Rio De Janeiro</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.png')"></span>
+            		 	<h2>?</h2>
+                     </div>
+                 </div>
+             </li>
+		 </ul>
+    </div>
+    
+    <!--Score Group A-->
+    <div id="score-group-a"
+        data-role="view"
+        data-title="Gruppe A"
+        data-transition="slide"
+        class="score-group">
+        
+        <div data-role="header">
+            <div data-role="navbar">
+                <a data-role="backbutton" id="backbutton" data-align="left" href="#tabstrip-group"></a>
+            	<span data-role="view-title"></span>
+            </div>
+        </div>
+        
+        <div class="sub-navigation">
+            <a data-role="button" class="selected-button" href="#score-group-a">Spiele</a>
+        	<a data-role="button" href="#ranking-group-a">Tabelle</a>
+        </div>
+        
+	 	<ul data-role="listview">
+             <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+            		 	<h2>BRA</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">2:2</div>
+                         <div class="game-tip">2:0</div>
+                         <div class="game-date">12.06 (22 Uhr) - São Paulo</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+            		 	<h2>CRO</h2>
+                     </div>
+                 </div>
+             </li>
+             <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+            		 	<h2>MEX</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">0:2</div>
+                         <div class="game-tip">0:0</div>
+                         <div class="game-date">13.06 (18 Uhr) - Natal</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
+            		 	<h2>KAM</h2>
+                     </div>
+                 </div>
+             </li>
+             <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+            		 	<h2>BRA</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">-</div>
+                         <div class="game-tip">-</div>
+                         <div class="game-date">17.06 (21 Uhr) - Fortaleza</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+            		 	<h2>MEX</h2>
+                     </div>
+                 </div>
+             </li>
+             <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
+            		 	<h2>KAM</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">-</div>
+                         <div class="game-tip">-</div>
+                         <div class="game-date">18.06 (0 Uhr) - Manaus</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+            		 	<h2>CRO</h2>
+                     </div>
+                 </div>
+             </li>
+              <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+            		 	<h2>CRO</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">-</div>
+                         <div class="game-tip">-</div>
+                         <div class="game-date">23.06 (22 Uhr) - Recife</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+            		 	<h2>MEX</h2>
+                     </div>
+                 </div>
+             </li>
+              <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
+            		 	<h2>KAM</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">-</div>
+                         <div class="game-tip">-</div>
+                         <div class="game-date">23.06 (22 Uhr) - Brasília</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+            		 	<h2>BRA</h2>
+                     </div>
+                 </div>
+             </li>
+		 </ul>
+    </div>
+    
+    <!--Ranking Group A-->
+    <div id="ranking-group-a"
+        data-role="view"
+        data-title="Gruppe A"
+        class="ranking-group">
+        
+        <div data-role="header">
+            <div data-role="navbar">
+                <a data-role="backbutton" id="backbutton" data-align="left" href="#tabstrip-group"></a>
+            	<span data-role="view-title"></span>
+            </div>
+        </div>
+        
+        <div class="sub-navigation">
+            <a data-role="button" href="#score-group-a">Spiele</a>
+        	<a data-role="button" class="selected-button" href="#ranking-group-a">Tabelle</a>
+        </div>
+        
+	 	<ul data-role="listview">
+             <li>
+                 <div class="list-item">
+                     <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+            		 <h2>BRA</h2>
+                     <table class="table">
+                         <thead>
+                             <tr>
+                                 <th>Spiele</th>
+                                 <th>Tore</th>
+                                 <th>Punkte</th>
+                             </tr>
+                         </thead>
+                         <tbody>
+                             <tr>
+                                 <td>3</td>
+                                 <td>24:4</td>
+                                 <td>9</td>
+                             </tr>
+                          </tbody>
+                      </table>
+                 </div>
+             </li>
+             <li>
+                 <div class="list-item">
+                     <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+            		 <h2>CRO</h2>
+                     <table class="table">
+                         <thead>
+                             <tr>
+                                 <th>Spiele</th>
+                                 <th>Tore</th>
+                                 <th>Punkte</th>
+                             </tr>
+                         </thead>
+                         <tbody>
+                             <tr>
+                                 <td>3</td>
+                                 <td>20:4</td>
+                                 <td>9</td>
+                             </tr>
+                          </tbody>
+                      </table>
+                 </div>
+             </li>
+             <li>
+                 <div class="list-item">
+                     <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+            		 <h2>MEX</h2>
+                     <table class="table">
+                         <thead>
+                             <tr>
+                                 <th>Spiele</th>
+                                 <th>Tore</th>
+                                 <th>Punkte</th>
+                             </tr>
+                         </thead>
+                         <tbody>
+                             <tr>
+                                 <td>0</td>
+                                 <td>0:0</td>
+                                 <td>0</td>
+                             </tr>
+                          </tbody>
+                      </table>
+                 </div>
+             </li>
+             <li>
+                 <div class="list-item">
+                     <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
+            		 <h2>KAM</h2>
+                     <table class="table">
+                         <thead>
+                             <tr>
+                                 <th>Spiele</th>
+                                 <th>Tore</th>
+                                 <th>Punkte</th>
+                             </tr>
+                         </thead>
+                         <tbody>
+                             <tr>
+                                 <td>0</td>
+                                 <td>0:0</td>
+                                 <td>0</td>
+                             </tr>
+                          </tbody>
+                      </table>
+                 </div>
+             </li>
+		 </ul>
+    </div>
+    
+    <!--Score Group B-->
+    <div id="score-group-b"
+        data-role="view"
+        data-title="Gruppe B"
+        data-transition="slide"
+        class="score-group">
+        
+        <div data-role="header">
+            <div data-role="navbar">
+                <a data-role="backbutton" id="backbutton" data-align="left" href="#tabstrip-group"></a>
+            	<span data-role="view-title"></span>
+            </div>
+        </div>
+        
+        <div class="sub-navigation">
+            <a data-role="button" class="selected-button" href="#score-group-b">Spiele</a>
+        	<a data-role="button" href="#ranking-group-b">Tabelle</a>
+        </div>
+        
+	 	<ul data-role="listview">
+             <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+            		 	<h2>BRA</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">2:2</div>
+                         <div class="game-tip">2:0</div>
+                         <div class="game-date">12.06 (22 Uhr) - São Paulo</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+            		 	<h2>CRO</h2>
+                     </div>
+                 </div>
+             </li>
+             <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+            		 	<h2>MEX</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">0:2</div>
+                         <div class="game-tip">0:0</div>
+                         <div class="game-date">13.06 (18 Uhr) - Natal</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
+            		 	<h2>KAM</h2>
+                     </div>
+                 </div>
+             </li>
+             <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+            		 	<h2>BRA</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">-</div>
+                         <div class="game-tip">-</div>
+                         <div class="game-date">17.06 (21 Uhr) - Fortaleza</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+            		 	<h2>MEX</h2>
+                     </div>
+                 </div>
+             </li>
+             <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
+            		 	<h2>KAM</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">-</div>
+                         <div class="game-tip">-</div>
+                         <div class="game-date">18.06 (0 Uhr) - Manaus</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+            		 	<h2>CRO</h2>
+                     </div>
+                 </div>
+             </li>
+              <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+            		 	<h2>CRO</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">-</div>
+                         <div class="game-tip">-</div>
+                         <div class="game-date">23.06 (22 Uhr) - Recife</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+            		 	<h2>MEX</h2>
+                     </div>
+                 </div>
+             </li>
+              <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
+            		 	<h2>KAM</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">-</div>
+                         <div class="game-tip">-</div>
+                         <div class="game-date">23.06 (22 Uhr) - Brasília</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+            		 	<h2>BRA</h2>
+                     </div>
+                 </div>
+             </li>
+		 </ul>
+    </div>
+    
+    <!--Ranking Group B-->
+    <div id="ranking-group-b"
+        data-role="view"
+        data-title="Gruppe B"
+        class="ranking-group">
+        
+        <div data-role="header">
+            <div data-role="navbar">
+                <a data-role="backbutton" id="backbutton" data-align="left" href="#tabstrip-group"></a>
+            	<span data-role="view-title"></span>
+            </div>
+        </div>
+        
+        <div class="sub-navigation">
+            <a data-role="button" href="#score-group-b">Spiele</a>
+        	<a data-role="button" class="selected-button" href="#ranking-group-b">Tabelle</a>
+        </div>
+        
+	 	<ul data-role="listview">
+             <li>
+                 <div class="list-item">
+                     <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+            		 <h2>BRA</h2>
+                     <table class="table">
+                         <thead>
+                             <tr>
+                                 <th>Spiele</th>
+                                 <th>Tore</th>
+                                 <th>Punkte</th>
+                             </tr>
+                         </thead>
+                         <tbody>
+                             <tr>
+                                 <td>3</td>
+                                 <td>24:4</td>
+                                 <td>9</td>
+                             </tr>
+                          </tbody>
+                      </table>
+                 </div>
+             </li>
+             <li>
+                 <div class="list-item">
+                     <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+            		 <h2>CRO</h2>
+                     <table class="table">
+                         <thead>
+                             <tr>
+                                 <th>Spiele</th>
+                                 <th>Tore</th>
+                                 <th>Punkte</th>
+                             </tr>
+                         </thead>
+                         <tbody>
+                             <tr>
+                                 <td>3</td>
+                                 <td>20:4</td>
+                                 <td>9</td>
+                             </tr>
+                          </tbody>
+                      </table>
+                 </div>
+             </li>
+             <li>
+                 <div class="list-item">
+                     <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+            		 <h2>MEX</h2>
+                     <table class="table">
+                         <thead>
+                             <tr>
+                                 <th>Spiele</th>
+                                 <th>Tore</th>
+                                 <th>Punkte</th>
+                             </tr>
+                         </thead>
+                         <tbody>
+                             <tr>
+                                 <td>0</td>
+                                 <td>0:0</td>
+                                 <td>0</td>
+                             </tr>
+                          </tbody>
+                      </table>
+                 </div>
+             </li>
+             <li>
+                 <div class="list-item">
+                     <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
+            		 <h2>KAM</h2>
+                     <table class="table">
+                         <thead>
+                             <tr>
+                                 <th>Spiele</th>
+                                 <th>Tore</th>
+                                 <th>Punkte</th>
+                             </tr>
+                         </thead>
+                         <tbody>
+                             <tr>
+                                 <td>0</td>
+                                 <td>0:0</td>
+                                 <td>0</td>
+                             </tr>
+                          </tbody>
+                      </table>
+                 </div>
+             </li>
+		 </ul>
+    </div>
+    
+    <!--Score Group C-->
+    <div id="score-group-c"
+        data-role="view"
+        data-title="Gruppe C"
+        data-transition="slide"
+        class="score-group">
+        
+        <div data-role="header">
+            <div data-role="navbar">
+                <a data-role="backbutton" id="backbutton" data-align="left" href="#tabstrip-group"></a>
+            	<span data-role="view-title"></span>
+            </div>
+        </div>
+        
+        <div class="sub-navigation">
+            <a data-role="button" class="selected-button" href="#score-group-c">Spiele</a>
+        	<a data-role="button" href="#ranking-group-c">Tabelle</a>
+        </div>
+        
+	 	<ul data-role="listview">
+             <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+            		 	<h2>BRA</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">2:2</div>
+                         <div class="game-tip">2:0</div>
+                         <div class="game-date">12.06 (22 Uhr) - São Paulo</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+            		 	<h2>CRO</h2>
+                     </div>
+                 </div>
+             </li>
+             <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+            		 	<h2>MEX</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">0:2</div>
+                         <div class="game-tip">0:0</div>
+                         <div class="game-date">13.06 (18 Uhr) - Natal</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
+            		 	<h2>KAM</h2>
+                     </div>
+                 </div>
+             </li>
+             <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+            		 	<h2>BRA</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">-</div>
+                         <div class="game-tip">-</div>
+                         <div class="game-date">17.06 (21 Uhr) - Fortaleza</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+            		 	<h2>MEX</h2>
+                     </div>
+                 </div>
+             </li>
+             <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
+            		 	<h2>KAM</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">-</div>
+                         <div class="game-tip">-</div>
+                         <div class="game-date">18.06 (0 Uhr) - Manaus</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+            		 	<h2>CRO</h2>
+                     </div>
+                 </div>
+             </li>
+              <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+            		 	<h2>CRO</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">-</div>
+                         <div class="game-tip">-</div>
+                         <div class="game-date">23.06 (22 Uhr) - Recife</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+            		 	<h2>MEX</h2>
+                     </div>
+                 </div>
+             </li>
+              <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
+            		 	<h2>KAM</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">-</div>
+                         <div class="game-tip">-</div>
+                         <div class="game-date">23.06 (22 Uhr) - Brasília</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+            		 	<h2>BRA</h2>
+                     </div>
+                 </div>
+             </li>
+		 </ul>
+    </div>
+    
+    <!--Ranking Group C-->
+    <div id="ranking-group-c"
+        data-role="view"
+        data-title="Gruppe C"
+        class="ranking-group">
+        
+        <div data-role="header">
+            <div data-role="navbar">
+                <a data-role="backbutton" id="backbutton" data-align="left" href="#tabstrip-group"></a>
+            	<span data-role="view-title"></span>
+            </div>
+        </div>
+        
+        <div class="sub-navigation">
+            <a data-role="button" href="#score-group-c">Spiele</a>
+        	<a data-role="button" class="selected-button" href="#ranking-group-c">Tabelle</a>
+        </div>
+        
+	 	<ul data-role="listview">
+             <li>
+                 <div class="list-item">
+                     <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+            		 <h2>BRA</h2>
+                     <table class="table">
+                         <thead>
+                             <tr>
+                                 <th>Spiele</th>
+                                 <th>Tore</th>
+                                 <th>Punkte</th>
+                             </tr>
+                         </thead>
+                         <tbody>
+                             <tr>
+                                 <td>3</td>
+                                 <td>24:4</td>
+                                 <td>9</td>
+                             </tr>
+                          </tbody>
+                      </table>
+                 </div>
+             </li>
+             <li>
+                 <div class="list-item">
+                     <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+            		 <h2>CRO</h2>
+                     <table class="table">
+                         <thead>
+                             <tr>
+                                 <th>Spiele</th>
+                                 <th>Tore</th>
+                                 <th>Punkte</th>
+                             </tr>
+                         </thead>
+                         <tbody>
+                             <tr>
+                                 <td>3</td>
+                                 <td>20:4</td>
+                                 <td>9</td>
+                             </tr>
+                          </tbody>
+                      </table>
+                 </div>
+             </li>
+             <li>
+                 <div class="list-item">
+                     <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+            		 <h2>MEX</h2>
+                     <table class="table">
+                         <thead>
+                             <tr>
+                                 <th>Spiele</th>
+                                 <th>Tore</th>
+                                 <th>Punkte</th>
+                             </tr>
+                         </thead>
+                         <tbody>
+                             <tr>
+                                 <td>0</td>
+                                 <td>0:0</td>
+                                 <td>0</td>
+                             </tr>
+                          </tbody>
+                      </table>
+                 </div>
+             </li>
+             <li>
+                 <div class="list-item">
+                     <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
+            		 <h2>KAM</h2>
+                     <table class="table">
+                         <thead>
+                             <tr>
+                                 <th>Spiele</th>
+                                 <th>Tore</th>
+                                 <th>Punkte</th>
+                             </tr>
+                         </thead>
+                         <tbody>
+                             <tr>
+                                 <td>0</td>
+                                 <td>0:0</td>
+                                 <td>0</td>
+                             </tr>
+                          </tbody>
+                      </table>
+                 </div>
+             </li>
+		 </ul>
+    </div>
+    
+    <!--Score Group D-->
+    <div id="score-group-d"
+        data-role="view"
+        data-title="Gruppe D"
+        data-transition="slide"
+        class="score-group">
+        
+        <div data-role="header">
+            <div data-role="navbar">
+                <a data-role="backbutton" id="backbutton" data-align="left" href="#tabstrip-group"></a>
+            	<span data-role="view-title"></span>
+            </div>
+        </div>
+        
+        <div class="sub-navigation">
+            <a data-role="button" class="selected-button" href="#score-group-d">Spiele</a>
+        	<a data-role="button" href="#ranking-group-d">Tabelle</a>
+        </div>
+        
+	 	<ul data-role="listview">
+             <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+            		 	<h2>BRA</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">2:2</div>
+                         <div class="game-tip">2:0</div>
+                         <div class="game-date">12.06 (22 Uhr) - São Paulo</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+            		 	<h2>CRO</h2>
+                     </div>
+                 </div>
+             </li>
+             <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+            		 	<h2>MEX</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">0:2</div>
+                         <div class="game-tip">0:0</div>
+                         <div class="game-date">13.06 (18 Uhr) - Natal</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
+            		 	<h2>KAM</h2>
+                     </div>
+                 </div>
+             </li>
+             <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+            		 	<h2>BRA</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">-</div>
+                         <div class="game-tip">-</div>
+                         <div class="game-date">17.06 (21 Uhr) - Fortaleza</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+            		 	<h2>MEX</h2>
+                     </div>
+                 </div>
+             </li>
+             <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
+            		 	<h2>KAM</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">-</div>
+                         <div class="game-tip">-</div>
+                         <div class="game-date">18.06 (0 Uhr) - Manaus</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+            		 	<h2>CRO</h2>
+                     </div>
+                 </div>
+             </li>
+              <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+            		 	<h2>CRO</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">-</div>
+                         <div class="game-tip">-</div>
+                         <div class="game-date">23.06 (22 Uhr) - Recife</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+            		 	<h2>MEX</h2>
+                     </div>
+                 </div>
+             </li>
+              <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
+            		 	<h2>KAM</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">-</div>
+                         <div class="game-tip">-</div>
+                         <div class="game-date">23.06 (22 Uhr) - Brasília</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+            		 	<h2>BRA</h2>
+                     </div>
+                 </div>
+             </li>
+		 </ul>
+    </div>
+    
+    <!--Ranking Group D-->
+    <div id="ranking-group-d"
+        data-role="view"
+        data-title="Gruppe D"
+        class="ranking-group">
+        
+        <div data-role="header">
+            <div data-role="navbar">
+                <a data-role="backbutton" id="backbutton" data-align="left" href="#tabstrip-group"></a>
+            	<span data-role="view-title"></span>
+            </div>
+        </div>
+        
+        <div class="sub-navigation">
+            <a data-role="button" href="#score-group-d">Spiele</a>
+        	<a data-role="button" class="selected-button" href="#ranking-group-d">Tabelle</a>
+        </div>
+        
+	 	<ul data-role="listview">
+             <li>
+                 <div class="list-item">
+                     <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+            		 <h2>BRA</h2>
+                     <table class="table">
+                         <thead>
+                             <tr>
+                                 <th>Spiele</th>
+                                 <th>Tore</th>
+                                 <th>Punkte</th>
+                             </tr>
+                         </thead>
+                         <tbody>
+                             <tr>
+                                 <td>3</td>
+                                 <td>24:4</td>
+                                 <td>9</td>
+                             </tr>
+                          </tbody>
+                      </table>
+                 </div>
+             </li>
+             <li>
+                 <div class="list-item">
+                     <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+            		 <h2>CRO</h2>
+                     <table class="table">
+                         <thead>
+                             <tr>
+                                 <th>Spiele</th>
+                                 <th>Tore</th>
+                                 <th>Punkte</th>
+                             </tr>
+                         </thead>
+                         <tbody>
+                             <tr>
+                                 <td>3</td>
+                                 <td>20:4</td>
+                                 <td>9</td>
+                             </tr>
+                          </tbody>
+                      </table>
+                 </div>
+             </li>
+             <li>
+                 <div class="list-item">
+                     <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+            		 <h2>MEX</h2>
+                     <table class="table">
+                         <thead>
+                             <tr>
+                                 <th>Spiele</th>
+                                 <th>Tore</th>
+                                 <th>Punkte</th>
+                             </tr>
+                         </thead>
+                         <tbody>
+                             <tr>
+                                 <td>0</td>
+                                 <td>0:0</td>
+                                 <td>0</td>
+                             </tr>
+                          </tbody>
+                      </table>
+                 </div>
+             </li>
+             <li>
+                 <div class="list-item">
+                     <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
+            		 <h2>KAM</h2>
+                     <table class="table">
+                         <thead>
+                             <tr>
+                                 <th>Spiele</th>
+                                 <th>Tore</th>
+                                 <th>Punkte</th>
+                             </tr>
+                         </thead>
+                         <tbody>
+                             <tr>
+                                 <td>0</td>
+                                 <td>0:0</td>
+                                 <td>0</td>
+                             </tr>
+                          </tbody>
+                      </table>
+                 </div>
+             </li>
+		 </ul>
+    </div>
+    
+    <!--Score Group E-->
+    <div id="score-group-e"
+        data-role="view"
+        data-title="Gruppe E"
+        data-transition="slide"
+        class="score-group">
+        
+        <div data-role="header">
+            <div data-role="navbar">
+                <a data-role="backbutton" id="backbutton" data-align="left" href="#tabstrip-group"></a>
+            	<span data-role="view-title"></span>
+            </div>
+        </div>
+        
+        <div class="sub-navigation">
+            <a data-role="button" class="selected-button" href="#score-group-e">Spiele</a>
+        	<a data-role="button" href="#ranking-group-e">Tabelle</a>
+        </div>
+        
+	 	<ul data-role="listview">
+             <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+            		 	<h2>BRA</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">2:2</div>
+                         <div class="game-tip">2:0</div>
+                         <div class="game-date">12.06 (22 Uhr) - São Paulo</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+            		 	<h2>CRO</h2>
+                     </div>
+                 </div>
+             </li>
+             <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+            		 	<h2>MEX</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">0:2</div>
+                         <div class="game-tip">0:0</div>
+                         <div class="game-date">13.06 (18 Uhr) - Natal</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
+            		 	<h2>KAM</h2>
+                     </div>
+                 </div>
+             </li>
+             <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+            		 	<h2>BRA</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">-</div>
+                         <div class="game-tip">-</div>
+                         <div class="game-date">17.06 (21 Uhr) - Fortaleza</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+            		 	<h2>MEX</h2>
+                     </div>
+                 </div>
+             </li>
+             <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
+            		 	<h2>KAM</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">-</div>
+                         <div class="game-tip">-</div>
+                         <div class="game-date">18.06 (0 Uhr) - Manaus</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+            		 	<h2>CRO</h2>
+                     </div>
+                 </div>
+             </li>
+              <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+            		 	<h2>CRO</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">-</div>
+                         <div class="game-tip">-</div>
+                         <div class="game-date">23.06 (22 Uhr) - Recife</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+            		 	<h2>MEX</h2>
+                     </div>
+                 </div>
+             </li>
+              <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
+            		 	<h2>KAM</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">-</div>
+                         <div class="game-tip">-</div>
+                         <div class="game-date">23.06 (22 Uhr) - Brasília</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+            		 	<h2>BRA</h2>
+                     </div>
+                 </div>
+             </li>
+		 </ul>
+    </div>
+    
+    <!--Ranking Group E-->
+    <div id="ranking-group-e"
+        data-role="view"
+        data-title="Gruppe E"
+        class="ranking-group">
+        
+        <div data-role="header">
+            <div data-role="navbar">
+                <a data-role="backbutton" id="backbutton" data-align="left" href="#tabstrip-group"></a>
+            	<span data-role="view-title"></span>
+            </div>
+        </div>
+        
+        <div class="sub-navigation">
+            <a data-role="button" href="#score-group-e">Spiele</a>
+        	<a data-role="button" class="selected-button" href="#ranking-group-e">Tabelle</a>
+        </div>
+        
+	 	<ul data-role="listview">
+             <li>
+                 <div class="list-item">
+                     <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+            		 <h2>BRA</h2>
+                     <table class="table">
+                         <thead>
+                             <tr>
+                                 <th>Spiele</th>
+                                 <th>Tore</th>
+                                 <th>Punkte</th>
+                             </tr>
+                         </thead>
+                         <tbody>
+                             <tr>
+                                 <td>3</td>
+                                 <td>24:4</td>
+                                 <td>9</td>
+                             </tr>
+                          </tbody>
+                      </table>
+                 </div>
+             </li>
+             <li>
+                 <div class="list-item">
+                     <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+            		 <h2>CRO</h2>
+                     <table class="table">
+                         <thead>
+                             <tr>
+                                 <th>Spiele</th>
+                                 <th>Tore</th>
+                                 <th>Punkte</th>
+                             </tr>
+                         </thead>
+                         <tbody>
+                             <tr>
+                                 <td>3</td>
+                                 <td>20:4</td>
+                                 <td>9</td>
+                             </tr>
+                          </tbody>
+                      </table>
+                 </div>
+             </li>
+             <li>
+                 <div class="list-item">
+                     <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+            		 <h2>MEX</h2>
+                     <table class="table">
+                         <thead>
+                             <tr>
+                                 <th>Spiele</th>
+                                 <th>Tore</th>
+                                 <th>Punkte</th>
+                             </tr>
+                         </thead>
+                         <tbody>
+                             <tr>
+                                 <td>0</td>
+                                 <td>0:0</td>
+                                 <td>0</td>
+                             </tr>
+                          </tbody>
+                      </table>
+                 </div>
+             </li>
+             <li>
+                 <div class="list-item">
+                     <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
+            		 <h2>KAM</h2>
+                     <table class="table">
+                         <thead>
+                             <tr>
+                                 <th>Spiele</th>
+                                 <th>Tore</th>
+                                 <th>Punkte</th>
+                             </tr>
+                         </thead>
+                         <tbody>
+                             <tr>
+                                 <td>0</td>
+                                 <td>0:0</td>
+                                 <td>0</td>
+                             </tr>
+                          </tbody>
+                      </table>
+                 </div>
+             </li>
+		 </ul>
+    </div>
+    
+    <!--Score Group F-->
+    <div id="score-group-f"
+        data-role="view"
+        data-title="Gruppe F"
+        data-transition="slide"
+        class="score-group">
+        
+        <div data-role="header">
+            <div data-role="navbar">
+                <a data-role="backbutton" id="backbutton" data-align="left" href="#tabstrip-group"></a>
+            	<span data-role="view-title"></span>
+            </div>
+        </div>
+        
+        <div class="sub-navigation">
+            <a data-role="button" class="selected-button" href="#score-group-f">Spiele</a>
+        	<a data-role="button" href="#ranking-group-f">Tabelle</a>
+        </div>
+        
+	 	<ul data-role="listview">
+             <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+            		 	<h2>BRA</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">2:2</div>
+                         <div class="game-tip">2:0</div>
+                         <div class="game-date">12.06 (22 Uhr) - São Paulo</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+            		 	<h2>CRO</h2>
+                     </div>
+                 </div>
+             </li>
+             <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+            		 	<h2>MEX</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">0:2</div>
+                         <div class="game-tip">0:0</div>
+                         <div class="game-date">13.06 (18 Uhr) - Natal</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
+            		 	<h2>KAM</h2>
+                     </div>
+                 </div>
+             </li>
+             <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+            		 	<h2>BRA</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">-</div>
+                         <div class="game-tip">-</div>
+                         <div class="game-date">17.06 (21 Uhr) - Fortaleza</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+            		 	<h2>MEX</h2>
+                     </div>
+                 </div>
+             </li>
+             <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
+            		 	<h2>KAM</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">-</div>
+                         <div class="game-tip">-</div>
+                         <div class="game-date">18.06 (0 Uhr) - Manaus</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+            		 	<h2>CRO</h2>
+                     </div>
+                 </div>
+             </li>
+              <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+            		 	<h2>CRO</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">-</div>
+                         <div class="game-tip">-</div>
+                         <div class="game-date">23.06 (22 Uhr) - Recife</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+            		 	<h2>MEX</h2>
+                     </div>
+                 </div>
+             </li>
+              <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
+            		 	<h2>KAM</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">-</div>
+                         <div class="game-tip">-</div>
+                         <div class="game-date">23.06 (22 Uhr) - Brasília</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+            		 	<h2>BRA</h2>
+                     </div>
+                 </div>
+             </li>
+		 </ul>
+    </div>
+    
+    <!--Ranking Group F-->
+    <div id="ranking-group-f"
+        data-role="view"
+        data-title="Gruppe F"
+        class="ranking-group">
+        
+        <div data-role="header">
+            <div data-role="navbar">
+                <a data-role="backbutton" id="backbutton" data-align="left" href="#tabstrip-group"></a>
+            	<span data-role="view-title"></span>
+            </div>
+        </div>
+        
+        <div class="sub-navigation">
+            <a data-role="button" href="#score-group-f">Spiele</a>
+        	<a data-role="button" class="selected-button" href="#ranking-group-f">Tabelle</a>
+        </div>
+        
+	 	<ul data-role="listview">
+             <li>
+                 <div class="list-item">
+                     <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+            		 <h2>BRA</h2>
+                     <table class="table">
+                         <thead>
+                             <tr>
+                                 <th>Spiele</th>
+                                 <th>Tore</th>
+                                 <th>Punkte</th>
+                             </tr>
+                         </thead>
+                         <tbody>
+                             <tr>
+                                 <td>3</td>
+                                 <td>24:4</td>
+                                 <td>9</td>
+                             </tr>
+                          </tbody>
+                      </table>
+                 </div>
+             </li>
+             <li>
+                 <div class="list-item">
+                     <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+            		 <h2>CRO</h2>
+                     <table class="table">
+                         <thead>
+                             <tr>
+                                 <th>Spiele</th>
+                                 <th>Tore</th>
+                                 <th>Punkte</th>
+                             </tr>
+                         </thead>
+                         <tbody>
+                             <tr>
+                                 <td>3</td>
+                                 <td>20:4</td>
+                                 <td>9</td>
+                             </tr>
+                          </tbody>
+                      </table>
+                 </div>
+             </li>
+             <li>
+                 <div class="list-item">
+                     <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+            		 <h2>MEX</h2>
+                     <table class="table">
+                         <thead>
+                             <tr>
+                                 <th>Spiele</th>
+                                 <th>Tore</th>
+                                 <th>Punkte</th>
+                             </tr>
+                         </thead>
+                         <tbody>
+                             <tr>
+                                 <td>0</td>
+                                 <td>0:0</td>
+                                 <td>0</td>
+                             </tr>
+                          </tbody>
+                      </table>
+                 </div>
+             </li>
+             <li>
+                 <div class="list-item">
+                     <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
+            		 <h2>KAM</h2>
+                     <table class="table">
+                         <thead>
+                             <tr>
+                                 <th>Spiele</th>
+                                 <th>Tore</th>
+                                 <th>Punkte</th>
+                             </tr>
+                         </thead>
+                         <tbody>
+                             <tr>
+                                 <td>0</td>
+                                 <td>0:0</td>
+                                 <td>0</td>
+                             </tr>
+                          </tbody>
+                      </table>
+                 </div>
+             </li>
+		 </ul>
+    </div>
+    
+    <!--Score Group G-->
+    <div id="score-group-g"
+        data-role="view"
+        data-title="Gruppe G"
+        data-transition="slide"
+        class="score-group">
+        
+        <div data-role="header">
+            <div data-role="navbar">
+                <a data-role="backbutton" id="backbutton" data-align="left" href="#tabstrip-group"></a>
+            	<span data-role="view-title"></span>
+            </div>
+        </div>
+        
+        <div class="sub-navigation">
+            <a data-role="button" class="selected-button" href="#score-group-g">Spiele</a>
+        	<a data-role="button" href="#ranking-group-g">Tabelle</a>
+        </div>
+        
+	 	<ul data-role="listview">
+             <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+            		 	<h2>BRA</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">2:2</div>
+                         <div class="game-tip">2:0</div>
+                         <div class="game-date">12.06 (22 Uhr) - São Paulo</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+            		 	<h2>CRO</h2>
+                     </div>
+                 </div>
+             </li>
+             <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+            		 	<h2>MEX</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">0:2</div>
+                         <div class="game-tip">0:0</div>
+                         <div class="game-date">13.06 (18 Uhr) - Natal</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
+            		 	<h2>KAM</h2>
+                     </div>
+                 </div>
+             </li>
+             <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+            		 	<h2>BRA</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">-</div>
+                         <div class="game-tip">-</div>
+                         <div class="game-date">17.06 (21 Uhr) - Fortaleza</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+            		 	<h2>MEX</h2>
+                     </div>
+                 </div>
+             </li>
+             <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
+            		 	<h2>KAM</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">-</div>
+                         <div class="game-tip">-</div>
+                         <div class="game-date">18.06 (0 Uhr) - Manaus</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+            		 	<h2>CRO</h2>
+                     </div>
+                 </div>
+             </li>
+              <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+            		 	<h2>CRO</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">-</div>
+                         <div class="game-tip">-</div>
+                         <div class="game-date">23.06 (22 Uhr) - Recife</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+            		 	<h2>MEX</h2>
+                     </div>
+                 </div>
+             </li>
+              <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
+            		 	<h2>KAM</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">-</div>
+                         <div class="game-tip">-</div>
+                         <div class="game-date">23.06 (22 Uhr) - Brasília</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+            		 	<h2>BRA</h2>
+                     </div>
+                 </div>
+             </li>
+		 </ul>
+    </div>
+    
+    <!--Ranking Group G-->
+    <div id="ranking-group-g"
+        data-role="view"
+        data-title="Gruppe G"
+        class="ranking-group">
+        
+        <div data-role="header">
+            <div data-role="navbar">
+                <a data-role="backbutton" id="backbutton" data-align="left" href="#tabstrip-group"></a>
+            	<span data-role="view-title"></span>
+            </div>
+        </div>
+        
+        <div class="sub-navigation">
+            <a data-role="button" href="#score-group-g">Spiele</a>
+        	<a data-role="button" class="selected-button" href="#ranking-group-g">Tabelle</a>
+        </div>
+        
+	 	<ul data-role="listview">
+             <li>
+                 <div class="list-item">
+                     <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+            		 <h2>BRA</h2>
+                     <table class="table">
+                         <thead>
+                             <tr>
+                                 <th>Spiele</th>
+                                 <th>Tore</th>
+                                 <th>Punkte</th>
+                             </tr>
+                         </thead>
+                         <tbody>
+                             <tr>
+                                 <td>3</td>
+                                 <td>24:4</td>
+                                 <td>9</td>
+                             </tr>
+                          </tbody>
+                      </table>
+                 </div>
+             </li>
+             <li>
+                 <div class="list-item">
+                     <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+            		 <h2>CRO</h2>
+                     <table class="table">
+                         <thead>
+                             <tr>
+                                 <th>Spiele</th>
+                                 <th>Tore</th>
+                                 <th>Punkte</th>
+                             </tr>
+                         </thead>
+                         <tbody>
+                             <tr>
+                                 <td>3</td>
+                                 <td>20:4</td>
+                                 <td>9</td>
+                             </tr>
+                          </tbody>
+                      </table>
+                 </div>
+             </li>
+             <li>
+                 <div class="list-item">
+                     <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+            		 <h2>MEX</h2>
+                     <table class="table">
+                         <thead>
+                             <tr>
+                                 <th>Spiele</th>
+                                 <th>Tore</th>
+                                 <th>Punkte</th>
+                             </tr>
+                         </thead>
+                         <tbody>
+                             <tr>
+                                 <td>0</td>
+                                 <td>0:0</td>
+                                 <td>0</td>
+                             </tr>
+                          </tbody>
+                      </table>
+                 </div>
+             </li>
+             <li>
+                 <div class="list-item">
+                     <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
+            		 <h2>KAM</h2>
+                     <table class="table">
+                         <thead>
+                             <tr>
+                                 <th>Spiele</th>
+                                 <th>Tore</th>
+                                 <th>Punkte</th>
+                             </tr>
+                         </thead>
+                         <tbody>
+                             <tr>
+                                 <td>0</td>
+                                 <td>0:0</td>
+                                 <td>0</td>
+                             </tr>
+                          </tbody>
+                      </table>
+                 </div>
+             </li>
+		 </ul>
+    </div>
+    
+    <!--Score Group H-->
+    <div id="score-group-h"
+        data-role="view"
+        data-title="Gruppe H"
+        data-transition="slide"
+        class="score-group">
+        
+        <div data-role="header">
+            <div data-role="navbar">
+                <a data-role="backbutton" id="backbutton" data-align="left" href="#tabstrip-group"></a>
+            	<span data-role="view-title"></span>
+            </div>
+        </div>
+        
+        <div class="sub-navigation">
+            <a data-role="button" class="selected-button" href="#score-group-h">Spiele</a>
+        	<a data-role="button" href="#ranking-group-h">Tabelle</a>
+        </div>
+        
+	 	<ul data-role="listview">
+             <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+            		 	<h2>BRA</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">2:2</div>
+                         <div class="game-tip">2:0</div>
+                         <div class="game-date">12.06 (22 Uhr) - São Paulo</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+            		 	<h2>CRO</h2>
+                     </div>
+                 </div>
+             </li>
+             <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+            		 	<h2>MEX</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">0:2</div>
+                         <div class="game-tip">0:0</div>
+                         <div class="game-date">13.06 (18 Uhr) - Natal</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
+            		 	<h2>KAM</h2>
+                     </div>
+                 </div>
+             </li>
+             <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+            		 	<h2>BRA</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">-</div>
+                         <div class="game-tip">-</div>
+                         <div class="game-date">17.06 (21 Uhr) - Fortaleza</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+            		 	<h2>MEX</h2>
+                     </div>
+                 </div>
+             </li>
+             <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
+            		 	<h2>KAM</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">-</div>
+                         <div class="game-tip">-</div>
+                         <div class="game-date">18.06 (0 Uhr) - Manaus</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+            		 	<h2>CRO</h2>
+                     </div>
+                 </div>
+             </li>
+              <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+            		 	<h2>CRO</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">-</div>
+                         <div class="game-tip">-</div>
+                         <div class="game-date">23.06 (22 Uhr) - Recife</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+            		 	<h2>MEX</h2>
+                     </div>
+                 </div>
+             </li>
+              <li>
+                 <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
+            		 	<h2>KAM</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">-</div>
+                         <div class="game-tip">-</div>
+                         <div class="game-date">23.06 (22 Uhr) - Brasília</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+            		 	<h2>BRA</h2>
+                     </div>
+                 </div>
+             </li>
+		 </ul>
+    </div>
+    
+    <!--Ranking Group H-->
+    <div id="ranking-group-h"
+        data-role="view"
+        data-title="Gruppe H"
+        class="ranking-group">
+        
+        <div data-role="header">
+            <div data-role="navbar">
+                <a data-role="backbutton" id="backbutton" data-align="left" href="#tabstrip-group"></a>
+            	<span data-role="view-title"></span>
+            </div>
+        </div>
+        
+        <div class="sub-navigation">
+            <a data-role="button" href="#score-group-h">Spiele</a>
+        	<a data-role="button" class="selected-button" href="#ranking-group-h">Tabelle</a>
+        </div>
+        
+	 	<ul data-role="listview">
+             <li>
+                 <div class="list-item">
+                     <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+            		 <h2>BRA</h2>
+                     <table class="table">
+                         <thead>
+                             <tr>
+                                 <th>Spiele</th>
+                                 <th>Tore</th>
+                                 <th>Punkte</th>
+                             </tr>
+                         </thead>
+                         <tbody>
+                             <tr>
+                                 <td>3</td>
+                                 <td>24:4</td>
+                                 <td>9</td>
+                             </tr>
+                          </tbody>
+                      </table>
+                 </div>
+             </li>
+             <li>
+                 <div class="list-item">
+                     <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+            		 <h2>CRO</h2>
+                     <table class="table">
+                         <thead>
+                             <tr>
+                                 <th>Spiele</th>
+                                 <th>Tore</th>
+                                 <th>Punkte</th>
+                             </tr>
+                         </thead>
+                         <tbody>
+                             <tr>
+                                 <td>3</td>
+                                 <td>20:4</td>
+                                 <td>9</td>
+                             </tr>
+                          </tbody>
+                      </table>
+                 </div>
+             </li>
+             <li>
+                 <div class="list-item">
+                     <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+            		 <h2>MEX</h2>
+                     <table class="table">
+                         <thead>
+                             <tr>
+                                 <th>Spiele</th>
+                                 <th>Tore</th>
+                                 <th>Punkte</th>
+                             </tr>
+                         </thead>
+                         <tbody>
+                             <tr>
+                                 <td>0</td>
+                                 <td>0:0</td>
+                                 <td>0</td>
+                             </tr>
+                          </tbody>
+                      </table>
+                 </div>
+             </li>
+             <li>
+                 <div class="list-item">
+                     <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
+            		 <h2>KAM</h2>
+                     <table class="table">
+                         <thead>
+                             <tr>
+                                 <th>Spiele</th>
+                                 <th>Tore</th>
+                                 <th>Punkte</th>
+                             </tr>
+                         </thead>
+                         <tbody>
+                             <tr>
+                                 <td>0</td>
+                                 <td>0:0</td>
+                                 <td>0</td>
+                             </tr>
+                          </tbody>
+                      </table>
+                 </div>
+             </li>
+		 </ul>
+    </div>
+    
+    
+    <!--Ranking View-->
+    <div id="tabstrip-ranking"
+        data-role="view"
+        data-title="Rangliste & Preise"
+        data-transition="slide">
+        
+        <div data-role="header">
+            <div data-role="navbar">
+                <a data-role="backbutton" id="backbutton" data-align="left" href="#tabstrip-home"></a>
+            	<span data-role="view-title"></span>
+            </div>
+        </div>
+        
+        <div class="sub-navigation">
+            <a data-role="button" class="selected-button" href="#tabstrip-ranking">Rangliste</a>
+        	<a data-role="button" href="#tabstrip-price">Preise</a>
+        </div>
         
 	 	<ul data-role="listview">
              <li class="major">
@@ -240,36 +2662,30 @@
                  </a>
              </li>
 		 </ul>
-        
-        <ul data-role="listview" style="display:none">
-             <li>
-                 <a href="tabstrip-schedule?parent=2" class="parent km-listview-link" data-role="listview-link">
-                     <div class="list-item">
-                         <span class="list-image" style="background-image: url('styles/images/Icons/schedule.png')"></span>
-                		 <h2>Spiele heute</h2>
-                     </div>
-                 </a>
-             </li>
-             <li>
-                 <a href="#tabstrip-schedule?parent=2" class="parent km-listview-link" data-role="listview-link">
-                     <div class="list-item">
-                         <span class="list-image" style="background-image: url('styles/images/Icons/1-32_round.png')"></span>
-                		 <h2>Vorrunde</h2>
-                     </div>
-                 </a>
-             </li>
-             <li>
-                 <a href="#tabstrip-schedule?parent=2" class="parent km-listview-link" data-role="listview-link">
-                     <div class="list-item">
-                         <span class="list-image" style="background-image: url('styles/images/Icons/1-8_round.png')"></span>
-                		 <h2>Achtelfinale</h2>
-                     </div>
-                 </a>
-             </li>
-		 </ul>
     </div>
-    -->
     
+    
+    
+    <!--Price View-->
+    <div id="tabstrip-price"
+        data-role="view"
+        data-title="Rangliste & Preise"
+        data-transition="">
+        
+        <div data-role="header">
+            <div data-role="navbar">
+                <a data-role="backbutton" id="backbutton" data-align="left" href="#tabstrip-home"></a>
+            	<span data-role="view-title"></span>
+            </div>
+        </div>
+        
+        <div class="sub-navigation">
+            <a data-role="button" href="#tabstrip-ranking">Rangliste</a>
+        	<a data-role="button" class="selected-button" href="#tabstrip-price">Preise</a>
+        </div>
+        
+	 	
+    </div>
     
     
     <!--Score View-->
@@ -277,6 +2693,13 @@
         data-role="view"
         data-title="Deine Treffergenauigkeit"
         data-transition="slide">
+        
+        <div data-role="header">
+            <div data-role="navbar">
+                <a data-role="backbutton" id="backbutton" data-align="left"></a>
+            	<span data-role="view-title"></span>
+            </div>
+        </div>
     </div>
     
     
@@ -285,19 +2708,44 @@
         data-role="view"
         data-title="Regeln & Mehr"
         data-transition="slide">
-    </div>
-
-
-
-    <!--Layout-->
-    <div data-role="layout" data-id="tabstrip-layout">
-        <!--Header-->
+        
         <div data-role="header">
             <div data-role="navbar">
-                <a data-role="backbutton" id="backbutton" data-align="left">Back</a>
+                <a data-role="backbutton" id="backbutton" data-align="left"></a>
             	<span data-role="view-title"></span>
             </div>
         </div>
+        
+        <div class="content-container">
+            <p>Bei diesem Tippspiel handelt es sich nicht um eine kommerzielle bzw. gewinnbringende Veranstaltung. Der Betreiber dieses Spiels stellt lediglich eine Plattform zur Verfügung, um den registrierten Benutzern eine bessere Organisation der Wetten zu ermöglichen. 
+                Der Rechtsweg ist ausgeschlossen. Bei Fragen bzw. Hinweisen bitten wir Sie den Spielbetreiber zu kontaktieren.</p>
+            <ul>
+                	<li>
+                        <strong>1. Wetten</strong>
+                        <p>Es kann auf jedes Spiel der FIFA Fußball-Weltmeisterschaft 2014 in Brasilien ein Tipp abgegeben werden. Dabei können die Tippabgaben bis unmittelbar vor Spielbeginn erfolgen. Bei allen Spielen sind die Ergebnisse nach 90 Minuten entscheidend - Verlängerungen und Elfmeterschießen werden nicht berücksichtigt.</p>
+                    </li>
+                	<li>
+                        <strong>2. Punktevergabe</strong>
+                        <p>Die maximale Punktzahl pro Tippabgabe beträgt zwei Punkte für ein 100% richtiges Ergebnis. Für eine richtige Tendenz erhält man einen Punkt. Weiterhin werden die einzelnen Phasen der Weltmeisterschaft (Vorrunde, Viertelfinale, etc.) mit einem Faktor gewichtet, um der Brisanz der einzelnen Phasen gerecht zu werden.
+						Die nachfolgende Tabelle zeigt die jeweiligen Runden mit den korrespondierenden Gewichtungsfaktoren:
+                        Phase Gewichtungsfaktor
+                        Vorrunde x 1
+                        Achtelfinale x 1
+                        Viertelfinale x 2
+                        Halbfinale x 3
+                        Spiel um Platz 3 x 4
+                        Finale x 4</p>
+                    </li>
+                	<li>
+                        <strong>3. Ermittlung der Gewinner</strong>
+                        <p>Nach Beendigung der Weltmeisterschaft werden die Sieger des Tippspiels durch die Punktzahl ermittelt. Bei Gleichstand mehrerer Spieler, entscheidet zuerst die Anzahl der richtigen genauen Ergebnisse pro Spieler und Spiel, dann die Anzahl der richtigen Tendenzen. Sollten nach diesem Vorgehen die Gewinner noch nicht feststehen, kommt es zu einer Auslosung. Die Gewinner werden unmittelbar nach der Veranstaltung vom Betreiber des Spieles persönlich angeschrieben.</p>
+                    </li>
+                	<li>
+                        <strong>4. Inhalt des Onlineangebotes</strong>
+                        <p>Der Autor übernimmt keinerlei Gewähr für die Korrektheit, Vollständigkeit oder Qualität der bereitgestellten Informationen. Haftungsansprüche gegen den Bereitsteller, die sich auf Schäden materieller oder ideeller Art beziehen, welche durch die Nutzung oder Nichtnutzung der dargebotenen Informationen bzw. durch die Nutzung fehlerhafter und unvollständiger Informationen verursacht wurden, sind grundsätzlich ausgeschlossen, sofern seitens des Autors kein nachweislich vorsätzliches oder grob fahrlässiges Verschulden vorliegt.</p>
+                    </li>
+            </ul>
+		</div>
     </div>
 </body>
 </html>
