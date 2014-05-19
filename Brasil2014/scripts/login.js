@@ -19,8 +19,35 @@
                 return;
             }
 
-            that.set("isLoggedIn", true);
-            app.application.navigate("#tabstrip-home", "slide"); 
+            // User wants to login, check provided credentials
+			// Save an authstring on local storage if authentication was successful
+        	WS.invokeRequest(
+        		"AuthenticateUser", 
+        		{ user: username, password: password }, 
+        		"Anmelden...", 
+        		function (res) { 
+        			var result = JSON.parse(res);     
+        			if(typeof(result.AuthenticateUserResult) === "object" && result.AuthenticateUserResult.__type == "userCredentials") {
+        				window.localStorage.setItem("authString", result.AuthenticateUserResult.authString);
+        				window.localStorage.setItem("user", username);
+        				
+        				app.application.navigate("#tabstrip-home", "slide"); 
+        			} else {
+        				window.localStorage.removeItem("authString");
+        				showAlert("Login fehlgeschlagen!", "Sie konnten mit der angegebenen Kombination aus Benutzername und Passwort nicht angemeldet werden. Bitte überprüfen Sie Ihre Daten.");
+        			}
+        		},
+        		function (xhr) {
+        			window.localStorage.removeItem("authString");
+        			showAlert("Login fehlgeschlagen!", "Sie konnten mit der angegebenen Kombination aus Benutzername und Passwort nicht angemeldet werden. Bitte überprüfen Sie Ihre Daten.");
+        			if (xhr.responseText) {
+        		  	var err = JSON.parse(xhr.responseText);
+        		   }
+        		}
+        	);
+            
+            //that.set("isLoggedIn", true);
+            //app.application.navigate("#tabstrip-home", "slide"); 
         },
 
         onLogout: function () {
