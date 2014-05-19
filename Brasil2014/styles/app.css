@@ -1,0 +1,442 @@
+/* IMAGES */
+body {
+    background: #000 url("../styles/images/background.png") center center no-repeat !important;
+    background-size: cover !important;
+} 
+
+::-webkit-input-placeholder {
+   color: #333;
+   opacity: 0.7;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #333;  
+    opacity: 0.7;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #333;  
+    opacity: 0.7;
+}
+
+:-ms-input-placeholder {  
+   color: #333;  
+    opacity: 0.7;
+}
+
+h2 {
+    font-family: "Roboto" !important;
+    font-weight: 300 !important;
+    font-size: 18px !important;
+    margin: 0 !important;
+}
+
+/* LOGIN VIEW STYLES */
+#tabstrip-login .login-form {
+    position: absolute;
+    left: 30px;
+    right: 30px;
+    bottom: 30px;
+}
+
+#tabstrip-login .login-button {
+    width: 100% !important;
+    height: 90px !important;
+    background-color: transparent !important;
+    border: 1px solid #FFF;
+    border-radius: 0  !important;
+    
+    margin-top: 0;
+    
+    font-family: "Roboto";
+    font-size: 20px !important;
+    font-weight: 300 !important;
+    font-style: italic !important;
+    //line-height: 90px !important;
+    text-align: center !important;
+    vertical-align: middle !important;
+    color: #FFF  !important;
+}
+
+#tabstrip-login .km-widget.km-listview.km-list {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+#tabstrip-login .km-widget.km-listview.km-list li {
+    margin-bottom: 15px !important;
+    padding: 0 15px !important;
+}
+
+.km-flat .km-list>li {
+    border: 0 !important;
+    box-shadow: none !important;
+	-webkit-box-shadow: none !important;
+}
+
+#tabstrip-login .km-widget.km-listview.km-list li input { 
+    font-family: "Roboto";
+    font-size: 20px !important;
+    font-weight: 300 !important;
+    font-style: italic !important;
+    
+    left: 15px;
+    width: 90% !important;
+    //top: 35%;
+	//padding: 0 !important;
+	//margin: 0 15px !important;
+}
+
+
+/* START VIEW STYLES */
+#top-list {
+    width: 100%;
+	display: inline-block;
+	padding-bottom: 0;
+}
+
+#top-list li {
+    width: 49%;
+	display: inline-block;
+}
+
+#top-list li:last-child {
+    float: right;
+}
+
+
+#top-list li {
+    background-color: #f6f6f6;
+    height: auto;
+}
+
+#top-list .list-item .list-image {
+     float: none;
+ 	margin: 0 auto;
+ 	margin-top: 15px;
+    
+    width: 70px;
+    height: 70px;
+}
+
+#top-list .list-item .list-detail {
+    background-color: #FFF;
+	padding: 10px;
+	font-size: 12px;
+	margin-top: 15px;
+    
+    font-style: normal;
+}
+
+#top-list .km-listview-link:after {
+    display: none;
+}
+
+#start-list {
+    padding-top: 0;
+}
+
+p {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+
+
+/* RULES VIEW */
+#tabstrip-rules .content-container {
+    padding: 20px;
+    color: #FFF !important;
+    font-weight: 300 !important;
+    font-family: "Roboto" !important;
+}
+
+#tabstrip-rules .content-container ul {
+    padding: 0;
+    margin-top: 40px;
+}
+
+#tabstrip-rules .content-container ul li {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+#tabstrip-rules .content-container ul li strong {
+    line-height: 40px;
+}
+
+
+
+/* THEME */
+[href*=index], #back-button
+{
+    visibility: hidden;
+}
+
+.km-flat, .km-flat .km-navbar, .km-flat .km-content {
+    background: none;
+    
+    font-family: "Roboto" !important;
+    font-weight: 300;
+    color: #333 !important;
+}
+
+.km-flat .km-header .km-navbar {
+    background-color: #96aa39;
+}
+
+.km-flat .km-navbar {
+    border: 0 !important;
+}
+
+.km-navbar .km-view-title {
+    text-align: left;
+    color: #FFF;
+    margin-left: 15px;
+    padding: 5px 0;
+    
+    font-family: "Roboto";
+    font-weight: 300;
+    font-style: italic;
+}
+
+.km-widget.km-listview.km-list {
+    //margin: 15px;
+    padding: 15px;
+}
+
+.km-widget.km-listview.km-list li {
+    margin-bottom: 5px !important;
+    height: 90px;
+    //line-height: 90px !important;
+    padding: 0 !important;
+    background-color: rgba(255, 255, 255, 0.7);
+    font-style: italic;
+    border-radius: 0 !important;
+}
+
+.km-widget.km-listview.km-list li.major {
+    background-color: #c94a43 !important;
+    color: #FFF;
+}
+
+.km-flat .km-listview-link:after {
+    color: #333;
+    right: 2rem;
+}
+
+.km-flat .major .km-listview-link:after {
+    color: #FFF;
+}
+
+.list-item h2 {
+    line-height: 90px !important;
+    vertical-align: middle !important;
+    display: inline-block !important;
+    margin-left: 10px !important;
+}
+
+.list-item .list-image {
+    background-size: 100%;
+    display: block;
+    float: left;
+    width: 90px;
+    height: 90px;
+}
+
+.score-group .list-item h2 {
+    position: absolute;
+    text-align: center !important;
+    margin-left: 0 !important;
+    margin-top: 10px !important;
+    font-size: 14px !important;
+	width: 90px;
+    display: block !important;
+    line-height: normal !important;
+}
+
+.score-group .km-widget.km-listview.km-list li {
+    height: 110px !important;
+}
+
+.score-group .list-item .list-image {
+    margin-top: 20px !important;
+}
+
+.score-group .list-item .right-side {
+    float: right;
+}
+
+.score-group .list-item .left-side {
+    float: left;
+}
+
+.score-group .list-item .game-info {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 30px;
+}
+
+.score-group .list-item .game-info .game-result:after {
+    content: "/";
+    padding: 0 5px 0 10px;
+}
+
+.score-group .list-item .game-info .game-result,
+.score-group .list-item .game-info .game-tip {
+    font-style: normal;
+    font-size: 30px;
+    font-weight: 100;
+    display: inline-block;
+}
+
+.score-group .list-item .game-info .game-date {
+    font-size: 12px;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.ranking-group .list-item h2 {
+    position: absolute;
+    text-align: center !important;
+    margin-left: 0 !important;
+    margin-top: 10px !important;
+    font-size: 14px !important;
+	width: 90px;
+    display: block !important;
+    line-height: normal !important;
+}
+
+.ranking-group .km-widget.km-listview.km-list li {
+    height: 110px !important;
+}
+
+.ranking-group .list-item .list-image {
+    margin-top: 20px !important;
+}
+
+.table {
+    float: right;
+    width: 65%;
+    text-align: center;
+    border-spacing: 10px;
+    margin-right: 5px;
+}
+
+.table th {
+    font-size: 14px;
+}
+
+.table td {
+    font-size: 20px;
+}
+
+
+.km-flat .km-switch-handle,
+.km-flat .k-slider-selection,
+.km-flat .km-switch-background
+{
+    color: #96aa39;
+}
+
+.km-flat .km-loader,
+.km-flat .km-rowinsert,
+.km-flat .km-state-active,
+.km-flat .km-scroller-pull,
+.km-flat .k-slider-selection,
+.km-flat .km-touch-scrollbar,
+.km-flat .km-pages .km-current-page,
+.km-flat .k-slider .k-draghandle,
+.km-flat .k-slider .k-draghandle:hover,
+.km-flat .km-tabstrip .km-state-active,
+.km-flat .km-scroller-refresh.km-load-more,
+.km-flat .km-popup .k-state-hover,
+.km-flat .km-popup .k-state-focused,
+.km-flat .km-popup .k-state-selected,
+.km-flat .km-actionsheet > li > a:active,
+.km-flat .km-actionsheet > li > a:hover,
+.km-flat li.km-state-active .km-listview-link,
+.km-flat li.km-state-active .km-listview-label,
+.km-flat .km-listview-label input[type=radio]:checked,
+.km-flat .km-listview-label input[type=checkbox]:checked
+{
+    background: #96aa39;
+}
+
+.km-flat .km-filter-wrap > input:focus
+{
+    border-color: #96aa39;
+}
+
+.km-navbar .km-leftitem {
+    float: left;
+    position: relative;
+    padding: 5px 0;
+} 
+
+#backbutton {
+    background-color: transparent;
+    border: 0;
+}
+
+.km-badge {
+    right: 0 !important;
+}
+
+.km-back:before {
+    content: " ";
+    display: inline-block!important;
+    color: #FFF;
+    width: .8em;
+    height: .8em;
+    border-width: 0;
+    -webkit-box-shadow: inset .25rem -0.25rem 0 #007aff;
+    box-shadow: inset .25rem -0.25rem 0 #FFF;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.sub-navigation .km-button {
+	//padding: 0 !important;
+	background: rgba(0,0,0,0) !important;
+	border: 0;
+	border-radius: 0 !important;
+	-moz-border-radius: 0 !important;;
+	-webkit-border-radius: 0 !important;
+}
+
+.sub-navigation {
+	border-bottom: 1px solid #FFF;
+    padding: 10px 0;
+}
+
+.sub-navigation .selected-button {
+    font-weight: 900;
+}
+
+.sub-navigation a {
+    //margin: 0 15px !important;
+    //padding: 0 15px !important;
+    color: #FFF !important;
+    text-decoration: none;
+    font-weight: 300;
+    font-family: "Roboto" !important;
+    font-size: 14px;
+    border: 0;
+    background: none !important;
+    border-right: 1px solid #FFF !important;
+    padding: 0 15px 0 10px !important;
+}
+
+.sub-navigation a:first-child {
+    padding: 0 15px !important;
+}
+
+.sub-navigation a:last-child {
+    border-right: 0 !important;
+}
+
