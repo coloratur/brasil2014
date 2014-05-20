@@ -256,7 +256,13 @@ p {
 }
 
 .score-group .km-widget.km-listview.km-list li {
-    height: 110px !important;
+    height: 110px;
+    
+    -webkit-transition: height 0.3s;
+	-moz-transition: height 0.3s;
+	-ms-transition: height 0.3s;
+	-o-transition: height 0.3s;
+	transition: height 0.3s;
 }
 
 .score-group .list-item .list-image {
@@ -277,6 +283,66 @@ p {
     text-align: center;
     top: 30px;
 }
+
+.score-group .list-item .voting-container {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+    opacity: 0;
+    
+    -webkit-transition: opacity 0.3s;
+	-moz-transition: opacity 0.3s;
+	-ms-transition: opacity 0.3s;
+	-o-transition: opacity 0.3s;
+	transition: opacity 0.3s;
+}
+
+.score-group .list-item .voting-container input {
+    position: relative;
+    height: 40px;
+    max-width: 50px !important;
+	min-width: 30px !important;
+    background-color: #FFF;
+    text-align: center;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-style: normal;
+	font-weight: 500;
+}
+
+.score-group .list-item .vote-button {
+    border: 0;
+    border-radius: 0;
+    background-color: #c94a43;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    color: #FFF !important;
+    margin-bottom: 10px;
+}
+
+#teamOne {
+    margin-right: 20px !important;
+}
+
+#teamTwo {
+    //right: 15px;
+}
+
+.score-group .list-item .button-container {
+    position: absolute;
+	bottom: 15px;
+	width: 100%;
+    text-align: center;
+    opacity: 0;
+    
+    -webkit-transition: opacity 0.3s;
+	-moz-transition: opacity 0.3s;
+	-ms-transition: opacity 0.3s;
+	-o-transition: opacity 0.3s;
+	transition: opacity 0.3s;
+}
+
 
 .score-group .list-item .game-info .game-result:after {
     content: "/";

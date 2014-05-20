@@ -7,4 +7,6 @@
 
         app.application = new kendo.mobile.Application(document.body, { skin: "flat" });
     }, false);
+    
 })(window);
+
