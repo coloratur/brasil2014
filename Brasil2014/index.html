@@ -16,6 +16,7 @@
     <script src="scripts/login.js"></script>
     <script src="scripts/home.js"></script>
     <script src="scripts/ranking.js"></script>
+    <script src="scripts/groupRanking.js"></script>
     
     <script src="scripts/analytics.js"></script>
       
@@ -639,7 +640,7 @@
         
         <div class="sub-navigation">
             <a data-role="button" class="selected-button" href="#score-group-a">Spiele</a>
-        	<a data-role="button" href="#ranking-group-a">Tabelle</a>
+        	<a data-role="button" href="#group-ranking?group=A">Tabelle</a>
         </div>
         
 	 	<ul data-role="listview">
@@ -760,6 +761,54 @@
 		 </ul>
     </div>
     
+    <!--GROUP RANKING-->
+    <div id="group-ranking"
+        data-role="view"
+        data-title="Gruppe A"
+        class="ranking-group">
+        
+        <div data-role="header">
+            <div data-role="navbar">
+                <a data-role="backbutton" id="backbutton" data-align="left" href="#tabstrip-group"></a>
+            	<span data-role="view-title"></span>
+            </div>
+        </div>
+        
+        <div class="sub-navigation">
+            <a data-role="button" href="#score-group-a">Spiele</a>
+        	<a data-role="button" class="selected-button" href="#group-ranking?group=A">Tabelle</a>
+        </div>
+        
+	 	<ul data-role="listview" data-source="app.groupRanking.teams" data-pull-to-refresh="true" data-append-on-refresh="false" data-template="group-ranking-template">
+             
+		 </ul>
+        
+        <script type="text/x-kendo-template" id="group-ranking-template">
+             <div class="list-item">
+                 <span class="list-image" style="background-image: url('styles/images/Teams/#: id #.svg')"></span>
+        		 <h2>#: id #</h2>
+                 <table class="table">
+                     <thead>
+                         <tr>
+                             <th>Spiele</th>
+                             <th>Tore</th>
+                             <th>Punkte</th>
+                         </tr>
+                     </thead>
+                     <tbody>
+                         <tr>
+                             <td>#: playedMatches #</td>
+                             <td>#: goalsScored #:#: goalsConceded #</td>
+                             <td>#: points #</td>
+                         </tr>
+                      </tbody>
+                  </table>
+             </div>
+        </script>
+        
+        
+    </div>
+    
     <!--Ranking Group A-->
     <div id="ranking-group-a"
         data-role="view"
@@ -779,28 +828,7 @@
         </div>
         
 	 	<ul data-role="listview">
-             <li>
-                 <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
-            		 <h2>BRA</h2>
-                     <table class="table">
-                         <thead>
-                             <tr>
-                                 <th>Spiele</th>
-                                 <th>Tore</th>
-                                 <th>Punkte</th>
-                             </tr>
-                         </thead>
-                         <tbody>
-                             <tr>
-                                 <td>3</td>
-                                 <td>24:4</td>
-                                 <td>9</td>
-                             </tr>
-                          </tbody>
-                      </table>
-                 </div>
-             </li>
+             
              <li>
                  <div class="list-item">
                      <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>

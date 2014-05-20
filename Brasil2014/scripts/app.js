@@ -5,6 +5,8 @@ function showAlert(title, text) { alert(title + "\r\n" + text); };
 (function (global) {
     var app = global.app = global.app || {};
 
+    app.WebServiceURL = "http://wm2014.coloratur.com/Service.svc/";
+    
     function WebService(url) {
     	this.url = url;
     	
@@ -51,7 +53,7 @@ function showAlert(title, text) { alert(title + "\r\n" + text); };
         
         app.application = new kendo.mobile.Application(document.body, { skin: "flat" });
         
-        app.WS = new WebService("http://wm2014.coloratur.com/Service.svc/");
+        app.WS = new WebService(app.WebServiceURL);
         
         app._onCurrentUserLoaded = new Array();
         app.onCurrentUserLoaded = function(func) {
@@ -92,6 +94,9 @@ function showAlert(title, text) { alert(title + "\r\n" + text); };
             	);
     		}
         }
+        
+        app._loadCurrentUser();
+        
     }, false);
 
 })(window);
