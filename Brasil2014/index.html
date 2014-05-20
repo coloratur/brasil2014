@@ -10,12 +10,13 @@
     <script src="cordova.js"></script>
     <script src="kendo/js/jquery.min.js"></script>
     <script src="kendo/js/kendo.mobile.min.js"></script>
-
+ 
+    <script src="scripts/app.js"></script>
+   
     <script src="scripts/WebService.js"></script>
     
-    <script src="scripts/app.js"></script>
-    
     <script src="scripts/login.js"></script>
+    <script src="scripts/home.js"></script>
     <script src="scripts/ranking.js"></script>
     
     <script src="scripts/analytics.js"></script>
@@ -29,7 +30,7 @@
         data-model="app.loginService.viewModel"
         data-transition="slide">
         
-        <form class="login-form" data-bind="events: { keyup: checkEnter, onLoad: onLoad }">
+        <form class="login-form" data-bind="events: { keyup: checkEnter }">
             <ul data-role="listview" data-bind="">
                 <li>
                     <label>
@@ -51,7 +52,8 @@
     <div id="tabstrip-home"
         data-role="view"
         data-title="Brasil 2014"
-        data-transition="slide">
+        data-transition="slide"
+        data-show="app.home.show">
         
         <div data-role="header">
             <div data-role="navbar">
@@ -59,13 +61,13 @@
             </div>
         </div>
         
-        <ul data-role="listview" id="top-list">
+        <ul data-role="listview"  id="top-list">
             <li>
                 <a href="#tabstrip-score">
                     <div class="list-item">
                         <span class="list-image" style="background-image: url('styles/images/Icons/user.png')"></span>
                         <div class="list-detail">
-                        	<p>Username</p>
+                        	<p data-bind="text: userId" id="home-userId"></p>
                         	<strong>Score 88%</strong>
                         </div>
                     </div>

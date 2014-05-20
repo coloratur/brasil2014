@@ -5,10 +5,6 @@
     LoginViewModel = kendo.data.ObservableObject.extend({
         username: "",
         password: "",
-        
-        onLoad : function() {
-            alert("test");
-        },
 
         onLogin: function () {
             var that = this,
@@ -24,7 +20,7 @@
 
             // User wants to login, check provided credentials
 			// Save an authstring on local storage if authentication was successful
-        	WS.invokeRequest(
+        	app.WS.invokeRequest(
         		"AuthenticateUser", 
         		{ user: username, password: password }, 
         		"Anmelden...", 

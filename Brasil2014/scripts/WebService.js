@@ -1,4 +1,4 @@
-var WebService = function WebService(url) {
+/*var WebService = function WebService(url) {
 	this.url = url;
 	
 	this.invokeRequest = function(method, data, loadingMessage, successCallback, errorCallback) {
@@ -28,6 +28,4 @@ var WebService = function WebService(url) {
             });
 		}
 	};
-}
-
-var WS = new WebService("http://wm2014.coloratur.com/Service.svc/");
+}*/
