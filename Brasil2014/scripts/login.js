@@ -29,6 +29,8 @@
         			if(typeof(result.AuthenticateUserResult) === "object" && result.AuthenticateUserResult.__type == "userCredentials") {
         				window.localStorage.setItem("authString", result.AuthenticateUserResult.authString);
         				window.localStorage.setItem("user", username);
+                        
+                        app._loadCurrentUser();
         				
         				app.application.navigate("#tabstrip-home", "slide"); 
         			} else {
