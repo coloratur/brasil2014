@@ -362,7 +362,7 @@ p {
 }
 
 .km-scroll-container {
-    -webkit-transition-duration: 300ms;
+    //-webkit-transition-duration: 300ms;
 }
 
 .score-group .list-item .game-info .game-result:after {

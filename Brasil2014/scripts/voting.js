@@ -8,7 +8,7 @@ function openVoting(event) {
     var offset = ((origOffset * -1) + 75).toString() + "px";
     
     var scrollContainer = $(activeItem).closest('.km-scroll-container');
-    $(scrollContainer).css({'webkit-transform': 'translate3d(0px, ' + offset + ', 0px)'});
+    //$(scrollContainer).css({'webkit-transform': 'translate3d(0px, ' + offset + ', 0px)'});
     
     // ---
     
@@ -51,6 +51,6 @@ function openVoting(event) {
         $(activeItem).find('.list-item .button-container').remove();
         $(activeItem).css({height: 110});
                 
-        $(scrollContainer).css({'webkit-transform': 'translate3d(0px, 0px, 0px)'});
+        //$(scrollContainer).css({'webkit-transform': 'translate3d(0px, 0px, 0px)'});
 	});
 }
