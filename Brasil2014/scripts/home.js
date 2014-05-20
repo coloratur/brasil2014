@@ -9,6 +9,7 @@
     app.home = {
         viewModel: new HomeViewModel(),
         show: function() {
+            console.log(app);
             app.onCurrentUserLoaded(function() {
                 app.home.viewModel.userId = app.currentUser.id;
                 kendo.bind($("#home-userId"), app.home.viewModel);

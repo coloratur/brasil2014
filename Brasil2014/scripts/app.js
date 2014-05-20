@@ -68,28 +68,30 @@ function showAlert(title, text) { alert(title + "\r\n" + text); };
             }
         };
         
-        if(window.localStorage.getItem("authString")) {
-	    	app.WS.invokeRequest(
-        		"LoadUserPrivate", 
-        		{ authString: window.localStorage.getItem("authString") }, 
-        		"Lade...", 
-        		function (res) { 
-        			var result = JSON.parse(res);  
+        app._loadCurrentUser = function() {
+            if(window.localStorage.getItem("authString")) {
+    	    	app.WS.invokeRequest(
+            		"LoadUserPrivate", 
+            		{ authString: window.localStorage.getItem("authString") }, 
+            		"Lade...", 
+            		function (res) { 
+            			var result = JSON.parse(res);  
 
-        			if(typeof(result.LoadUserPrivateResult) === "object" && result.LoadUserPrivateResult.__type === "userPrivate") {
-        				user = result.LoadUserPrivateResult;
-                        app.currentUser = user;
-                        
-                        app.currentUserLoaded();
-                        
-                        app.application.navigate("#tabstrip-home", "slide");
-        			}
-        		},
-        		function (xhr) {
-        			
-        		}
-        	);
-		}
+            			if(typeof(result.LoadUserPrivateResult) === "object" && result.LoadUserPrivateResult.__type === "userPrivate") {
+            				user = result.LoadUserPrivateResult;
+                            app.currentUser = user;
+                            
+                            app.currentUserLoaded();
+                            
+                            app.application.navigate("#tabstrip-home", "slide");
+            			}
+            		},
+            		function (xhr) {
+            			
+            		}
+            	);
+    		}
+        }
     }, false);
 
 })(window);
