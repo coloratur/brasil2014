@@ -1,6 +1,3 @@
-var voting = {};
-var voting
-
 function openVoting(event) {
     //console.log($(this).closest('.list-item'));
 
