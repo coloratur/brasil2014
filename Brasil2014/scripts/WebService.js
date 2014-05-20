@@ -1,5 +1,4 @@
-var WebService = function WebService(url)
-{
+var WebService = function WebService(url) {
 	this.url = url;
 	
 	this.invokeRequest = function(method, data, loadingMessage, successCallback, errorCallback) {
@@ -7,8 +6,9 @@ var WebService = function WebService(url)
 		if(!hasNetworkConnection()) {
 			showAlert("Keine Internetverbindung!", "Bitte stellen Sie eine Internetverbindung her, um auf das Tippspiel zugreifen zu können.");
 		}
-		else
-		{
+		else {
+            app.application.showLoading();
+            
      		$.ajax( { 
                 url: url + method,
                 data: JSON.stringify(data),
@@ -17,16 +17,16 @@ var WebService = function WebService(url)
                 timeout: 10000,
                 dataType: "text",  // not "json" we'll parse 
                 success: 
-                function(res) 
-                {
+                function(res) {
+                    app.application.hideLoading();
                 	successCallback(res);
                 },
                 error:  function(xhr) {
+                    app.application.hideLoading();
                 	errorCallback(xhr);
                 }
             });
 		}
-		
 	};
 }
 

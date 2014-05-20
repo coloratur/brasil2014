@@ -3,9 +3,12 @@
         app = global.app = global.app || {};
 
     LoginViewModel = kendo.data.ObservableObject.extend({
-        isLoggedIn: false,
         username: "",
         password: "",
+        
+        onLoad : function() {
+            alert("test");
+        },
 
         onLogin: function () {
             var that = this,
@@ -45,16 +48,15 @@
         		   }
         		}
         	);
-            
-            //that.set("isLoggedIn", true);
-            //app.application.navigate("#tabstrip-home", "slide"); 
         },
 
         onLogout: function () {
             var that = this;
 
             that.clearForm();
-            that.set("isLoggedIn", false);
+            
+            window.localStorage.removeItem("authString");
+			window.localStorage.removeItem("user");
         },
 
         clearForm: function () {

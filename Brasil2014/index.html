@@ -11,30 +11,15 @@
     <script src="kendo/js/jquery.min.js"></script>
     <script src="kendo/js/kendo.mobile.min.js"></script>
 
-    <script src="scripts/login.js"></script>
-    <script src="scripts/ranking.js"></script>
-    <script src="scripts/app.js"></script>
-    <script src="scripts/analytics.js"></script>
-    
     <script src="scripts/WebService.js"></script>
     
-    <script>
-        
-        function hasNetworkConnection() { return true; };
-		function showAlert(title, text) { alert(title + "\r\n" + text); };
+    <script src="scripts/app.js"></script>
     
-        function onDeviceReady() {
-            // some native functions
-    		hasNetworkConnection = function () {
-    			return navigator.connection.type  != Connection.NONE;
-    		}
-    		
-    		showAlert = function (title, text) {
-    			navigator.notification.alert(text, function () { }, title, "OK");
-    		}
-       }
-        
-    </script>
+    <script src="scripts/login.js"></script>
+    <script src="scripts/ranking.js"></script>
+    
+    <script src="scripts/analytics.js"></script>
+      
 </head>
 <body>
     <!--Login View-->
@@ -44,8 +29,8 @@
         data-model="app.loginService.viewModel"
         data-transition="slide">
         
-        <form class="login-form" data-bind="events: { keyup: checkEnter }">
-            <ul data-role="listview" data-bind="invisible: isLoggedIn">
+        <form class="login-form" data-bind="events: { keyup: checkEnter, onLoad: onLoad }">
+            <ul data-role="listview" data-bind="">
                 <li>
                     <label>
                         <input type="text" placeholder="Username" data-bind="value: username" />
@@ -58,7 +43,7 @@
                 </li>
             </ul>
             
-            <input id="login" type="submit" data-role="button" data-bind="click: onLogin, invisible: isLoggedIn" value="Login" class="login-button" />
+            <input id="login" type="submit" data-role="button" data-bind="click: onLogin" value="Login" class="login-button" />
         </form>
     </div>
     
