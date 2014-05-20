@@ -6,6 +6,8 @@
         StatusBar.hide();
 
         app.application = new kendo.mobile.Application(document.body, { skin: "flat" });
+        
+        analytics.Start();
     }, false);
     
 })(window);
