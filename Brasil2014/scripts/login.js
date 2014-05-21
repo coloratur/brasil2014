@@ -27,19 +27,19 @@
         		function (res) { 
         			var result = JSON.parse(res);     
         			if(typeof(result.AuthenticateUserResult) === "object" && result.AuthenticateUserResult.__type == "userCredentials") {
-        				window.localStorage.setItem("authString", result.AuthenticateUserResult.authString);
-        				window.localStorage.setItem("user", username);
+        				global.localStorage.setItem("authString", result.AuthenticateUserResult.authString);
+        				global.localStorage.setItem("user", username);
                         
                         app._loadCurrentUser();
         				
         				app.application.navigate("#tabstrip-home", "slide"); 
         			} else {
-        				window.localStorage.removeItem("authString");
+        				global.localStorage.removeItem("authString");
         				showAlert("Login fehlgeschlagen!", "Sie konnten mit der angegebenen Kombination aus Benutzername und Passwort nicht angemeldet werden. Bitte überprüfen Sie Ihre Daten.");
         			}
         		},
         		function (xhr) {
-        			window.localStorage.removeItem("authString");
+        			global.localStorage.removeItem("authString");
         			showAlert("Login fehlgeschlagen!", "Sie konnten mit der angegebenen Kombination aus Benutzername und Passwort nicht angemeldet werden. Bitte überprüfen Sie Ihre Daten.");
         			if (xhr.responseText) {
         		  	var err = JSON.parse(xhr.responseText);
@@ -53,8 +53,8 @@
 
             that.clearForm();
             
-            window.localStorage.removeItem("authString");
-			window.localStorage.removeItem("user");
+            global.localStorage.removeItem("authString");
+			global.localStorage.removeItem("user");
         },
 
         clearForm: function () {

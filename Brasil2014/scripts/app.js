@@ -5,8 +5,8 @@ function showAlert(title, text) { alert(title + "\r\n" + text); };
 (function (global) {
     var app = global.app = global.app || {};
 
-    //app.WebServiceURL = "http://wm2014.coloratur.com/Service.svc/";
-    app.WebServiceURL = "http://jarjarbinks.dev.webservice.wc2014.de/Service.svc/";
+    app.WebServiceURL = "http://wm2014.coloratur.com/Service.svc/";
+    //app.WebServiceURL = "http://jarjarbinks.dev.webservice.wc2014.de/Service.svc/";
     
     function WebService(url) {
     	this.url = url;
@@ -72,10 +72,10 @@ function showAlert(title, text) { alert(title + "\r\n" + text); };
         };
         
         app._loadCurrentUser = function() {
-            if(window.localStorage.getItem("authString")) {
+            if(global.localStorage.getItem("authString")) {
     	    	app.WS.invokeRequest(
             		"LoadUserPrivate", 
-            		{ authString: window.localStorage.getItem("authString") }, 
+            		{ authString: global.localStorage.getItem("authString") }, 
             		"Lade...", 
             		function (res) { 
             			var result = JSON.parse(res);  

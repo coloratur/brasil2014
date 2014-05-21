@@ -5,7 +5,7 @@
     MatchListViewModel = kendo.data.ObservableObject.extend({
        
     });
-
+console.log(global.localStorage);
     app.matchList = {
         viewModel: new MatchListViewModel(),
         refreshItems: function() {
@@ -35,7 +35,7 @@
 					transport: {
 						read: {
                             url: app.WebServiceURL + "LoadMatchesByStage",
-                            data: { authString: window.localStorage.getItem("authString"), sStage: "GROUP" },
+                            data: { authString: global.localStorage.getItem("authString"), sStage: "GROUP" },
                             type: "POST",
                             contentType: "application/json",
                             timeout: 10000,
@@ -43,7 +43,10 @@
                             processData: false
                         },
 						parameterMap: function(data, type) {
-							return JSON.stringify(data);
+							data.authString = global.localStorage.getItem("authString");
+							console.log(global.localStorage.getItem("authString"));
+                            console.log(data);
+                            return JSON.stringify(data);
 						} 
 					},
             		schema: {

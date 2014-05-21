@@ -35,7 +35,7 @@
 					transport: {
 						read: {
                             url: app.WebServiceURL + "LoadTeams",
-                            data: { authString: window.localStorage.getItem("authString") },
+                            data: { authString: global.localStorage.getItem("authString") },
                             type: "POST",
                             contentType: "application/json",
                             timeout: 10000,
@@ -43,6 +43,9 @@
                             processData: false
                         },
 						parameterMap: function(data, type) {
+							data.authString = global.localStorage.getItem("authString");
+                            console.log(global.localStorage.getItem("authString"));
+                            console.log(data);
 							return JSON.stringify(data);
 						} 
 					},
