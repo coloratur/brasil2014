@@ -31,6 +31,43 @@ console.log(global.localStorage);
             $("#navi-ranking-list").attr("href", "#group-ranking?group=" + group);
             
         },
+        saveBet: function(e) {
+        	
+        	var matchId = $(e.srcElement).data("matchid");
+            
+            var goals1 = $("#goals-team1-" + matchId).val();
+            var goals2 = $("#goals-team2-" + matchId).val();
+            
+            console.log(matchId);
+            console.log(goals1);
+            console.log(goals2);
+            
+            app.WS.invokeRequest(
+        		"PlaceBet", 
+        		{ authString: global.localStorage.getItem("authString"), goals1: goals1, goals2: goals2, matchId: matchId }, 
+        		"Tipp abgeben...", 
+        		function (res) { 
+        			var result = JSON.parse(res);     
+        			if(typeof(result.PlaceBetResult) === "object" && result.PlaceBetResult.__type == "bool") {
+                        if(result.PlaceBetResult.value) {
+        					 
+                            var $saved = $("<div style='margin-top: -50px;'></div>");
+                            $saved.text("Gespeichert!");
+                            
+                            $("#game-info-" + matchId).append($saved); 
+                            
+                            setTimeout(function() { $saved.remove(); }, 2500);
+                            
+                            return;
+                        }
+        			}
+                    
+        		},
+        		function (xhr) {        			
+        			
+        		}
+        	);
+        },
         matches: new kendo.data.DataSource({
 					transport: {
 						read: {
@@ -44,8 +81,6 @@ console.log(global.localStorage);
                         },
 						parameterMap: function(data, type) {
 							data.authString = global.localStorage.getItem("authString");
-							console.log(global.localStorage.getItem("authString"));
-                            console.log(data);
                             return JSON.stringify(data);
 						} 
 					},
@@ -55,7 +90,11 @@ console.log(global.localStorage);
                               	
                             	for(var i = 0; i < res.LoadMatchesByStageResult.matches.length; i++) {
                                     var match = res.LoadMatchesByStageResult.matches[i];
-                                    result.push(match);                                    
+                                    
+                                    if(app.application.view().params.group && app.application.view().params.group == match.group) {
+                                    	result.push(match);                                    
+                                    }
+                                    console.log(match);
                                 }
                                 
                                 return result;

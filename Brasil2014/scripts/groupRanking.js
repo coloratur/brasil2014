@@ -55,7 +55,7 @@
                               	
                             	for(var i = 0; i < res.LoadTeamsResult.teams.length; i++) {
                                     var team = res.LoadTeamsResult.teams[i];
-                                    console.log(app.application.view().params.group);
+
                                     if(team.group === app.application.view().params.group) {
                                     	result.push(team);
                                     }
