@@ -32,7 +32,43 @@
                         
                         app._loadCurrentUser();
         				
-        				app.application.navigate("#tabstrip-home", "slide"); 
+        				//app.application.navigate("#tabstrip-home", "slide"); 
+                        
+                        app.WS.invokeRequest(
+                    		"LoadTenants", 
+                    		undefined, 
+                    		"Anmelden...", 
+                    		function (res) { 
+                    			var result = JSON.parse(res);   
+                                
+                    			if(typeof(result.LoadTenantsResult) === "object" && result.LoadTenantsResult.__type == "tenantCollection") {
+                    				
+                                	app.onCurrentUserLoaded(function() {
+                                    	    
+                                   	for(var i = 0; i < result.LoadTenantsResult.tenant.length; i++) {
+                                           var tenant = result.LoadTenantsResult.tenant[i];
+                                           
+                                           if(tenant.id == app.currentUser.tenantId) {
+                                               global.localStorage.setItem("tenantColour", tenant.colour);
+                                               
+                                               app.application.navigate("#tabstrip-home", "slide"); 
+                                               
+                                               break;
+                                           }
+                                       }
+                                        
+                                    });
+                                    
+                    				
+                    			} else {
+                    				showAlert("Login fehlgeschlagen!", "Sie konnten mit der angegebenen Kombination aus Benutzername und Passwort nicht angemeldet werden. Bitte überprüfen Sie Ihre Daten.");
+                    			}
+                    		},
+                    		function (xhr) {
+                    			showAlert("Login fehlgeschlagen!", "Sie konnten mit der angegebenen Kombination aus Benutzername und Passwort nicht angemeldet werden. Bitte überprüfen Sie Ihre Daten.");
+                    		}
+                    	);
+                        
         			} else {
         				global.localStorage.removeItem("authString");
         				showAlert("Login fehlgeschlagen!", "Sie konnten mit der angegebenen Kombination aus Benutzername und Passwort nicht angemeldet werden. Bitte überprüfen Sie Ihre Daten.");
