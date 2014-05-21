@@ -151,7 +151,7 @@
                  </a>
              </li>
              <li>
-                 <a href="#match-list?stage=roundOf16" class="parent km-listview-link" data-role="listview-link">
+                 <a href="#match-list?stage=ROUND_OF_16" class="parent km-listview-link" data-role="listview-link">
                      <div class="list-item">
                          <span class="list-image" style="background-image: url('styles/images/Icons/1-8_round.png')"></span>
                 		 <h2>Achtelfinale</h2>
@@ -159,7 +159,7 @@
                  </a>
              </li>
              <li>
-                 <a href="#match-list?stage=QF" class="parent km-listview-link" data-role="listview-link">
+                 <a href="#match-list?stage=QUARTER_FINALS" class="parent km-listview-link" data-role="listview-link">
                      <div class="list-item">
                          <span class="list-image" style="background-image: url('styles/images/Icons/1-4_round.png')"></span>
                 		 <h2>Viertelfinale</h2>
@@ -167,7 +167,7 @@
                  </a>
              </li>
               <li>
-                 <a href="#match-list?stage=SF" class="parent km-listview-link" data-role="listview-link">
+                 <a href="#match-list?stage=SEMI_FINALS" class="parent km-listview-link" data-role="listview-link">
                      <div class="list-item">
                          <span class="list-image" style="background-image: url('styles/images/Icons/1-2_round.png')"></span>
                 		 <h2>Halbfinale</h2>
@@ -175,7 +175,15 @@
                  </a>
              </li>
               <li>
-                 <a href="#match-list?stage=F" class="parent km-listview-link" data-role="listview-link">
+                 <a href="#match-list?stage=THIRD_PLACE" class="parent km-listview-link" data-role="listview-link">
+                     <div class="list-item">
+                         <span class="list-image" style="background-image: url('styles/images/Icons/1-2_round.png')"></span>
+                		 <h2>Spiel um Platz 3</h2>
+                     </div>
+                 </a>
+             </li>
+              <li>
+                 <a href="#match-list?stage=FINAL" class="parent km-listview-link" data-role="listview-link">
                      <div class="list-item">
                          <span class="list-image" style="background-image: url('styles/images/Icons/final.png')"></span>
                 		 <h2>Finale</h2>
@@ -273,6 +281,7 @@
         data-show="app.matchList.show"
         data-after-show="app.matchList.afterShow"
         data-before-show="app.matchList.beforeShow"
+        data-hide="app.matchList.hide"
         data-init="app.matchList.init"
         class="score-group">
         
@@ -287,15 +296,11 @@
             <a data-role="button" class="selected-button" href="#match-list?group=" id="navi-matches-list">Spiele</a>
         	<a data-role="button" href="#group-ranking?group=" id="navi-ranking-list">Tabelle</a>
         </div>
-        <a data-role="button" data-click="app.matchList.refreshItems">Refresh items</a>
-        <ul id="match-list-listview" data-auto-bind="true" data-role="listview" data-source="app.matchList.matches" data-pull-to-refresh="true" data-append-on-refresh="false" data-template="match-list-template">
-
-        </ul>
         
         <script type="text/x-kendo-template" id="match-list-template">
             <div class="list-item">
                  <div class="left-side">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/#: Team1Id.toLowerCase() #.svg')"></span>
+                     <span class="list-image" style="background-image: url('styles/images/Teams/#: Team1Id ? Team1Id.toLowerCase()+".svg" : "flag.png" #')"></span>
         		 	<h2>#: Team1Id #</h2>
                  </div>
                  
@@ -303,14 +308,7 @@
         			<div class="voting-container">
 						<input type="number" id="goals-team1-#: id #" value="#: userBet != null ? userBet.goals1 : null #" data-matchId="#: id #" min="0" max="99" onchange="return app.matchList.saveBet(event);" />
 						<input type="number" id="goals-team2-#: id #" value="#: userBet != null ? userBet.goals2 : null #" data-matchId="#: id #" min="0" max="99" onchange="return app.matchList.saveBet(event);" />
-        			</div>
-            		<!--<div data-role="button" data-click="app.matchList.saveBet" class="vote-button">Tipp speichern</div>-->
-                     <!--
-        <div class="game-result">#: resultType ===  null ? "TIPPEN" : goalsTeam1Final + ":" + goalsTeam2Final #</div>
-        
-        			<div class="game-tip">-</div>
-        -->
-        			
+        			</div>        			
                      <div class="game-date">
             			#: dateString # (#: parseInt(new Date(parseInt(startDate)).getHours()) < 9 ? "0" + new Date(parseInt(startDate)).getHours() : new Date(parseInt(startDate)).getHours()  #:#: parseInt(new Date(parseInt(startDate)).getMinutes()) < 9 ? "0" + new Date(parseInt(startDate)).getMinutes() : new Date(parseInt(startDate)).getMinutes() #)
             			<br />
@@ -319,7 +317,7 @@
                  </div>
                  
                  <div class="right-side">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/#: Team2Id.toLowerCase() #.svg')"></span>
+                     <span class="list-image" style="background-image: url('styles/images/Teams/#: Team2Id ? Team2Id.toLowerCase()+".svg" : "flag.png" #')"></span>
         		 	<h2>#: Team2Id #</h2>
                  </div>
             
@@ -335,6 +333,7 @@
         data-show="app.groupRanking.show"
         data-after-show="app.groupRanking.afterShow"
         data-before-show="app.groupRanking.beforeShow"
+        data-hide="app.groupRanking.hide"
         data-init="app.groupRanking.init"
         class="ranking-group">
         
@@ -349,10 +348,6 @@
             <a data-role="button" href="#match-list?group=" id="navi-matches">Spiele</a>
         	<a data-role="button" class="selected-button" href="#group-ranking?group=" id="navi-ranking">Tabelle</a>
         </div>
-        <a data-role="button" data-click="app.groupRanking.refreshItems">Refresh items</a>
-	 	<ul id="group-ranking-listview" data-auto-bind="true" data-role="listview" data-source="app.groupRanking.teams" data-pull-to-refresh="true" data-append-on-refresh="false" data-template="group-ranking-template">
-             
-		 </ul>
         
         <script type="text/x-kendo-template" id="group-ranking-template">
              <div class="list-item">
