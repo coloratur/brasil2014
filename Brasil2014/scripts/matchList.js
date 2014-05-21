@@ -1,18 +1,18 @@
 (function (global) {
-    var GroupRankingViewModel,
+    var MatchListViewModel,
         app = global.app = global.app || {};
 
-    GroupRankingViewModel = kendo.data.ObservableObject.extend({
+    MatchListViewModel = kendo.data.ObservableObject.extend({
        
     });
 
-    app.groupRanking = {
-        viewModel: new GroupRankingViewModel(),
+    app.matchList = {
+        viewModel: new MatchListViewModel(),
         refreshItems: function() {
             console.log("refreshItems");
-            $("#group-ranking-listview").data("kendoMobileListView").setDataSource(app.groupRanking.teams);
-            $("#group-ranking-listview").data("kendoMobileListView").refresh();
-            app.groupRanking.teams.fetch();
+            $("#match-list-listview").data("kendoMobileListView").setDataSource(app.matchList.matches);
+            $("#match-list-listview").data("kendoMobileListView").refresh();
+            app.matchList.matches.fetch();
         },
         init: function(e) {
 
@@ -27,15 +27,15 @@
 
             this.header.find('[data-role="navbar"]').find('[data-role="view-title"]').html("Gruppe " + group);
             
-            $("#navi-matches").attr("href", "#match-list?group=" + group);
-            $("#navi-ranking").attr("href", "#group-ranking?group=" + group);
+            $("#navi-matches-list").attr("href", "#match-list?group=" + group);
+            $("#navi-ranking-list").attr("href", "#group-ranking?group=" + group);
             
         },
-        teams: new kendo.data.DataSource({
+        matches: new kendo.data.DataSource({
 					transport: {
 						read: {
-                            url: app.WebServiceURL + "LoadTeams",
-                            data: { authString: window.localStorage.getItem("authString") },
+                            url: app.WebServiceURL + "LoadMatchesByStage",
+                            data: { authString: window.localStorage.getItem("authString"), sStage: "GROUP" },
                             type: "POST",
                             contentType: "application/json",
                             timeout: 10000,
@@ -50,12 +50,9 @@
                     	data: function(res) {
                         	var result = new Array();
                               	
-                            	for(var i = 0; i < res.LoadTeamsResult.teams.length; i++) {
-                                    var team = res.LoadTeamsResult.teams[i];
-                                    console.log(app.application.view().params.group);
-                                    if(team.group === app.application.view().params.group) {
-                                    	result.push(team);
-                                    }
+                            	for(var i = 0; i < res.LoadMatchesByStageResult.matches.length; i++) {
+                                    var match = res.LoadMatchesByStageResult.matches[i];
+                                    result.push(match);                                    
                                 }
                                 
                                 return result;

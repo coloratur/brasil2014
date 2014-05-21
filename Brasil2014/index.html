@@ -17,6 +17,7 @@
     <script src="scripts/home.js"></script>
     <script src="scripts/ranking.js"></script>
     <script src="scripts/groupRanking.js"></script>
+    <script src="scripts/matchList.js"></script>
     
     <script src="scripts/analytics.js"></script>
       
@@ -201,7 +202,7 @@
         
 	 	<ul data-role="listview">
              <li>
-                 <a href="#score-group-a" class="parent km-listview-link" data-role="listview-link">
+                 <a href="#match-list?group=A" class="parent km-listview-link" data-role="listview-link">
                      <div class="list-item">
                          <span class="list-image" style="background-image: url('styles/images/Icons/group_a.png')"></span>
                 		 <h2>Gruppe A</h2>
@@ -209,7 +210,7 @@
                  </a>
              </li>
              <li>
-                 <a href="#score-group-b" class="parent km-listview-link" data-role="listview-link">
+                 <a href="#match-list?group=B" class="parent km-listview-link" data-role="listview-link">
                      <div class="list-item">
                          <span class="list-image" style="background-image: url('styles/images/Icons/group_b.png')"></span>
                 		 <h2>Gruppe B</h2>
@@ -217,7 +218,7 @@
                  </a>
              </li>
              <li>
-                 <a href="#score-group-c" class="parent km-listview-link" data-role="listview-link">
+                 <a href="#match-list?group=C" class="parent km-listview-link" data-role="listview-link">
                      <div class="list-item">
                          <span class="list-image" style="background-image: url('styles/images/Icons/group_c.png')"></span>
                 		 <h2>Gruppe C</h2>
@@ -625,7 +626,7 @@
     </div>
     
     <!--Score Group A-->
-    <div id="score-group-a"
+    <div id="score-group-A"
         data-role="view"
         data-title="Gruppe A"
         data-transition="slide"
@@ -639,7 +640,7 @@
         </div>
         
         <div class="sub-navigation">
-            <a data-role="button" class="selected-button" href="#score-group-a">Spiele</a>
+            <a data-role="button" class="selected-button" href="#score-group-A">Spiele</a>
         	<a data-role="button" href="#group-ranking?group=A">Tabelle</a>
         </div>
         
@@ -761,10 +762,62 @@
 		 </ul>
     </div>
     
+    <!--MATCH LIST-->
+    <div id="match-list"
+        data-role="view"
+        data-title="Spiele"
+        data-show="app.matchList.show"
+        data-after-show="app.matchList.afterShow"
+        data-before-show="app.matchList.beforeShow"
+        data-init="app.matchList.init"
+        class="score-group">
+        
+        <div data-role="header">
+            <div data-role="navbar">
+                <a data-role="backbutton" id="backbutton" data-align="left" href="#tabstrip-group"></a>
+            	<span data-role="view-title"></span>
+            </div>
+        </div>
+        
+        <div class="sub-navigation">
+            <a data-role="button" class="selected-button" href="#match-list?group=" id="navi-matches-list">Spiele</a>
+        	<a data-role="button" href="#group-ranking?group=" id="navi-ranking-list">Tabelle</a>
+        </div>
+        <a data-role="button" data-click="app.matchList.refreshItems">Refresh items</a>
+        <ul id="match-list-listview" data-auto-bind="true" data-role="listview" data-source="app.matchList.matches" data-pull-to-refresh="true" data-append-on-refresh="false" data-template="match-list-template">
+
+        </ul>
+        
+        <script type="text/x-kendo-template" id="match-list-template">
+            <div class="list-item">
+                     <div class="left-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/#: Team1Id.toLowerCase() #.svg')"></span>
+            		 	<h2>#: Team1Id #</h2>
+                     </div>
+                     
+                     <div class="game-info">
+                         <div class="game-result">-</div>
+                         <div class="game-tip">-</div>
+                         <div class="game-date">#: dateString # (#: new Date(parseInt(startDate)).getHours() #:#: new Date(parseInt(startDate)).getMinutes() < 9 ? "0" + new Date(parseInt(startDate)).getMinutes() : new Date(parseInt(startDate)).getMinutes() #) - #: venue #</div>
+                     </div>
+                     
+                     <div class="right-side">
+                         <span class="list-image" style="background-image: url('styles/images/Teams/#: Team2Id.toLowerCase() #.svg')"></span>
+            		 	<h2>#: Team2Id #</h2>
+                     </div>
+                 </div>
+        </script>
+        
+    </div>
+    
     <!--GROUP RANKING-->
     <div id="group-ranking"
         data-role="view"
-        data-title="Gruppe A"
+        data-title="Gruppe"
+        data-show="app.groupRanking.show"
+        data-after-show="app.groupRanking.afterShow"
+        data-before-show="app.groupRanking.beforeShow"
+        data-init="app.groupRanking.init"
         class="ranking-group">
         
         <div data-role="header">
@@ -775,17 +828,17 @@
         </div>
         
         <div class="sub-navigation">
-            <a data-role="button" href="#score-group-a">Spiele</a>
-        	<a data-role="button" class="selected-button" href="#group-ranking?group=A">Tabelle</a>
+            <a data-role="button" href="#match-list?group=" id="navi-matches">Spiele</a>
+        	<a data-role="button" class="selected-button" href="#group-ranking?group=" id="navi-ranking">Tabelle</a>
         </div>
-        
-	 	<ul data-role="listview" data-source="app.groupRanking.teams" data-pull-to-refresh="true" data-append-on-refresh="false" data-template="group-ranking-template">
+        <a data-role="button" data-click="app.groupRanking.refreshItems">Refresh items</a>
+	 	<ul id="group-ranking-listview" data-auto-bind="true" data-role="listview" data-source="app.groupRanking.teams" data-pull-to-refresh="true" data-append-on-refresh="false" data-template="group-ranking-template">
              
 		 </ul>
         
         <script type="text/x-kendo-template" id="group-ranking-template">
              <div class="list-item">
-                 <span class="list-image" style="background-image: url('styles/images/Teams/#: id #.svg')"></span>
+                 <span class="list-image" style="background-image: url('styles/images/Teams/#: id.toLowerCase() #.svg')"></span>
         		 <h2>#: id #</h2>
                  <table class="table">
                      <thead>
@@ -806,100 +859,12 @@
              </div>
         </script>
         
-        
     </div>
     
-    <!--Ranking Group A-->
-    <div id="ranking-group-a"
-        data-role="view"
-        data-title="Gruppe A"
-        class="ranking-group">
-        
-        <div data-role="header">
-            <div data-role="navbar">
-                <a data-role="backbutton" id="backbutton" data-align="left" href="#tabstrip-group"></a>
-            	<span data-role="view-title"></span>
-            </div>
-        </div>
-        
-        <div class="sub-navigation">
-            <a data-role="button" href="#score-group-a">Spiele</a>
-        	<a data-role="button" class="selected-button" href="#ranking-group-a">Tabelle</a>
-        </div>
-        
-	 	<ul data-role="listview">
-             
-             <li>
-                 <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
-            		 <h2>CRO</h2>
-                     <table class="table">
-                         <thead>
-                             <tr>
-                                 <th>Spiele</th>
-                                 <th>Tore</th>
-                                 <th>Punkte</th>
-                             </tr>
-                         </thead>
-                         <tbody>
-                             <tr>
-                                 <td>3</td>
-                                 <td>20:4</td>
-                                 <td>9</td>
-                             </tr>
-                          </tbody>
-                      </table>
-                 </div>
-             </li>
-             <li>
-                 <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
-            		 <h2>MEX</h2>
-                     <table class="table">
-                         <thead>
-                             <tr>
-                                 <th>Spiele</th>
-                                 <th>Tore</th>
-                                 <th>Punkte</th>
-                             </tr>
-                         </thead>
-                         <tbody>
-                             <tr>
-                                 <td>0</td>
-                                 <td>0:0</td>
-                                 <td>0</td>
-                             </tr>
-                          </tbody>
-                      </table>
-                 </div>
-             </li>
-             <li>
-                 <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
-            		 <h2>KAM</h2>
-                     <table class="table">
-                         <thead>
-                             <tr>
-                                 <th>Spiele</th>
-                                 <th>Tore</th>
-                                 <th>Punkte</th>
-                             </tr>
-                         </thead>
-                         <tbody>
-                             <tr>
-                                 <td>0</td>
-                                 <td>0:0</td>
-                                 <td>0</td>
-                             </tr>
-                          </tbody>
-                      </table>
-                 </div>
-             </li>
-		 </ul>
-    </div>
+    
     
     <!--Score Group B-->
-    <div id="score-group-b"
+    <div id="score-group-B"
         data-role="view"
         data-title="Gruppe B"
         data-transition="slide"
@@ -913,8 +878,8 @@
         </div>
         
         <div class="sub-navigation">
-            <a data-role="button" class="selected-button" href="#score-group-b">Spiele</a>
-        	<a data-role="button" href="#ranking-group-b">Tabelle</a>
+            <a data-role="button" class="selected-button" href="#score-group-B">Spiele</a>
+        	<a data-role="button" href="#group-ranking?group=B">Tabelle</a>
         </div>
         
 	 	<ul data-role="listview">
@@ -1030,123 +995,13 @@
                          <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
             		 	<h2>BRA</h2>
                      </div>
-                 </div>
-             </li>
-		 </ul>
-    </div>
-    
-    <!--Ranking Group B-->
-    <div id="ranking-group-b"
-        data-role="view"
-        data-title="Gruppe B"
-        class="ranking-group">
-        
-        <div data-role="header">
-            <div data-role="navbar">
-                <a data-role="backbutton" id="backbutton" data-align="left" href="#tabstrip-group"></a>
-            	<span data-role="view-title"></span>
-            </div>
-        </div>
-        
-        <div class="sub-navigation">
-            <a data-role="button" href="#score-group-b">Spiele</a>
-        	<a data-role="button" class="selected-button" href="#ranking-group-b">Tabelle</a>
-        </div>
-        
-	 	<ul data-role="listview">
-             <li>
-                 <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
-            		 <h2>BRA</h2>
-                     <table class="table">
-                         <thead>
-                             <tr>
-                                 <th>Spiele</th>
-                                 <th>Tore</th>
-                                 <th>Punkte</th>
-                             </tr>
-                         </thead>
-                         <tbody>
-                             <tr>
-                                 <td>3</td>
-                                 <td>24:4</td>
-                                 <td>9</td>
-                             </tr>
-                          </tbody>
-                      </table>
-                 </div>
-             </li>
-             <li>
-                 <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
-            		 <h2>CRO</h2>
-                     <table class="table">
-                         <thead>
-                             <tr>
-                                 <th>Spiele</th>
-                                 <th>Tore</th>
-                                 <th>Punkte</th>
-                             </tr>
-                         </thead>
-                         <tbody>
-                             <tr>
-                                 <td>3</td>
-                                 <td>20:4</td>
-                                 <td>9</td>
-                             </tr>
-                          </tbody>
-                      </table>
-                 </div>
-             </li>
-             <li>
-                 <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
-            		 <h2>MEX</h2>
-                     <table class="table">
-                         <thead>
-                             <tr>
-                                 <th>Spiele</th>
-                                 <th>Tore</th>
-                                 <th>Punkte</th>
-                             </tr>
-                         </thead>
-                         <tbody>
-                             <tr>
-                                 <td>0</td>
-                                 <td>0:0</td>
-                                 <td>0</td>
-                             </tr>
-                          </tbody>
-                      </table>
-                 </div>
-             </li>
-             <li>
-                 <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
-            		 <h2>KAM</h2>
-                     <table class="table">
-                         <thead>
-                             <tr>
-                                 <th>Spiele</th>
-                                 <th>Tore</th>
-                                 <th>Punkte</th>
-                             </tr>
-                         </thead>
-                         <tbody>
-                             <tr>
-                                 <td>0</td>
-                                 <td>0:0</td>
-                                 <td>0</td>
-                             </tr>
-                          </tbody>
-                      </table>
                  </div>
              </li>
 		 </ul>
     </div>
     
     <!--Score Group C-->
-    <div id="score-group-c"
+    <div id="score-group-C"
         data-role="view"
         data-title="Gruppe C"
         data-transition="slide"
@@ -1160,8 +1015,8 @@
         </div>
         
         <div class="sub-navigation">
-            <a data-role="button" class="selected-button" href="#score-group-c">Spiele</a>
-        	<a data-role="button" href="#ranking-group-c">Tabelle</a>
+            <a data-role="button" class="selected-button" href="#score-group-C">Spiele</a>
+        	<a data-role="button" href="#group-ranking?group=C">Tabelle</a>
         </div>
         
 	 	<ul data-role="listview">
@@ -1277,116 +1132,6 @@
                          <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
             		 	<h2>BRA</h2>
                      </div>
-                 </div>
-             </li>
-		 </ul>
-    </div>
-    
-    <!--Ranking Group C-->
-    <div id="ranking-group-c"
-        data-role="view"
-        data-title="Gruppe C"
-        class="ranking-group">
-        
-        <div data-role="header">
-            <div data-role="navbar">
-                <a data-role="backbutton" id="backbutton" data-align="left" href="#tabstrip-group"></a>
-            	<span data-role="view-title"></span>
-            </div>
-        </div>
-        
-        <div class="sub-navigation">
-            <a data-role="button" href="#score-group-c">Spiele</a>
-        	<a data-role="button" class="selected-button" href="#ranking-group-c">Tabelle</a>
-        </div>
-        
-	 	<ul data-role="listview">
-             <li>
-                 <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
-            		 <h2>BRA</h2>
-                     <table class="table">
-                         <thead>
-                             <tr>
-                                 <th>Spiele</th>
-                                 <th>Tore</th>
-                                 <th>Punkte</th>
-                             </tr>
-                         </thead>
-                         <tbody>
-                             <tr>
-                                 <td>3</td>
-                                 <td>24:4</td>
-                                 <td>9</td>
-                             </tr>
-                          </tbody>
-                      </table>
-                 </div>
-             </li>
-             <li>
-                 <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
-            		 <h2>CRO</h2>
-                     <table class="table">
-                         <thead>
-                             <tr>
-                                 <th>Spiele</th>
-                                 <th>Tore</th>
-                                 <th>Punkte</th>
-                             </tr>
-                         </thead>
-                         <tbody>
-                             <tr>
-                                 <td>3</td>
-                                 <td>20:4</td>
-                                 <td>9</td>
-                             </tr>
-                          </tbody>
-                      </table>
-                 </div>
-             </li>
-             <li>
-                 <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
-            		 <h2>MEX</h2>
-                     <table class="table">
-                         <thead>
-                             <tr>
-                                 <th>Spiele</th>
-                                 <th>Tore</th>
-                                 <th>Punkte</th>
-                             </tr>
-                         </thead>
-                         <tbody>
-                             <tr>
-                                 <td>0</td>
-                                 <td>0:0</td>
-                                 <td>0</td>
-                             </tr>
-                          </tbody>
-                      </table>
-                 </div>
-             </li>
-             <li>
-                 <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
-            		 <h2>KAM</h2>
-                     <table class="table">
-                         <thead>
-                             <tr>
-                                 <th>Spiele</th>
-                                 <th>Tore</th>
-                                 <th>Punkte</th>
-                             </tr>
-                         </thead>
-                         <tbody>
-                             <tr>
-                                 <td>0</td>
-                                 <td>0:0</td>
-                                 <td>0</td>
-                             </tr>
-                          </tbody>
-                      </table>
                  </div>
              </li>
 		 </ul>
@@ -1408,7 +1153,7 @@
         
         <div class="sub-navigation">
             <a data-role="button" class="selected-button" href="#score-group-d">Spiele</a>
-        	<a data-role="button" href="#ranking-group-d">Tabelle</a>
+        	<a data-role="button" href="#group-ranking?group=D">Tabelle</a>
         </div>
         
 	 	<ul data-role="listview">
@@ -1524,116 +1269,6 @@
                          <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
             		 	<h2>BRA</h2>
                      </div>
-                 </div>
-             </li>
-		 </ul>
-    </div>
-    
-    <!--Ranking Group D-->
-    <div id="ranking-group-d"
-        data-role="view"
-        data-title="Gruppe D"
-        class="ranking-group">
-        
-        <div data-role="header">
-            <div data-role="navbar">
-                <a data-role="backbutton" id="backbutton" data-align="left" href="#tabstrip-group"></a>
-            	<span data-role="view-title"></span>
-            </div>
-        </div>
-        
-        <div class="sub-navigation">
-            <a data-role="button" href="#score-group-d">Spiele</a>
-        	<a data-role="button" class="selected-button" href="#ranking-group-d">Tabelle</a>
-        </div>
-        
-	 	<ul data-role="listview">
-             <li>
-                 <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
-            		 <h2>BRA</h2>
-                     <table class="table">
-                         <thead>
-                             <tr>
-                                 <th>Spiele</th>
-                                 <th>Tore</th>
-                                 <th>Punkte</th>
-                             </tr>
-                         </thead>
-                         <tbody>
-                             <tr>
-                                 <td>3</td>
-                                 <td>24:4</td>
-                                 <td>9</td>
-                             </tr>
-                          </tbody>
-                      </table>
-                 </div>
-             </li>
-             <li>
-                 <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
-            		 <h2>CRO</h2>
-                     <table class="table">
-                         <thead>
-                             <tr>
-                                 <th>Spiele</th>
-                                 <th>Tore</th>
-                                 <th>Punkte</th>
-                             </tr>
-                         </thead>
-                         <tbody>
-                             <tr>
-                                 <td>3</td>
-                                 <td>20:4</td>
-                                 <td>9</td>
-                             </tr>
-                          </tbody>
-                      </table>
-                 </div>
-             </li>
-             <li>
-                 <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
-            		 <h2>MEX</h2>
-                     <table class="table">
-                         <thead>
-                             <tr>
-                                 <th>Spiele</th>
-                                 <th>Tore</th>
-                                 <th>Punkte</th>
-                             </tr>
-                         </thead>
-                         <tbody>
-                             <tr>
-                                 <td>0</td>
-                                 <td>0:0</td>
-                                 <td>0</td>
-                             </tr>
-                          </tbody>
-                      </table>
-                 </div>
-             </li>
-             <li>
-                 <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
-            		 <h2>KAM</h2>
-                     <table class="table">
-                         <thead>
-                             <tr>
-                                 <th>Spiele</th>
-                                 <th>Tore</th>
-                                 <th>Punkte</th>
-                             </tr>
-                         </thead>
-                         <tbody>
-                             <tr>
-                                 <td>0</td>
-                                 <td>0:0</td>
-                                 <td>0</td>
-                             </tr>
-                          </tbody>
-                      </table>
                  </div>
              </li>
 		 </ul>
@@ -1655,7 +1290,7 @@
         
         <div class="sub-navigation">
             <a data-role="button" class="selected-button" href="#score-group-e">Spiele</a>
-        	<a data-role="button" href="#ranking-group-e">Tabelle</a>
+        	<a data-role="button" href="#group-ranking?group=E">Tabelle</a>
         </div>
         
 	 	<ul data-role="listview">
@@ -1776,115 +1411,7 @@
 		 </ul>
     </div>
     
-    <!--Ranking Group E-->
-    <div id="ranking-group-e"
-        data-role="view"
-        data-title="Gruppe E"
-        class="ranking-group">
-        
-        <div data-role="header">
-            <div data-role="navbar">
-                <a data-role="backbutton" id="backbutton" data-align="left" href="#tabstrip-group"></a>
-            	<span data-role="view-title"></span>
-            </div>
-        </div>
-        
-        <div class="sub-navigation">
-            <a data-role="button" href="#score-group-e">Spiele</a>
-        	<a data-role="button" class="selected-button" href="#ranking-group-e">Tabelle</a>
-        </div>
-        
-	 	<ul data-role="listview">
-             <li>
-                 <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
-            		 <h2>BRA</h2>
-                     <table class="table">
-                         <thead>
-                             <tr>
-                                 <th>Spiele</th>
-                                 <th>Tore</th>
-                                 <th>Punkte</th>
-                             </tr>
-                         </thead>
-                         <tbody>
-                             <tr>
-                                 <td>3</td>
-                                 <td>24:4</td>
-                                 <td>9</td>
-                             </tr>
-                          </tbody>
-                      </table>
-                 </div>
-             </li>
-             <li>
-                 <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
-            		 <h2>CRO</h2>
-                     <table class="table">
-                         <thead>
-                             <tr>
-                                 <th>Spiele</th>
-                                 <th>Tore</th>
-                                 <th>Punkte</th>
-                             </tr>
-                         </thead>
-                         <tbody>
-                             <tr>
-                                 <td>3</td>
-                                 <td>20:4</td>
-                                 <td>9</td>
-                             </tr>
-                          </tbody>
-                      </table>
-                 </div>
-             </li>
-             <li>
-                 <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
-            		 <h2>MEX</h2>
-                     <table class="table">
-                         <thead>
-                             <tr>
-                                 <th>Spiele</th>
-                                 <th>Tore</th>
-                                 <th>Punkte</th>
-                             </tr>
-                         </thead>
-                         <tbody>
-                             <tr>
-                                 <td>0</td>
-                                 <td>0:0</td>
-                                 <td>0</td>
-                             </tr>
-                          </tbody>
-                      </table>
-                 </div>
-             </li>
-             <li>
-                 <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
-            		 <h2>KAM</h2>
-                     <table class="table">
-                         <thead>
-                             <tr>
-                                 <th>Spiele</th>
-                                 <th>Tore</th>
-                                 <th>Punkte</th>
-                             </tr>
-                         </thead>
-                         <tbody>
-                             <tr>
-                                 <td>0</td>
-                                 <td>0:0</td>
-                                 <td>0</td>
-                             </tr>
-                          </tbody>
-                      </table>
-                 </div>
-             </li>
-		 </ul>
-    </div>
+    
     
     <!--Score Group F-->
     <div id="score-group-f"
@@ -1902,7 +1429,7 @@
         
         <div class="sub-navigation">
             <a data-role="button" class="selected-button" href="#score-group-f">Spiele</a>
-        	<a data-role="button" href="#ranking-group-f">Tabelle</a>
+        	<a data-role="button" href="#group-ranking=group=F">Tabelle</a>
         </div>
         
 	 	<ul data-role="listview">
@@ -2023,115 +1550,7 @@
 		 </ul>
     </div>
     
-    <!--Ranking Group F-->
-    <div id="ranking-group-f"
-        data-role="view"
-        data-title="Gruppe F"
-        class="ranking-group">
-        
-        <div data-role="header">
-            <div data-role="navbar">
-                <a data-role="backbutton" id="backbutton" data-align="left" href="#tabstrip-group"></a>
-            	<span data-role="view-title"></span>
-            </div>
-        </div>
-        
-        <div class="sub-navigation">
-            <a data-role="button" href="#score-group-f">Spiele</a>
-        	<a data-role="button" class="selected-button" href="#ranking-group-f">Tabelle</a>
-        </div>
-        
-	 	<ul data-role="listview">
-             <li>
-                 <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
-            		 <h2>BRA</h2>
-                     <table class="table">
-                         <thead>
-                             <tr>
-                                 <th>Spiele</th>
-                                 <th>Tore</th>
-                                 <th>Punkte</th>
-                             </tr>
-                         </thead>
-                         <tbody>
-                             <tr>
-                                 <td>3</td>
-                                 <td>24:4</td>
-                                 <td>9</td>
-                             </tr>
-                          </tbody>
-                      </table>
-                 </div>
-             </li>
-             <li>
-                 <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
-            		 <h2>CRO</h2>
-                     <table class="table">
-                         <thead>
-                             <tr>
-                                 <th>Spiele</th>
-                                 <th>Tore</th>
-                                 <th>Punkte</th>
-                             </tr>
-                         </thead>
-                         <tbody>
-                             <tr>
-                                 <td>3</td>
-                                 <td>20:4</td>
-                                 <td>9</td>
-                             </tr>
-                          </tbody>
-                      </table>
-                 </div>
-             </li>
-             <li>
-                 <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
-            		 <h2>MEX</h2>
-                     <table class="table">
-                         <thead>
-                             <tr>
-                                 <th>Spiele</th>
-                                 <th>Tore</th>
-                                 <th>Punkte</th>
-                             </tr>
-                         </thead>
-                         <tbody>
-                             <tr>
-                                 <td>0</td>
-                                 <td>0:0</td>
-                                 <td>0</td>
-                             </tr>
-                          </tbody>
-                      </table>
-                 </div>
-             </li>
-             <li>
-                 <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
-            		 <h2>KAM</h2>
-                     <table class="table">
-                         <thead>
-                             <tr>
-                                 <th>Spiele</th>
-                                 <th>Tore</th>
-                                 <th>Punkte</th>
-                             </tr>
-                         </thead>
-                         <tbody>
-                             <tr>
-                                 <td>0</td>
-                                 <td>0:0</td>
-                                 <td>0</td>
-                             </tr>
-                          </tbody>
-                      </table>
-                 </div>
-             </li>
-		 </ul>
-    </div>
+    
     
     <!--Score Group G-->
     <div id="score-group-g"
@@ -2149,7 +1568,7 @@
         
         <div class="sub-navigation">
             <a data-role="button" class="selected-button" href="#score-group-g">Spiele</a>
-        	<a data-role="button" href="#ranking-group-g">Tabelle</a>
+        	<a data-role="button" href="#group-ranking?group=G">Tabelle</a>
         </div>
         
 	 	<ul data-role="listview">
@@ -2270,115 +1689,7 @@
 		 </ul>
     </div>
     
-    <!--Ranking Group G-->
-    <div id="ranking-group-g"
-        data-role="view"
-        data-title="Gruppe G"
-        class="ranking-group">
-        
-        <div data-role="header">
-            <div data-role="navbar">
-                <a data-role="backbutton" id="backbutton" data-align="left" href="#tabstrip-group"></a>
-            	<span data-role="view-title"></span>
-            </div>
-        </div>
-        
-        <div class="sub-navigation">
-            <a data-role="button" href="#score-group-g">Spiele</a>
-        	<a data-role="button" class="selected-button" href="#ranking-group-g">Tabelle</a>
-        </div>
-        
-	 	<ul data-role="listview">
-             <li>
-                 <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
-            		 <h2>BRA</h2>
-                     <table class="table">
-                         <thead>
-                             <tr>
-                                 <th>Spiele</th>
-                                 <th>Tore</th>
-                                 <th>Punkte</th>
-                             </tr>
-                         </thead>
-                         <tbody>
-                             <tr>
-                                 <td>3</td>
-                                 <td>24:4</td>
-                                 <td>9</td>
-                             </tr>
-                          </tbody>
-                      </table>
-                 </div>
-             </li>
-             <li>
-                 <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
-            		 <h2>CRO</h2>
-                     <table class="table">
-                         <thead>
-                             <tr>
-                                 <th>Spiele</th>
-                                 <th>Tore</th>
-                                 <th>Punkte</th>
-                             </tr>
-                         </thead>
-                         <tbody>
-                             <tr>
-                                 <td>3</td>
-                                 <td>20:4</td>
-                                 <td>9</td>
-                             </tr>
-                          </tbody>
-                      </table>
-                 </div>
-             </li>
-             <li>
-                 <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
-            		 <h2>MEX</h2>
-                     <table class="table">
-                         <thead>
-                             <tr>
-                                 <th>Spiele</th>
-                                 <th>Tore</th>
-                                 <th>Punkte</th>
-                             </tr>
-                         </thead>
-                         <tbody>
-                             <tr>
-                                 <td>0</td>
-                                 <td>0:0</td>
-                                 <td>0</td>
-                             </tr>
-                          </tbody>
-                      </table>
-                 </div>
-             </li>
-             <li>
-                 <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
-            		 <h2>KAM</h2>
-                     <table class="table">
-                         <thead>
-                             <tr>
-                                 <th>Spiele</th>
-                                 <th>Tore</th>
-                                 <th>Punkte</th>
-                             </tr>
-                         </thead>
-                         <tbody>
-                             <tr>
-                                 <td>0</td>
-                                 <td>0:0</td>
-                                 <td>0</td>
-                             </tr>
-                          </tbody>
-                      </table>
-                 </div>
-             </li>
-		 </ul>
-    </div>
+    
     
     <!--Score Group H-->
     <div id="score-group-h"
@@ -2396,7 +1707,7 @@
         
         <div class="sub-navigation">
             <a data-role="button" class="selected-button" href="#score-group-h">Spiele</a>
-        	<a data-role="button" href="#ranking-group-h">Tabelle</a>
+        	<a data-role="button" href="#group-ranking?group=H">Tabelle</a>
         </div>
         
 	 	<ul data-role="listview">
@@ -2517,116 +1828,7 @@
 		 </ul>
     </div>
     
-    <!--Ranking Group H-->
-    <div id="ranking-group-h"
-        data-role="view"
-        data-title="Gruppe H"
-        class="ranking-group">
-        
-        <div data-role="header">
-            <div data-role="navbar">
-                <a data-role="backbutton" id="backbutton" data-align="left" href="#tabstrip-group"></a>
-            	<span data-role="view-title"></span>
-            </div>
-        </div>
-        
-        <div class="sub-navigation">
-            <a data-role="button" href="#score-group-h">Spiele</a>
-        	<a data-role="button" class="selected-button" href="#ranking-group-h">Tabelle</a>
-        </div>
-        
-	 	<ul data-role="listview">
-             <li>
-                 <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
-            		 <h2>BRA</h2>
-                     <table class="table">
-                         <thead>
-                             <tr>
-                                 <th>Spiele</th>
-                                 <th>Tore</th>
-                                 <th>Punkte</th>
-                             </tr>
-                         </thead>
-                         <tbody>
-                             <tr>
-                                 <td>3</td>
-                                 <td>24:4</td>
-                                 <td>9</td>
-                             </tr>
-                          </tbody>
-                      </table>
-                 </div>
-             </li>
-             <li>
-                 <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
-            		 <h2>CRO</h2>
-                     <table class="table">
-                         <thead>
-                             <tr>
-                                 <th>Spiele</th>
-                                 <th>Tore</th>
-                                 <th>Punkte</th>
-                             </tr>
-                         </thead>
-                         <tbody>
-                             <tr>
-                                 <td>3</td>
-                                 <td>20:4</td>
-                                 <td>9</td>
-                             </tr>
-                          </tbody>
-                      </table>
-                 </div>
-             </li>
-             <li>
-                 <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
-            		 <h2>MEX</h2>
-                     <table class="table">
-                         <thead>
-                             <tr>
-                                 <th>Spiele</th>
-                                 <th>Tore</th>
-                                 <th>Punkte</th>
-                             </tr>
-                         </thead>
-                         <tbody>
-                             <tr>
-                                 <td>0</td>
-                                 <td>0:0</td>
-                                 <td>0</td>
-                             </tr>
-                          </tbody>
-                      </table>
-                 </div>
-             </li>
-             <li>
-                 <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
-            		 <h2>KAM</h2>
-                     <table class="table">
-                         <thead>
-                             <tr>
-                                 <th>Spiele</th>
-                                 <th>Tore</th>
-                                 <th>Punkte</th>
-                             </tr>
-                         </thead>
-                         <tbody>
-                             <tr>
-                                 <td>0</td>
-                                 <td>0:0</td>
-                                 <td>0</td>
-                             </tr>
-                          </tbody>
-                      </table>
-                 </div>
-             </li>
-		 </ul>
-    </div>
-
+  
     
     <!-- Games Today -->
     <div id="tabstrip-games-today"

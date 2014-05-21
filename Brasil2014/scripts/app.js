@@ -5,7 +5,8 @@ function showAlert(title, text) { alert(title + "\r\n" + text); };
 (function (global) {
     var app = global.app = global.app || {};
 
-    app.WebServiceURL = "http://wm2014.coloratur.com/Service.svc/";
+    //app.WebServiceURL = "http://wm2014.coloratur.com/Service.svc/";
+    app.WebServiceURL = "http://jarjarbinks.dev.webservice.wc2014.de/Service.svc/";
     
     function WebService(url) {
     	this.url = url;
