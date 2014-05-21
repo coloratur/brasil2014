@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>7936fad6-1edf-4f89-986c-d485cc3eda4f</ProjectGuid>
+    <ProjectTypeGuids>{070BCB52-5A75-4F8C-A973-144AF0EAFCC9}</ProjectTypeGuids>
+    <AppIdentifier>com.telerik.Brasil2014</AppIdentifier>
+    <ProjectName>Brasil2014</ProjectName>
+    <IsRunnable>true</IsRunnable>
+    <FrameworkVersion>3.2.0</FrameworkVersion>
+    <AndroidPermissions>android.permission.ACCESS_NETWORK_STATE;android.permission.ACCOUNT_MANAGER;android.permission.BROADCAST_STICKY;android.permission.GET_ACCOUNTS;android.permission.INTERNET;android.permission.MANAGE_ACCOUNTS;android.permission.VIBRATE;android.permission.WRITE_EXTERNAL_STORAGE</AndroidPermissions>
+    <CorePlugins>org.apache.cordova.console;org.apache.cordova.device;org.apache.cordova.file;org.apache.cordova.file-transfer;org.apache.cordova.globalization;org.apache.cordova.inappbrowser;org.apache.cordova.keyboard;org.apache.cordova.network-information;org.apache.cordova.dialogs;com.phonegap.plugins.PushPlugin;org.apache.cordova.splashscreen;org.apache.cordova.statusbar;com.telerik.plugin.eqatecanalytics;org.apache.cordova.vibration</CorePlugins>
+    <DeviceOrientations>Portrait</DeviceOrientations>
+    <iOSStatusBarStyle>Hidden</iOSStatusBarStyle>
+    <AndroidHardwareAcceleration>false</AndroidHardwareAcceleration>
+    <WP8SupportedResolutions>ID_RESOLUTION_WVGA;ID_RESOLUTION_WXGA;ID_RESOLUTION_HD720P</WP8SupportedResolutions>
+    <BundleVersion>0.8</BundleVersion>
+    <DisplayName>Brasil 2014</DisplayName>
+    <Author>COLORATUR GmbH</Author>
+    <Description>Brasil2014</Description>
+    <iOSDeviceFamily>1</iOSDeviceFamily>
+    <iOSBackgroundMode />
+    <AndroidVersionCode>1</AndroidVersionCode>
+    <WP8Requirements />
+    <WP8Capabilities />
+    <WP8TileTitle />
+    <WP8ProductID>{7936fad6-1edf-4f89-986c-d485cc3eda4f}</WP8ProductID>
+    <WP8PublisherID>{2030e9f3-a464-4426-aa1f-82cb8554cc90}</WP8PublisherID>
+    <WP8Publisher />
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Telerik\ICE\Tools\Mobile\MobileTools.targets" />
+</Project>
