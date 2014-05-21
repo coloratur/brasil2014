@@ -117,6 +117,8 @@ h2 {
     
     width: 70px;
     height: 70px;
+    
+    background-color: transparent;
 }
 
 #top-list .list-item .list-detail {
@@ -163,6 +165,68 @@ p {
 
 #tabstrip-rules .content-container ul li strong {
     line-height: 40px;
+}
+
+
+
+/* RANKING VIEW */
+/* START VIEW STYLES */
+#ranking-top-list {
+    width: 100%;
+	display: inline-block;
+	padding-bottom: 0;
+}
+
+#ranking-top-list li {
+    width: 32.4%;
+	display: inline-block;
+}
+
+#ranking-top-list li:last-child {
+    float: right;
+}
+
+
+#ranking-top-list li {
+    background-color: #f6f6f6;
+    height: auto;
+}
+
+#ranking-top-list .list-item .list-image {
+     float: none;
+ 	margin: 0 auto;
+ 	margin-top: 15px;
+    
+    width: 90px;
+    height: 90px;
+    
+    background-color: transparent;
+}
+
+#ranking-top-list .list-item .list-detail {
+    background-color: #FFF;
+	padding: 10px;
+	font-size: 12px;
+	margin-top: 15px;
+    
+    font-style: normal;
+}
+
+#ranking-top-list .km-listview-link:after {
+    display: none;
+}
+
+#ranking-list {
+    padding-top: 0;
+}
+
+#ranking-list li {
+    height: 70px;
+}
+
+#ranking-list .list-item .list-image {
+    width: 70px;
+    height: 70px;
 }
 
 
@@ -242,6 +306,7 @@ p {
     float: left;
     width: 90px;
     height: 90px;
+    background-color: rgba(0,0,0,0.05);
 }
 
 .score-group .list-item h2 {
@@ -401,6 +466,7 @@ p {
 
 .ranking-group .list-item .list-image {
     margin-top: 20px !important;
+    background-color: transparent !important;
 }
 
 .table {

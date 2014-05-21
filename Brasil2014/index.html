@@ -3,18 +3,26 @@
 <head>
     <title></title>
     <meta charset="utf-8" />
+    <!--<link href="kendo/styles/kendo.dataviz.min.css" rel="stylesheet" />-->
+    <!--<link href="kendo/styles/kendo.dataviz.default.min.css" rel="stylesheet" />-->
     <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
+    
     <link href="styles/app.css" rel="stylesheet" />
     <link href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,100italic,300italic" rel="stylesheet" />
 
     <script src="cordova.js"></script>
     <script src="kendo/js/jquery.min.js"></script>
+    <!--
+    <script src="kendo/js/kendo.dataviz.min.js"></script>
     <script src="kendo/js/kendo.mobile.min.js"></script>
-
+    -->
+    <script src="kendo/js/__kendo.mobile.min.js"></script>
+    
     <script src="scripts/login.js"></script>
     <script src="scripts/ranking.js"></script>
     <script src="scripts/voting.js"></script>
     <script src="scripts/analytics.js"></script>
+    <script src="scripts/score.js"></script>
     <script src="scripts/app.js"></script>
 </head>
 <body>
@@ -59,7 +67,7 @@
             <li>
                 <a href="#tabstrip-score">
                     <div class="list-item">
-                        <span class="list-image" style="background-image: url('styles/images/Icons/user.png')"></span>
+                        <span class="list-image" style="background-image: url('styles/images/Icons/user.svg')"></span>
                         <div class="list-detail">
                         	<p>Username</p>
                         	<strong>Score 88%</strong>
@@ -70,7 +78,7 @@
             <li>
                 <a href="#tabstrip-games-today">
                     <div class="list-item">
-                        <span class="list-image" style="background-image: url('styles/images/Icons/tip.png')"></span>
+                        <span class="list-image" style="background-image: url('styles/images/Icons/tip.svg')"></span>
                         <div class="list-detail">
                             <p>Tip abgeben</p>
                             <strong>4 von 8 Tipps offen</strong>
@@ -133,7 +141,7 @@
              <li class="major">
                  <a href="#tabstrip-games-today" class="parent km-listview-link" data-role="listview-link">
                      <div class="list-item">
-                         <span class="list-image" style="background-image: url('styles/images/Icons/schedule.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Icons/schedule.svg')"></span>
                 		 <h2>Spiele heute</h2>
                      </div>
                  </a>
@@ -141,7 +149,7 @@
              <li>
                  <a href="#tabstrip-group" class="parent km-listview-link" data-role="listview-link">
                      <div class="list-item">
-                         <span class="list-image" style="background-image: url('styles/images/Icons/1-32_round.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Icons/1-32_round.svg')"></span>
                 		 <h2>Vorrunde</h2>
                      </div>
                  </a>
@@ -149,7 +157,7 @@
              <li>
                  <a href="#tabstrip-final-8" class="parent km-listview-link" data-role="listview-link">
                      <div class="list-item">
-                         <span class="list-image" style="background-image: url('styles/images/Icons/1-8_round.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Icons/1-8_round.svg')"></span>
                 		 <h2>Achtelfinale</h2>
                      </div>
                  </a>
@@ -157,7 +165,7 @@
              <li>
                  <a href="#tabstrip-final-4" class="parent km-listview-link" data-role="listview-link">
                      <div class="list-item">
-                         <span class="list-image" style="background-image: url('styles/images/Icons/1-4_round.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Icons/1-4_round.svg')"></span>
                 		 <h2>Viertelfinale</h2>
                      </div>
                  </a>
@@ -165,7 +173,7 @@
               <li>
                  <a href="#tabstrip-final-2" class="parent km-listview-link" data-role="listview-link">
                      <div class="list-item">
-                         <span class="list-image" style="background-image: url('styles/images/Icons/1-2_round.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Icons/1-2_round.svg')"></span>
                 		 <h2>Halbfinale</h2>
                      </div>
                  </a>
@@ -173,7 +181,7 @@
               <li>
                  <a href="#tabstrip-final" class="parent km-listview-link" data-role="listview-link">
                      <div class="list-item">
-                         <span class="list-image" style="background-image: url('styles/images/Icons/final.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Icons/final.svg')"></span>
                 		 <h2>Finale</h2>
                      </div>
                  </a>
@@ -198,7 +206,7 @@
              <li>
                  <a href="#score-group-a" class="parent km-listview-link" data-role="listview-link">
                      <div class="list-item">
-                         <span class="list-image" style="background-image: url('styles/images/Icons/group_a.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Icons/group_a.svg')"></span>
                 		 <h2>Gruppe A</h2>
                      </div>
                  </a>
@@ -206,7 +214,7 @@
              <li>
                  <a href="#score-group-b" class="parent km-listview-link" data-role="listview-link">
                      <div class="list-item">
-                         <span class="list-image" style="background-image: url('styles/images/Icons/group_b.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Icons/group_b.svg')"></span>
                 		 <h2>Gruppe B</h2>
                      </div>
                  </a>
@@ -214,7 +222,7 @@
              <li>
                  <a href="#score-group-c" class="parent km-listview-link" data-role="listview-link">
                      <div class="list-item">
-                         <span class="list-image" style="background-image: url('styles/images/Icons/group_c.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Icons/group_c.svg')"></span>
                 		 <h2>Gruppe C</h2>
                      </div>
                  </a>
@@ -222,7 +230,7 @@
              <li>
                  <a href="#score-group-d" class="parent km-listview-link" data-role="listview-link">
                      <div class="list-item">
-                         <span class="list-image" style="background-image: url('styles/images/Icons/group_d.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Icons/group_d.svg')"></span>
                 		 <h2>Gruppe D</h2>
                      </div>
                  </a>
@@ -230,7 +238,7 @@
               <li>
                  <a href="#score-group-e" class="parent km-listview-link" data-role="listview-link">
                      <div class="list-item">
-                         <span class="list-image" style="background-image: url('styles/images/Icons/group_e.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Icons/group_e.svg')"></span>
                 		 <h2>Gruppe E</h2>
                      </div>
                  </a>
@@ -238,7 +246,7 @@
               <li>
                  <a href="#score-group-f" class="parent km-listview-link" data-role="listview-link">
                      <div class="list-item">
-                         <span class="list-image" style="background-image: url('styles/images/Icons/group_f.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Icons/group_f.svg')"></span>
                 		 <h2>Gruppe F</h2>
                      </div>
                  </a>
@@ -246,7 +254,7 @@
              <li>
                  <a href="#score-group-g" class="parent km-listview-link" data-role="listview-link">
                      <div class="list-item">
-                         <span class="list-image" style="background-image: url('styles/images/Icons/group_g.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Icons/group_g.svg')"></span>
                 		 <h2>Gruppe G</h2>
                      </div>
                  </a>
@@ -254,7 +262,7 @@
              <li>
                  <a href="#score-group-h" class="parent km-listview-link" data-role="listview-link">
                      <div class="list-item">
-                         <span class="list-image" style="background-image: url('styles/images/Icons/group_h.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Icons/group_h.svg')"></span>
                 		 <h2>Gruppe H</h2>
                      </div>
                  </a>
@@ -280,7 +288,7 @@
              <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.svg')"></span>
             		 	<h2>?</h2>
                      </div>
                      
@@ -291,7 +299,7 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.svg')"></span>
             		 	<h2>?</h2>
                      </div>
                  </div>
@@ -299,7 +307,7 @@
              <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.svg')"></span>
             		 	<h2>?</h2>
                      </div>
                      
@@ -310,7 +318,7 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.svg')"></span>
             		 	<h2>?</h2>
                      </div>
                  </div>
@@ -318,7 +326,7 @@
              <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.svg')"></span>
             		 	<h2>?</h2>
                      </div>
                      
@@ -329,7 +337,7 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.svg')"></span>
             		 	<h2>?</h2>
                      </div>
                  </div>
@@ -337,7 +345,7 @@
              <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.svg')"></span>
             		 	<h2>?</h2>
                      </div>
                      
@@ -348,7 +356,7 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.svg')"></span>
             		 	<h2>?</h2>
                      </div>
                  </div>
@@ -356,7 +364,7 @@
              <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.svg')"></span>
             		 	<h2>?</h2>
                      </div>
                      
@@ -367,7 +375,7 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.svg')"></span>
             		 	<h2>?</h2>
                      </div>
                  </div>
@@ -375,7 +383,7 @@
              <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.svg')"></span>
             		 	<h2>?</h2>
                      </div>
                      
@@ -386,7 +394,7 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.svg')"></span>
             		 	<h2>?</h2>
                      </div>
                  </div>
@@ -394,7 +402,7 @@
              <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.svg')"></span>
             		 	<h2>?</h2>
                      </div>
                      
@@ -405,7 +413,7 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.svg')"></span>
             		 	<h2>?</h2>
                      </div>
                  </div>
@@ -413,7 +421,7 @@
              <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.svg')"></span>
             		 	<h2>?</h2>
                      </div>
                      
@@ -424,7 +432,7 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.svg')"></span>
             		 	<h2>?</h2>
                      </div>
                  </div>
@@ -450,7 +458,7 @@
              <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.svg')"></span>
             		 	<h2>?</h2>
                      </div>
                      
@@ -461,7 +469,7 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.svg')"></span>
             		 	<h2>?</h2>
                      </div>
                  </div>
@@ -469,7 +477,7 @@
              <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.svg')"></span>
             		 	<h2>?</h2>
                      </div>
                      
@@ -480,7 +488,7 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.svg')"></span>
             		 	<h2>?</h2>
                      </div>
                  </div>
@@ -488,7 +496,7 @@
              <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.svg')"></span>
             		 	<h2>?</h2>
                      </div>
                      
@@ -499,7 +507,7 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.svg')"></span>
             		 	<h2>?</h2>
                      </div>
                  </div>
@@ -507,7 +515,7 @@
              <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.svg')"></span>
             		 	<h2>?</h2>
                      </div>
                      
@@ -518,7 +526,7 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.svg')"></span>
             		 	<h2>?</h2>
                      </div>
                  </div>
@@ -544,7 +552,7 @@
              <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.svg')"></span>
             		 	<h2>?</h2>
                      </div>
                      
@@ -555,7 +563,7 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.svg')"></span>
             		 	<h2>?</h2>
                      </div>
                  </div>
@@ -563,7 +571,7 @@
              <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.svg')"></span>
             		 	<h2>?</h2>
                      </div>
                      
@@ -574,7 +582,7 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.svg')"></span>
             		 	<h2>?</h2>
                      </div>
                  </div>
@@ -600,7 +608,7 @@
              <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.svg')"></span>
             		 	<h2>?</h2>
                      </div>
                      
@@ -611,7 +619,7 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/flag.svg')"></span>
             		 	<h2>?</h2>
                      </div>
                  </div>
@@ -642,7 +650,7 @@
              <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.svg')"></span>
             		 	<h2>BRA</h2>
                      </div>
                      
@@ -653,7 +661,7 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.svg')"></span>
             		 	<h2>CRO</h2>
                      </div>
                  </div>
@@ -661,7 +669,7 @@
              <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.svg')"></span>
             		 	<h2>MEX</h2>
                      </div>
                      
@@ -672,15 +680,15 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
-            		 	<h2>KAM</h2>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/chr.svg')"></span>
+            		 	<h2>chr</h2>
                      </div>
                  </div>
              </li>
              <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.svg')"></span>
             		 	<h2>BRA</h2>
                      </div>
                      
@@ -691,7 +699,7 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.svg')"></span>
             		 	<h2>MEX</h2>
                      </div>
                  </div>
@@ -699,8 +707,8 @@
              <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
-            		 	<h2>KAM</h2>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/chr.svg')"></span>
+            		 	<h2>chr</h2>
                      </div>
                      
                      <div class="game-info">
@@ -710,7 +718,7 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.svg')"></span>
             		 	<h2>CRO</h2>
                      </div>
                  </div>
@@ -718,7 +726,7 @@
               <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.svg')"></span>
             		 	<h2>CRO</h2>
                      </div>
                      
@@ -729,7 +737,7 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.svg')"></span>
             		 	<h2>MEX</h2>
                      </div>
                  </div>
@@ -737,8 +745,8 @@
               <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
-            		 	<h2>KAM</h2>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/chr.svg')"></span>
+            		 	<h2>chr</h2>
                      </div>
                      
                      <div class="game-info">
@@ -748,7 +756,7 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.svg')"></span>
             		 	<h2>BRA</h2>
                      </div>
                  </div>
@@ -777,7 +785,7 @@
 	 	<ul data-role="listview">
              <li>
                  <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+                     <span class="list-image" style="background-image: url('styles/images/Teams/bra.svg')"></span>
             		 <h2>BRA</h2>
                      <table class="table">
                          <thead>
@@ -799,7 +807,7 @@
              </li>
              <li>
                  <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+                     <span class="list-image" style="background-image: url('styles/images/Teams/cro.svg')"></span>
             		 <h2>CRO</h2>
                      <table class="table">
                          <thead>
@@ -821,7 +829,7 @@
              </li>
              <li>
                  <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+                     <span class="list-image" style="background-image: url('styles/images/Teams/mex.svg')"></span>
             		 <h2>MEX</h2>
                      <table class="table">
                          <thead>
@@ -843,8 +851,8 @@
              </li>
              <li>
                  <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
-            		 <h2>KAM</h2>
+                     <span class="list-image" style="background-image: url('styles/images/Teams/chr.svg')"></span>
+            		 <h2>chr</h2>
                      <table class="table">
                          <thead>
                              <tr>
@@ -889,7 +897,7 @@
              <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.svg')"></span>
             		 	<h2>BRA</h2>
                      </div>
                      
@@ -900,7 +908,7 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.svg')"></span>
             		 	<h2>CRO</h2>
                      </div>
                  </div>
@@ -908,7 +916,7 @@
              <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.svg')"></span>
             		 	<h2>MEX</h2>
                      </div>
                      
@@ -919,15 +927,15 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
-            		 	<h2>KAM</h2>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/chr.svg')"></span>
+            		 	<h2>chr</h2>
                      </div>
                  </div>
              </li>
              <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.svg')"></span>
             		 	<h2>BRA</h2>
                      </div>
                      
@@ -938,7 +946,7 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.svg')"></span>
             		 	<h2>MEX</h2>
                      </div>
                  </div>
@@ -946,8 +954,8 @@
              <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
-            		 	<h2>KAM</h2>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/chr.svg')"></span>
+            		 	<h2>chr</h2>
                      </div>
                      
                      <div class="game-info">
@@ -957,7 +965,7 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.svg')"></span>
             		 	<h2>CRO</h2>
                      </div>
                  </div>
@@ -965,7 +973,7 @@
               <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.svg')"></span>
             		 	<h2>CRO</h2>
                      </div>
                      
@@ -976,7 +984,7 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.svg')"></span>
             		 	<h2>MEX</h2>
                      </div>
                  </div>
@@ -984,8 +992,8 @@
               <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
-            		 	<h2>KAM</h2>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/chr.svg')"></span>
+            		 	<h2>chr</h2>
                      </div>
                      
                      <div class="game-info">
@@ -995,7 +1003,7 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.svg')"></span>
             		 	<h2>BRA</h2>
                      </div>
                  </div>
@@ -1024,7 +1032,7 @@
 	 	<ul data-role="listview">
              <li>
                  <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+                     <span class="list-image" style="background-image: url('styles/images/Teams/bra.svg')"></span>
             		 <h2>BRA</h2>
                      <table class="table">
                          <thead>
@@ -1046,7 +1054,7 @@
              </li>
              <li>
                  <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+                     <span class="list-image" style="background-image: url('styles/images/Teams/cro.svg')"></span>
             		 <h2>CRO</h2>
                      <table class="table">
                          <thead>
@@ -1068,7 +1076,7 @@
              </li>
              <li>
                  <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+                     <span class="list-image" style="background-image: url('styles/images/Teams/mex.svg')"></span>
             		 <h2>MEX</h2>
                      <table class="table">
                          <thead>
@@ -1090,8 +1098,8 @@
              </li>
              <li>
                  <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
-            		 <h2>KAM</h2>
+                     <span class="list-image" style="background-image: url('styles/images/Teams/chr.svg')"></span>
+            		 <h2>chr</h2>
                      <table class="table">
                          <thead>
                              <tr>
@@ -1136,7 +1144,7 @@
              <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.svg')"></span>
             		 	<h2>BRA</h2>
                      </div>
                      
@@ -1147,7 +1155,7 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.svg')"></span>
             		 	<h2>CRO</h2>
                      </div>
                  </div>
@@ -1155,7 +1163,7 @@
              <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.svg')"></span>
             		 	<h2>MEX</h2>
                      </div>
                      
@@ -1166,15 +1174,15 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
-            		 	<h2>KAM</h2>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/chr.svg')"></span>
+            		 	<h2>chr</h2>
                      </div>
                  </div>
              </li>
              <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.svg')"></span>
             		 	<h2>BRA</h2>
                      </div>
                      
@@ -1185,7 +1193,7 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.svg')"></span>
             		 	<h2>MEX</h2>
                      </div>
                  </div>
@@ -1193,8 +1201,8 @@
              <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
-            		 	<h2>KAM</h2>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/chr.svg')"></span>
+            		 	<h2>chr</h2>
                      </div>
                      
                      <div class="game-info">
@@ -1204,7 +1212,7 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.svg')"></span>
             		 	<h2>CRO</h2>
                      </div>
                  </div>
@@ -1212,7 +1220,7 @@
               <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.svg')"></span>
             		 	<h2>CRO</h2>
                      </div>
                      
@@ -1223,7 +1231,7 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.svg')"></span>
             		 	<h2>MEX</h2>
                      </div>
                  </div>
@@ -1231,8 +1239,8 @@
               <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
-            		 	<h2>KAM</h2>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/chr.svg')"></span>
+            		 	<h2>chr</h2>
                      </div>
                      
                      <div class="game-info">
@@ -1242,7 +1250,7 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.svg')"></span>
             		 	<h2>BRA</h2>
                      </div>
                  </div>
@@ -1271,7 +1279,7 @@
 	 	<ul data-role="listview">
              <li>
                  <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+                     <span class="list-image" style="background-image: url('styles/images/Teams/bra.svg')"></span>
             		 <h2>BRA</h2>
                      <table class="table">
                          <thead>
@@ -1293,7 +1301,7 @@
              </li>
              <li>
                  <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+                     <span class="list-image" style="background-image: url('styles/images/Teams/cro.svg')"></span>
             		 <h2>CRO</h2>
                      <table class="table">
                          <thead>
@@ -1315,7 +1323,7 @@
              </li>
              <li>
                  <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+                     <span class="list-image" style="background-image: url('styles/images/Teams/mex.svg')"></span>
             		 <h2>MEX</h2>
                      <table class="table">
                          <thead>
@@ -1337,8 +1345,8 @@
              </li>
              <li>
                  <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
-            		 <h2>KAM</h2>
+                     <span class="list-image" style="background-image: url('styles/images/Teams/chr.svg')"></span>
+            		 <h2>chr</h2>
                      <table class="table">
                          <thead>
                              <tr>
@@ -1383,7 +1391,7 @@
              <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.svg')"></span>
             		 	<h2>BRA</h2>
                      </div>
                      
@@ -1394,7 +1402,7 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.svg')"></span>
             		 	<h2>CRO</h2>
                      </div>
                  </div>
@@ -1402,7 +1410,7 @@
              <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.svg')"></span>
             		 	<h2>MEX</h2>
                      </div>
                      
@@ -1413,15 +1421,15 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
-            		 	<h2>KAM</h2>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/chr.svg')"></span>
+            		 	<h2>chr</h2>
                      </div>
                  </div>
              </li>
              <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.svg')"></span>
             		 	<h2>BRA</h2>
                      </div>
                      
@@ -1432,7 +1440,7 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.svg')"></span>
             		 	<h2>MEX</h2>
                      </div>
                  </div>
@@ -1440,8 +1448,8 @@
              <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
-            		 	<h2>KAM</h2>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/chr.svg')"></span>
+            		 	<h2>chr</h2>
                      </div>
                      
                      <div class="game-info">
@@ -1451,7 +1459,7 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.svg')"></span>
             		 	<h2>CRO</h2>
                      </div>
                  </div>
@@ -1459,7 +1467,7 @@
               <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.svg')"></span>
             		 	<h2>CRO</h2>
                      </div>
                      
@@ -1470,7 +1478,7 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.svg')"></span>
             		 	<h2>MEX</h2>
                      </div>
                  </div>
@@ -1478,8 +1486,8 @@
               <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
-            		 	<h2>KAM</h2>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/chr.svg')"></span>
+            		 	<h2>chr</h2>
                      </div>
                      
                      <div class="game-info">
@@ -1489,7 +1497,7 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.svg')"></span>
             		 	<h2>BRA</h2>
                      </div>
                  </div>
@@ -1518,7 +1526,7 @@
 	 	<ul data-role="listview">
              <li>
                  <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+                     <span class="list-image" style="background-image: url('styles/images/Teams/bra.svg')"></span>
             		 <h2>BRA</h2>
                      <table class="table">
                          <thead>
@@ -1540,7 +1548,7 @@
              </li>
              <li>
                  <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+                     <span class="list-image" style="background-image: url('styles/images/Teams/cro.svg')"></span>
             		 <h2>CRO</h2>
                      <table class="table">
                          <thead>
@@ -1562,7 +1570,7 @@
              </li>
              <li>
                  <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+                     <span class="list-image" style="background-image: url('styles/images/Teams/mex.svg')"></span>
             		 <h2>MEX</h2>
                      <table class="table">
                          <thead>
@@ -1584,8 +1592,8 @@
              </li>
              <li>
                  <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
-            		 <h2>KAM</h2>
+                     <span class="list-image" style="background-image: url('styles/images/Teams/chr.svg')"></span>
+            		 <h2>chr</h2>
                      <table class="table">
                          <thead>
                              <tr>
@@ -1630,7 +1638,7 @@
              <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.svg')"></span>
             		 	<h2>BRA</h2>
                      </div>
                      
@@ -1641,7 +1649,7 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.svg')"></span>
             		 	<h2>CRO</h2>
                      </div>
                  </div>
@@ -1649,7 +1657,7 @@
              <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.svg')"></span>
             		 	<h2>MEX</h2>
                      </div>
                      
@@ -1660,15 +1668,15 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
-            		 	<h2>KAM</h2>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/chr.svg')"></span>
+            		 	<h2>chr</h2>
                      </div>
                  </div>
              </li>
              <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.svg')"></span>
             		 	<h2>BRA</h2>
                      </div>
                      
@@ -1679,7 +1687,7 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.svg')"></span>
             		 	<h2>MEX</h2>
                      </div>
                  </div>
@@ -1687,8 +1695,8 @@
              <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
-            		 	<h2>KAM</h2>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/chr.svg')"></span>
+            		 	<h2>chr</h2>
                      </div>
                      
                      <div class="game-info">
@@ -1698,7 +1706,7 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.svg')"></span>
             		 	<h2>CRO</h2>
                      </div>
                  </div>
@@ -1706,7 +1714,7 @@
               <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.svg')"></span>
             		 	<h2>CRO</h2>
                      </div>
                      
@@ -1717,7 +1725,7 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.svg')"></span>
             		 	<h2>MEX</h2>
                      </div>
                  </div>
@@ -1725,8 +1733,8 @@
               <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
-            		 	<h2>KAM</h2>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/chr.svg')"></span>
+            		 	<h2>chr</h2>
                      </div>
                      
                      <div class="game-info">
@@ -1736,7 +1744,7 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.svg')"></span>
             		 	<h2>BRA</h2>
                      </div>
                  </div>
@@ -1765,7 +1773,7 @@
 	 	<ul data-role="listview">
              <li>
                  <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+                     <span class="list-image" style="background-image: url('styles/images/Teams/bra.svg')"></span>
             		 <h2>BRA</h2>
                      <table class="table">
                          <thead>
@@ -1787,7 +1795,7 @@
              </li>
              <li>
                  <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+                     <span class="list-image" style="background-image: url('styles/images/Teams/cro.svg')"></span>
             		 <h2>CRO</h2>
                      <table class="table">
                          <thead>
@@ -1809,7 +1817,7 @@
              </li>
              <li>
                  <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+                     <span class="list-image" style="background-image: url('styles/images/Teams/mex.svg')"></span>
             		 <h2>MEX</h2>
                      <table class="table">
                          <thead>
@@ -1831,8 +1839,8 @@
              </li>
              <li>
                  <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
-            		 <h2>KAM</h2>
+                     <span class="list-image" style="background-image: url('styles/images/Teams/chr.svg')"></span>
+            		 <h2>chr</h2>
                      <table class="table">
                          <thead>
                              <tr>
@@ -1877,7 +1885,7 @@
              <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.svg')"></span>
             		 	<h2>BRA</h2>
                      </div>
                      
@@ -1888,7 +1896,7 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.svg')"></span>
             		 	<h2>CRO</h2>
                      </div>
                  </div>
@@ -1896,7 +1904,7 @@
              <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.svg')"></span>
             		 	<h2>MEX</h2>
                      </div>
                      
@@ -1907,15 +1915,15 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
-            		 	<h2>KAM</h2>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/chr.svg')"></span>
+            		 	<h2>chr</h2>
                      </div>
                  </div>
              </li>
              <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.svg')"></span>
             		 	<h2>BRA</h2>
                      </div>
                      
@@ -1926,7 +1934,7 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.svg')"></span>
             		 	<h2>MEX</h2>
                      </div>
                  </div>
@@ -1934,8 +1942,8 @@
              <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
-            		 	<h2>KAM</h2>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/chr.svg')"></span>
+            		 	<h2>chr</h2>
                      </div>
                      
                      <div class="game-info">
@@ -1945,7 +1953,7 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.svg')"></span>
             		 	<h2>CRO</h2>
                      </div>
                  </div>
@@ -1953,7 +1961,7 @@
               <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.svg')"></span>
             		 	<h2>CRO</h2>
                      </div>
                      
@@ -1964,7 +1972,7 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.svg')"></span>
             		 	<h2>MEX</h2>
                      </div>
                  </div>
@@ -1972,8 +1980,8 @@
               <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
-            		 	<h2>KAM</h2>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/chr.svg')"></span>
+            		 	<h2>chr</h2>
                      </div>
                      
                      <div class="game-info">
@@ -1983,7 +1991,7 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.svg')"></span>
             		 	<h2>BRA</h2>
                      </div>
                  </div>
@@ -2012,7 +2020,7 @@
 	 	<ul data-role="listview">
              <li>
                  <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+                     <span class="list-image" style="background-image: url('styles/images/Teams/bra.svg')"></span>
             		 <h2>BRA</h2>
                      <table class="table">
                          <thead>
@@ -2034,7 +2042,7 @@
              </li>
              <li>
                  <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+                     <span class="list-image" style="background-image: url('styles/images/Teams/cro.svg')"></span>
             		 <h2>CRO</h2>
                      <table class="table">
                          <thead>
@@ -2056,7 +2064,7 @@
              </li>
              <li>
                  <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+                     <span class="list-image" style="background-image: url('styles/images/Teams/mex.svg')"></span>
             		 <h2>MEX</h2>
                      <table class="table">
                          <thead>
@@ -2078,8 +2086,8 @@
              </li>
              <li>
                  <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
-            		 <h2>KAM</h2>
+                     <span class="list-image" style="background-image: url('styles/images/Teams/chr.svg')"></span>
+            		 <h2>chr</h2>
                      <table class="table">
                          <thead>
                              <tr>
@@ -2124,7 +2132,7 @@
              <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.svg')"></span>
             		 	<h2>BRA</h2>
                      </div>
                      
@@ -2135,7 +2143,7 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.svg')"></span>
             		 	<h2>CRO</h2>
                      </div>
                  </div>
@@ -2143,7 +2151,7 @@
              <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.svg')"></span>
             		 	<h2>MEX</h2>
                      </div>
                      
@@ -2154,15 +2162,15 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
-            		 	<h2>KAM</h2>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/chr.svg')"></span>
+            		 	<h2>chr</h2>
                      </div>
                  </div>
              </li>
              <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.svg')"></span>
             		 	<h2>BRA</h2>
                      </div>
                      
@@ -2173,7 +2181,7 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.svg')"></span>
             		 	<h2>MEX</h2>
                      </div>
                  </div>
@@ -2181,8 +2189,8 @@
              <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
-            		 	<h2>KAM</h2>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/chr.svg')"></span>
+            		 	<h2>chr</h2>
                      </div>
                      
                      <div class="game-info">
@@ -2192,7 +2200,7 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.svg')"></span>
             		 	<h2>CRO</h2>
                      </div>
                  </div>
@@ -2200,7 +2208,7 @@
               <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.svg')"></span>
             		 	<h2>CRO</h2>
                      </div>
                      
@@ -2211,7 +2219,7 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.svg')"></span>
             		 	<h2>MEX</h2>
                      </div>
                  </div>
@@ -2219,8 +2227,8 @@
               <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
-            		 	<h2>KAM</h2>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/chr.svg')"></span>
+            		 	<h2>chr</h2>
                      </div>
                      
                      <div class="game-info">
@@ -2230,7 +2238,7 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.svg')"></span>
             		 	<h2>BRA</h2>
                      </div>
                  </div>
@@ -2259,7 +2267,7 @@
 	 	<ul data-role="listview">
              <li>
                  <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+                     <span class="list-image" style="background-image: url('styles/images/Teams/bra.svg')"></span>
             		 <h2>BRA</h2>
                      <table class="table">
                          <thead>
@@ -2281,7 +2289,7 @@
              </li>
              <li>
                  <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+                     <span class="list-image" style="background-image: url('styles/images/Teams/cro.svg')"></span>
             		 <h2>CRO</h2>
                      <table class="table">
                          <thead>
@@ -2303,7 +2311,7 @@
              </li>
              <li>
                  <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+                     <span class="list-image" style="background-image: url('styles/images/Teams/mex.svg')"></span>
             		 <h2>MEX</h2>
                      <table class="table">
                          <thead>
@@ -2325,8 +2333,8 @@
              </li>
              <li>
                  <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
-            		 <h2>KAM</h2>
+                     <span class="list-image" style="background-image: url('styles/images/Teams/chr.svg')"></span>
+            		 <h2>chr</h2>
                      <table class="table">
                          <thead>
                              <tr>
@@ -2371,7 +2379,7 @@
              <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.svg')"></span>
             		 	<h2>BRA</h2>
                      </div>
                      
@@ -2382,7 +2390,7 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.svg')"></span>
             		 	<h2>CRO</h2>
                      </div>
                  </div>
@@ -2390,7 +2398,7 @@
              <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.svg')"></span>
             		 	<h2>MEX</h2>
                      </div>
                      
@@ -2401,15 +2409,15 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
-            		 	<h2>KAM</h2>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/chr.svg')"></span>
+            		 	<h2>chr</h2>
                      </div>
                  </div>
              </li>
              <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.svg')"></span>
             		 	<h2>BRA</h2>
                      </div>
                      
@@ -2420,7 +2428,7 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.svg')"></span>
             		 	<h2>MEX</h2>
                      </div>
                  </div>
@@ -2428,8 +2436,8 @@
              <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
-            		 	<h2>KAM</h2>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/chr.svg')"></span>
+            		 	<h2>chr</h2>
                      </div>
                      
                      <div class="game-info">
@@ -2439,7 +2447,7 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.svg')"></span>
             		 	<h2>CRO</h2>
                      </div>
                  </div>
@@ -2447,7 +2455,7 @@
               <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.svg')"></span>
             		 	<h2>CRO</h2>
                      </div>
                      
@@ -2458,7 +2466,7 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.svg')"></span>
             		 	<h2>MEX</h2>
                      </div>
                  </div>
@@ -2466,8 +2474,8 @@
               <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
-            		 	<h2>KAM</h2>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/chr.svg')"></span>
+            		 	<h2>chr</h2>
                      </div>
                      
                      <div class="game-info">
@@ -2477,7 +2485,7 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.svg')"></span>
             		 	<h2>BRA</h2>
                      </div>
                  </div>
@@ -2506,7 +2514,7 @@
 	 	<ul data-role="listview">
              <li>
                  <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+                     <span class="list-image" style="background-image: url('styles/images/Teams/bra.svg')"></span>
             		 <h2>BRA</h2>
                      <table class="table">
                          <thead>
@@ -2528,7 +2536,7 @@
              </li>
              <li>
                  <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+                     <span class="list-image" style="background-image: url('styles/images/Teams/cro.svg')"></span>
             		 <h2>CRO</h2>
                      <table class="table">
                          <thead>
@@ -2550,7 +2558,7 @@
              </li>
              <li>
                  <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+                     <span class="list-image" style="background-image: url('styles/images/Teams/mex.svg')"></span>
             		 <h2>MEX</h2>
                      <table class="table">
                          <thead>
@@ -2572,8 +2580,8 @@
              </li>
              <li>
                  <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
-            		 <h2>KAM</h2>
+                     <span class="list-image" style="background-image: url('styles/images/Teams/chr.svg')"></span>
+            		 <h2>chr</h2>
                      <table class="table">
                          <thead>
                              <tr>
@@ -2644,15 +2652,15 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/kam.svg')"></span>
-            		 	<h2>KAM</h2>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/chr.svg')"></span>
+            		 	<h2>chr</h2>
                      </div>
                  </div>
              </li>
              <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.svg')"></span>
             		 	<h2>BRA</h2>
                      </div>
                      
@@ -2662,7 +2670,7 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.svg')"></span>
             		 	<h2>MEX</h2>
                      </div>
                  </div>
@@ -2670,8 +2678,8 @@
              <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
-            		 	<h2>KAM</h2>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/chr.svg')"></span>
+            		 	<h2>chr</h2>
                      </div>
                      
                      <div class="game-info">
@@ -2681,7 +2689,7 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.svg')"></span>
             		 	<h2>CRO</h2>
                      </div>
                  </div>
@@ -2689,7 +2697,7 @@
               <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/cro.svg')"></span>
             		 	<h2>CRO</h2>
                      </div>
                      
@@ -2700,7 +2708,7 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/mex.svg')"></span>
             		 	<h2>MEX</h2>
                      </div>
                  </div>
@@ -2708,8 +2716,8 @@
               <li>
                  <div class="list-item">
                      <div class="left-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/kam.png')"></span>
-            		 	<h2>KAM</h2>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/chr.svg')"></span>
+            		 	<h2>chr</h2>
                      </div>
                      
                      <div class="game-info">
@@ -2719,7 +2727,7 @@
                      </div>
                      
                      <div class="right-side">
-                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.png')"></span>
+                         <span class="list-image" style="background-image: url('styles/images/Teams/bra.svg')"></span>
             		 	<h2>BRA</h2>
                      </div>
                  </div>
@@ -2746,54 +2754,60 @@
         	<a data-role="button" href="#tabstrip-price">Preise</a>
         </div>
         
-	 	<ul data-role="listview">
-             <li class="major">
-                 <a href="tabstrip-schedule?parent=2" class="parent km-listview-link" data-role="listview-link">
-                     <div class="list-item">
-                         <span class="list-image" style="background-image: url('styles/images/Icons/schedule.png')"></span>
-                		 <h2>Spiele heute</h2>
-                     </div>
-                 </a>
+	 	<ul data-role="listview" id="ranking-top-list">
+            <li>
+                <div class="list-item">
+                    <span class="list-image" style="background-image: url('styles/images/Icons/user.svg')"></span>
+                    <div class="list-detail">
+                    	<p>Username</p>
+                    	<strong>Score 88%</strong>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="list-item">
+                    <span class="list-image" style="background-image: url('styles/images/Icons/user.svg')"></span>
+                    <div class="list-detail">
+                    	<p>Username</p>
+                    	<strong>Score 88%</strong>
+                    </div>
+                </div>
+            </li>
+             <li>
+                <div class="list-item">
+                    <span class="list-image" style="background-image: url('styles/images/Icons/user.svg')"></span>
+                    <div class="list-detail">
+                    	<p>Username</p>
+                    	<strong>Score 88%</strong>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        
+	 	<ul data-role="listview" id="ranking-list">
+             <li>
+                 <div class="list-item">
+                     <span class="list-image" style="background-image: url('styles/images/Icons/user.svg')"></span>
+            		 <h2>Spielplan & Ergebnisse</h2>
+                 </div>
              </li>
              <li>
-                 <a href="#tabstrip-schedule?parent=2" class="parent km-listview-link" data-role="listview-link">
-                     <div class="list-item">
-                         <span class="list-image" style="background-image: url('styles/images/Icons/1-32_round.png')"></span>
-                		 <h2>Vorrunde</h2>
-                     </div>
-                 </a>
+                 <div class="list-item">
+                     <span class="list-image" style="background-image: url('styles/images/Icons/user.svg')"></span>
+            		 <h2>Spielplan & Ergebnisse</h2>
+                 </div>
              </li>
              <li>
-                 <a href="#tabstrip-schedule?parent=2" class="parent km-listview-link" data-role="listview-link">
-                     <div class="list-item">
-                         <span class="list-image" style="background-image: url('styles/images/Icons/1-8_round.png')"></span>
-                		 <h2>Achtelfinale</h2>
-                     </div>
-                 </a>
+                 <div class="list-item">
+                     <span class="list-image" style="background-image: url('styles/images/Icons/user.svg')"></span>
+            		 <h2>Spielplan & Ergebnisse</h2>
+                 </div>
              </li>
              <li>
-                 <a href="#tabstrip-schedule?parent=2" class="parent km-listview-link" data-role="listview-link">
-                     <div class="list-item">
-                         <span class="list-image" style="background-image: url('styles/images/Icons/1-4_round.png')"></span>
-                		 <h2>Viertelfinale</h2>
-                     </div>
-                 </a>
-             </li>
-              <li>
-                 <a href="#tabstrip-schedule?parent=2" class="parent km-listview-link" data-role="listview-link">
-                     <div class="list-item">
-                         <span class="list-image" style="background-image: url('styles/images/Icons/1-2_round.png')"></span>
-                		 <h2>Halbfinale</h2>
-                     </div>
-                 </a>
-             </li>
-              <li>
-                 <a href="#tabstrip-schedule?parent=2" class="parent km-listview-link" data-role="listview-link">
-                     <div class="list-item">
-                         <span class="list-image" style="background-image: url('styles/images/Icons/final.png')"></span>
-                		 <h2>Finale</h2>
-                     </div>
-                 </a>
+                 <div class="list-item">
+                     <span class="list-image" style="background-image: url('styles/images/Icons/user.svg')"></span>
+            		 <h2>Spielplan & Ergebnisse</h2>
+                 </div>
              </li>
 		 </ul>
     </div>
@@ -2833,6 +2847,10 @@
                 <a data-role="backbutton" id="backbutton" data-align="left"></a>
             	<span data-role="view-title"></span>
             </div>
+        </div>
+        
+        <div id="gauge-container">
+            <div id="gauge"></div>
         </div>
     </div>
     

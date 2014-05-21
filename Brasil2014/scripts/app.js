@@ -7,7 +7,9 @@
 
         app.application = new kendo.mobile.Application(document.body, { skin: "flat" });
         
+        //app = new kendo.mobile.Application(document.body, { skin: "flat" });
+
+        
         //analytics.Start();
-    }, false);
-    
+    }, false);    
 })(window);
