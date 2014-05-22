@@ -1808,7 +1808,7 @@
 	</g>
 </g>
 <g id="ICONS">
-	<rect display="none" opacity="5.000000e-02" width="150" height="150"/>
+	<rect opacity="5.000000e-02" width="150" height="150"/>
 	<g id="schedule" display="none">
 		<circle display="inline" fill="none" stroke="#FFFFFF" stroke-miterlimit="10" cx="75" cy="75" r="54.5"/>
 		

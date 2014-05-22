@@ -1,9 +1,8 @@
 (function (global) {
-    var LoginViewModel = {};
+    var LoginViewModel,
         app = global.app = global.app || {};
 
     LoginViewModel = kendo.data.ObservableObject.extend({
-        isLoggedIn: false,
         username: "",
         password: "",
 
@@ -19,15 +18,79 @@
                 return;
             }
 
-            that.set("isLoggedIn", true);
-            app.application.navigate("#tabstrip-home", "slide"); 
+            // User wants to login, check provided credentials
+			// Save an authstring on local storage if authentication was successful
+        	app.WS.invokeRequest(
+        		"AuthenticateUser", 
+        		{ user: username, password: password }, 
+        		"Anmelden...", 
+        		function (res) { 
+        			var result = JSON.parse(res);     
+        			if(typeof(result.AuthenticateUserResult) === "object" && result.AuthenticateUserResult.__type == "userCredentials") {
+        				global.localStorage.setItem("authString", result.AuthenticateUserResult.authString);
+        				global.localStorage.setItem("user", username);
+                        
+                        app._loadCurrentUser();
+        				
+        				//app.application.navigate("#tabstrip-home", "slide"); 
+                        
+                        app.WS.invokeRequest(
+                    		"LoadTenants", 
+                    		undefined, 
+                    		"Anmelden...", 
+                    		function (res) { 
+                    			var result = JSON.parse(res);   
+                                
+                    			if(typeof(result.LoadTenantsResult) === "object" && result.LoadTenantsResult.__type == "tenantCollection") {
+                    				
+                                	app.onCurrentUserLoaded(function() {
+                                    	    
+                                   	for(var i = 0; i < result.LoadTenantsResult.tenant.length; i++) {
+                                           var tenant = result.LoadTenantsResult.tenant[i];
+                                           
+                                           if(tenant.id == app.currentUser.tenantId) {
+                                               global.localStorage.setItem("tenantColour", tenant.colour);
+                                               
+                                               app.application.navigate("#tabstrip-home", "slide"); 
+                                               
+                                               break;
+                                           }
+                                       }
+                                        
+                                    });
+                                    
+                    				
+                    			} else {
+                    				showAlert("Login fehlgeschlagen!", "Sie konnten mit der angegebenen Kombination aus Benutzername und Passwort nicht angemeldet werden. Bitte überprüfen Sie Ihre Daten.");
+                    			}
+                    		},
+                    		function (xhr) {
+                    			showAlert("Login fehlgeschlagen!", "Sie konnten mit der angegebenen Kombination aus Benutzername und Passwort nicht angemeldet werden. Bitte überprüfen Sie Ihre Daten.");
+                    		}
+                    	);
+                        
+        			} else {
+        				global.localStorage.removeItem("authString");
+        				showAlert("Login fehlgeschlagen!", "Sie konnten mit der angegebenen Kombination aus Benutzername und Passwort nicht angemeldet werden. Bitte überprüfen Sie Ihre Daten.");
+        			}
+        		},
+        		function (xhr) {
+        			global.localStorage.removeItem("authString");
+        			showAlert("Login fehlgeschlagen!", "Sie konnten mit der angegebenen Kombination aus Benutzername und Passwort nicht angemeldet werden. Bitte überprüfen Sie Ihre Daten.");
+        			if (xhr.responseText) {
+        		  	var err = JSON.parse(xhr.responseText);
+        		   }
+        		}
+        	);
         },
 
         onLogout: function () {
             var that = this;
 
             that.clearForm();
-            that.set("isLoggedIn", false);
+            
+            global.localStorage.removeItem("authString");
+			global.localStorage.removeItem("user");
         },
 
         clearForm: function () {
