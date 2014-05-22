@@ -9,11 +9,9 @@
     app.matchList = {
         viewModel: new MatchListViewModel(),
         init: function(e) {
-			
             
         },
         beforeShow: function(e) {
-            
 			
     	},
         hide: function(e) {
@@ -141,13 +139,19 @@
         			var result = JSON.parse(res);     
         			if(typeof(result.PlaceBetResult) === "object" && result.PlaceBetResult.__type == "bool") {
                         if(result.PlaceBetResult.value) {
-        					 
-                            var $saved = $("<div class='saved-label'></div>");
-                            $saved.text("Gespeichert!");
-                            
-                            $("#game-info-" + matchId).append($saved); 
-                            
-                            setTimeout(function() { $saved.remove(); }, 2500);
+        					
+                            if($("#game-info-" + matchId + " .saved-label").length === 0) {
+                                var $saved = $("<div class='saved-label'></div>");
+                                $saved.text("Gespeichert!");
+                                
+                                $("#game-info-" + matchId).append($saved); 
+                                
+                                setTimeout(function() { 
+                                    if($saved && $saved.length) {
+                                    	$saved.remove();
+                                    }
+                                }, 2500);
+                            }
                             
                             return;
                         }
