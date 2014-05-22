@@ -142,7 +142,7 @@
         			if(typeof(result.PlaceBetResult) === "object" && result.PlaceBetResult.__type == "bool") {
                         if(result.PlaceBetResult.value) {
         					 
-                            var $saved = $("<div style='margin-top: -50px;'></div>");
+                            var $saved = $("<div class='saved-label'></div>");
                             $saved.text("Gespeichert!");
                             
                             $("#game-info-" + matchId).append($saved); 

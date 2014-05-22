@@ -382,6 +382,15 @@ p {
     margin-bottom: 15px;
 }
 
+.score-group .list-item .game-info .saved-label {
+    color: #c94a43;
+    font-weight: 600;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
 .ranking-group .list-item h2 {
     position: absolute;
     text-align: center !important;
