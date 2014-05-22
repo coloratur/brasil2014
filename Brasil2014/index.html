@@ -314,15 +314,15 @@
         			</div>
             		<div class="game-result">
             			<div style="#: resultType === null ? 'display: none;' : 'result' #">
-            				#: goalsTeam1 #:#: goalsTeam2 # / #: resultType === 'REG' ? "-" : goalsTeam1Final + ":" + goalsTeam2Final #
+            				<span>#: goalsTeam1 #:#: goalsTeam2 # </span>
+            				/
+            				<span class="game-user-bet">#: userBet == null ? "-" : userBet.goals1 + ":" + userBet.goals2 #</span>
             				
-            				<!--
-            				<div style="#: resultType === 'REG' ? 'display: none;' : 'result' #">
+            				<div style="font-size: 18px; #: resultType === 'REG' ? 'display: none;' : '' #">
             					#: goalsTeam1Final # : #: goalsTeam2Final #
             					#: resultType === 'AET' ? '(n.V.)' : '' #
             					#: resultType === 'APS' ? '(n.E.)' : '' #
             				</div>
-            				-->
                         </div>
             		</div>
         			<div class="voting-container" style="#: resultType == null ? '' : 'display: none;' #">
