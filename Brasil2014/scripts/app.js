@@ -60,6 +60,9 @@ function showAlert(title, text) { alert(title + "\r\n" + text); };
             global.localStorage.removeItem("user");
             global.localStorage.removeItem("authString");
             
+            $("#tbUsername").val("");
+            $("#tbPassword").val("");
+            
 			app.application.navigate("#tabstrip-login", "slide");     
         };
         
