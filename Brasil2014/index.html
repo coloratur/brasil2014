@@ -301,7 +301,7 @@
             <div class="list-item">
                  <div class="left-side">
                      <span class="list-image" style="background-image: url('styles/images/Teams/#: Team1Id ? Team1Id.toLowerCase()+".svg" : "flag.png" #')"></span>
-        		 	<h2>#: Team1Id #</h2>
+        		 	<h2>#: Team1Id == null ? 'N/A' : Team1Id #</h2>
                  </div>
                  
                  <div class="game-info" id="game-info-#: id #">
@@ -331,7 +331,7 @@
                  
                  <div class="right-side">
                      <span class="list-image" style="background-image: url('styles/images/Teams/#: Team2Id ? Team2Id.toLowerCase()+".svg" : "flag.png" #')"></span>
-        		 	<h2>#: Team2Id #</h2>
+        		 	<h2>#: Team2Id == null ? 'N/A' : Team2Id #</h2>
                  </div>
             
             </div>
