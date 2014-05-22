@@ -1859,6 +1859,9 @@
 			<text transform="matrix(1 0 0 1 56.7896 73.7673)" fill="#3C3C3B" font-family="'Roboto-Thin'" font-size="30">1</text>
 			<text transform="matrix(1 0 0 1 78.5791 93.7671)" fill="#3C3C3B" font-family="'Roboto-Thin'" font-size="30">2</text>
 			<text transform="matrix(1 0 0 1 65.5779 89.0271)" fill="#3C3C3B" font-family="'Roboto-ThinItalic'" font-size="48">/</text>
+			<g>
+				<path fill="#3C3C3B" d="M65.3,92H64l20.7-37.1H86L65.3,92z"/>
+			</g>
 		</g>
 		<g id="_x33__price">
 			<circle display="inline" fill="none" stroke="#FFFFFF" stroke-miterlimit="10" cx="75" cy="75" r="54.5"/>
@@ -1883,7 +1886,10 @@
 				<stop  offset="1" style="stop-color:#CCCCCC"/>
 			</linearGradient>
 			<circle display="inline" fill="url(#SVGID_70_)" cx="75" cy="75" r="46.3"/>
-			<text transform="matrix(1 0 0 1 64.2512 85.5203)" display="inline" fill="#3C3C3B" font-family="'Roboto-Thin'" font-size="36">A</text>
+			<g display="inline">
+				<path fill="#3C3C3B" d="M81.2,77.9H68.7l-2.8,7.6h-1l9.6-25.6h1.2l9.6,25.6h-1L81.2,77.9z M69.1,76.9h11.8l-5.4-14.4L75,61H75
+					l-0.5,1.5L69.1,76.9z"/>
+			</g>
 		</g>
 		<g id="B" display="none">
 			<circle display="inline" fill="none" stroke="#FFFFFF" stroke-miterlimit="10" cx="75" cy="75" r="50"/>
@@ -1893,7 +1899,12 @@
 				<stop  offset="1" style="stop-color:#CCCCCC"/>
 			</linearGradient>
 			<circle display="inline" fill="url(#SVGID_71_)" cx="75" cy="75" r="46.3"/>
-			<text transform="matrix(1 0 0 1 64.1458 85.5203)" display="inline" fill="#3C3C3B" font-family="'Roboto-Thin'" font-size="36">B</text>
+			<g display="inline">
+				<path fill="#3C3C3B" d="M67.7,87.8V62.2h6.7c2.7,0,4.8,0.5,6.2,1.6s2.2,2.7,2.2,5c0,1.5-0.4,2.8-1.1,3.9s-1.8,1.7-3.2,1.9v0.1
+					c1.5,0.2,2.8,0.9,3.9,2.1s1.6,2.5,1.6,4.1c0,2.3-0.7,4-2.1,5.2s-3.3,1.8-5.8,1.8H67.7z M68.6,74.2h6.1c2.4,0,4.1-0.4,5.3-1.3
+					s1.7-2.3,1.7-4.2c0-1.9-0.6-3.3-1.8-4.2s-3.1-1.4-5.6-1.4h-5.8V74.2z M68.6,75.2v11.7H76c2.2,0,3.9-0.5,5.1-1.6s1.8-2.5,1.8-4.5
+					c0-1.6-0.6-2.9-1.7-4s-2.8-1.6-5-1.6H68.6z"/>
+			</g>
 		</g>
 		<g id="C" display="none">
 			<circle display="inline" fill="none" stroke="#FFFFFF" stroke-miterlimit="10" cx="75" cy="75" r="50"/>
@@ -1903,7 +1914,12 @@
 				<stop  offset="1" style="stop-color:#CCCCCC"/>
 			</linearGradient>
 			<circle display="inline" fill="url(#SVGID_72_)" cx="75" cy="75" r="46.3"/>
-			<text transform="matrix(1 0 0 1 63.3372 85.5203)" display="inline" fill="#3C3C3B" font-family="'Roboto-Thin'" font-size="36">C</text>
+			<g display="inline">
+				<path fill="#3C3C3B" d="M84.3,78.7c-0.3,2.8-1.2,4.8-2.8,6.2s-3.7,2-6.4,2c-2.9,0-5.1-1-6.8-3s-2.5-4.8-2.5-8.2v-3.8
+					c0-3.4,0.8-6.2,2.5-8.2s3.9-3.1,6.8-3.1c2.7,0,4.8,0.7,6.4,2s2.5,3.4,2.8,6.1h-0.9c-0.3-2.4-1.1-4.2-2.5-5.4s-3.3-1.8-5.7-1.8
+					c-2.5,0-4.6,0.9-6.1,2.8s-2.2,4.3-2.2,7.5v3.9c0,3.2,0.8,5.7,2.2,7.5s3.5,2.8,6.1,2.8c2.5,0,4.4-0.6,5.7-1.7s2.2-3,2.4-5.5H84.3
+					z"/>
+			</g>
 		</g>
 		<g id="D" display="none">
 			<circle display="inline" fill="none" stroke="#FFFFFF" stroke-miterlimit="10" cx="75" cy="75" r="50"/>
@@ -1913,7 +1929,10 @@
 				<stop  offset="1" style="stop-color:#CCCCCC"/>
 			</linearGradient>
 			<circle display="inline" fill="url(#SVGID_73_)" cx="75" cy="75" r="46.3"/>
-			<text transform="matrix(1 0 0 1 63.2229 85.5203)" display="inline" fill="#3C3C3B" font-family="'Roboto-Thin'" font-size="36">D</text>
+			<g display="inline">
+				<path fill="#3C3C3B" d="M66.7,86.5V60.9h7.1c3.1,0,5.6,1,7.6,3.1s3,4.8,3,8.1v3.1c0,3.4-1,6.1-3,8.1s-4.5,3.1-7.6,3.1H66.7z
+					 M67.7,61.9v23.7h6.1c2.8,0,5.1-0.9,6.9-2.8s2.7-4.4,2.7-7.4v-3.2c0-3-0.9-5.5-2.7-7.4s-4.1-2.8-6.9-2.8H67.7z"/>
+			</g>
 		</g>
 		<g id="E" display="none">
 			<circle display="inline" fill="none" stroke="#FFFFFF" stroke-miterlimit="10" cx="75" cy="75" r="50"/>
@@ -1923,7 +1942,9 @@
 				<stop  offset="1" style="stop-color:#CCCCCC"/>
 			</linearGradient>
 			<circle display="inline" fill="url(#SVGID_74_)" cx="75" cy="75" r="46.3"/>
-			<text transform="matrix(1 0 0 1 64.7522 85.5203)" display="inline" fill="#3C3C3B" font-family="'Roboto-Thin'" font-size="36">E</text>
+			<g display="inline">
+				<path fill="#3C3C3B" d="M82,73.7H69.2v11.9h14.6v0.9H68.3V60.9h15.6v0.9H69.2v10.8H82V73.7z"/>
+			</g>
 		</g>
 		<g id="F" display="none">
 			<circle display="inline" fill="none" stroke="#FFFFFF" stroke-miterlimit="10" cx="75" cy="75" r="50"/>
@@ -1933,7 +1954,9 @@
 				<stop  offset="1" style="stop-color:#CCCCCC"/>
 			</linearGradient>
 			<circle display="inline" fill="url(#SVGID_75_)" cx="75" cy="75" r="46.3"/>
-			<text transform="matrix(1 0 0 1 64.6995 85.5203)" display="inline" fill="#3C3C3B" font-family="'Roboto-Thin'" font-size="36">F</text>
+			<g display="inline">
+				<path fill="#3C3C3B" d="M82.3,73.9H69.2v12.6h-0.9V60.9h15.9v0.9H69.2V73h13.1V73.9z"/>
+			</g>
 		</g>
 		<g id="G">
 			<circle fill="none" stroke="#FFFFFF" stroke-miterlimit="10" cx="75" cy="75" r="50"/>
@@ -1943,7 +1966,12 @@
 				<stop  offset="1" style="stop-color:#CCCCCC"/>
 			</linearGradient>
 			<circle fill="url(#SVGID_76_)" cx="75" cy="75" r="46.3"/>
-			<text transform="matrix(1 0 0 1 62.6428 86.5203)" fill="#3C3C3B" font-family="'Roboto-Thin'" font-size="36">G</text>
+			<g>
+				<path fill="#3C3C3B" d="M84.3,85.1c-0.6,0.8-1.6,1.5-3.1,2.1s-3.4,1-5.7,1c-3,0-5.4-1-7.2-3.1s-2.7-4.8-2.7-8.2v-4.2
+					c0-3.3,0.9-5.9,2.6-7.9s4.1-3,6.9-3c2.7,0,4.8,0.7,6.3,2s2.4,3.1,2.7,5.3h-0.9c-0.3-1.9-1.1-3.4-2.4-4.6s-3.2-1.7-5.7-1.7
+					c-2.6,0-4.7,0.9-6.3,2.7s-2.3,4.2-2.3,7.2v4.2c0,3.1,0.8,5.6,2.4,7.5s3.8,2.8,6.5,2.8c1.9,0,3.6-0.3,5-0.8s2.3-1.1,2.8-1.8v-7.5
+					h-7.8v-1h8.8V85.1z"/>
+			</g>
 		</g>
 		<g id="H" display="none">
 			<circle display="inline" fill="none" stroke="#FFFFFF" stroke-miterlimit="10" cx="75" cy="75" r="50"/>
@@ -1953,9 +1981,8 @@
 				<stop  offset="1" style="stop-color:#CCCCCC"/>
 			</linearGradient>
 			<circle display="inline" fill="url(#SVGID_77_)" cx="75" cy="75" r="46.3"/>
-			<text transform="matrix(1 0 0 1 62.3616 86.5203)" display="inline" fill="#3C3C3B" font-family="'Roboto-Thin'" font-size="36">H</text>
 			<g display="inline">
-				<path fill="#3C3C3B" d="M84.1,86.5h-0.9V74.3H66.8v12.2h-0.9V60.9h0.9v12.4h16.3V60.9h0.9V86.5z"/>
+				<path fill="#3C3C3B" d="M84.1,87.8h-0.9V75.6H66.8v12.2h-0.9V62.2h0.9v12.4h16.3V62.2h0.9V87.8z"/>
 			</g>
 		</g>
 	</g>

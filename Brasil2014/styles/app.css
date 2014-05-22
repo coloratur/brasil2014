@@ -362,17 +362,12 @@ p {
     //-webkit-transition-duration: 300ms;
 }
 
-.score-group .list-item .game-info .game-result:after {
-    content: "/";
-    padding: 0 5px 0 10px;
-}
-
 .score-group .list-item .game-info .game-result,
 .score-group .list-item .game-info .game-tip {
     font-style: normal;
-    font-size: 30px;
+    font-size: 24px;
     font-weight: 100;
-    display: inline-block;
+    //display: inline-block;
 }
 
 .score-group .list-item .game-info .game-date {
@@ -497,7 +492,7 @@ p {
 
 .km-scroller-pull .km-template {
     color: #FFF !important;
-    font-site: 16px;
+    font-size: 16px;
 }
 
 .sub-navigation .km-button {
