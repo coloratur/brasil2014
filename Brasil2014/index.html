@@ -304,15 +304,15 @@
         		 	<h2>#: Team1Id #</h2>
                  </div>
                  
-                 <div class="game-info" id="game-info-#: id #">
-        			<div class="voting-container">
-						<input type="number" id="goals-team1-#: id #" value="#: userBet != null ? userBet.goals1 : null #" data-matchId="#: id #" min="0" max="99" onchange="return app.matchList.saveBet(event);" />
-						<input type="number" id="goals-team2-#: id #" value="#: userBet != null ? userBet.goals2 : null #" data-matchId="#: id #" min="0" max="99" onchange="return app.matchList.saveBet(event);" />
-        			</div>        			
+                 <div class="game-info" id="game-info-#: id #">        			
                      <div class="game-date">
             			#: dateString # (#: parseInt(new Date(parseInt(startDate)).getHours()) < 9 ? "0" + new Date(parseInt(startDate)).getHours() : new Date(parseInt(startDate)).getHours()  #:#: parseInt(new Date(parseInt(startDate)).getMinutes()) < 9 ? "0" + new Date(parseInt(startDate)).getMinutes() : new Date(parseInt(startDate)).getMinutes() #)
-            			<br />
+            			-
             			#: venue #
+        			</div>
+            		<div class="voting-container">
+						<input type="number" id="goals-team1-#: id #" value="#: userBet != null ? userBet.goals1 : null #" data-matchId="#: id #" min="0" max="99" onchange="return app.matchList.saveBet(event);" />
+						<input type="number" id="goals-team2-#: id #" value="#: userBet != null ? userBet.goals2 : null #" data-matchId="#: id #" min="0" max="99" onchange="return app.matchList.saveBet(event);" />
         			</div>
                  </div>
                  
