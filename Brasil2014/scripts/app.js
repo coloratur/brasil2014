@@ -2,6 +2,16 @@
 function hasNetworkConnection() { return true; };
 function showAlert(title, text) { alert(title + "\r\n" + text); };
 
+function imageExists(image_url){
+
+    var http = new XMLHttpRequest();
+
+    http.open('HEAD', image_url, false);
+    http.send();
+
+    return http.status != 404;
+}
+
 (function (global) {
     var app = global.app = global.app || {};
 
@@ -126,29 +136,17 @@ function showAlert(title, text) { alert(title + "\r\n" + text); };
             			if(typeof(result.LoadUserPrivateResult) === "object" && result.LoadUserPrivateResult.__type === "userPrivate") {
             				user = result.LoadUserPrivateResult;
                             app.currentUser = user;
-                            
+              
                             global.localStorage.setItem("tenantColour", user.userTenant.colour);
                             
                             app.currentUserLoaded();
                             
                             app.application.navigate("#tabstrip-home", "slide");
                             
-                            var imageUrl = user.userTenant.registrationUrl + "user_images/" + user.id + ".jpg";
+                            var imgUrl = app.ranking.getUserImage(user.id);
                             
-                            $.get(imageUrl).fail(
-                                function() { 
-                        			imageUrl = user.userTenant.registrationUrl + "user_images/" + user.id + ".png";
-                                    
-                                    $.get(imageUrl).fail(
-                                        function() { 
-                                			imageUrl = undefined;
-                                		}
-                                    );
-                        		}
-                            );
-                            
-                            if(imageUrl) {
-                                $("#user-image").css("background-image", "url(" + imageUrl + ")");
+                            if(imgUrl) {
+                                $("#user-image").css("background-image", "url(" + imgUrl + ")");
                             }
             			}
             		},

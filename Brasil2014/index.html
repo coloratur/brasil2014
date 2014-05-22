@@ -285,6 +285,7 @@
         data-before-show="app.matchList.beforeShow"
         data-hide="app.matchList.hide"
         data-init="app.matchList.init"
+        data-transition="slide"
         class="score-group">
         
         <div data-role="header">
@@ -350,6 +351,7 @@
         data-before-show="app.groupRanking.beforeShow"
         data-hide="app.groupRanking.hide"
         data-init="app.groupRanking.init"
+        data-transition="slide"
         class="ranking-group">
         
         <div data-role="header">
@@ -393,6 +395,7 @@
     <div id="tabstrip-ranking"
         data-role="view"
         data-title="Rangliste & Preise"
+        data-after-show="app.ranking.afterShow"
         data-transition="slide">
         
         <div data-role="header">
@@ -407,83 +410,77 @@
         	<a data-role="button" href="#tabstrip-ranking" data-click="app.openPrices">Preise</a>
         </div>
         
-	 	<ul data-role="listview" id="ranking-top-list">
-            <li>
-                <div class="list-item">
-                    <span class="list-image" style="background-image: url('styles/images/Icons/user.svg')"></span>
-                    <div class="list-detail">
-                    	<p>Username</p>
-                    	<strong>Score 88%</strong>
-                    </div>
+        <script type="text/x-kendo-template" id="ranking-top-list-template">
+            <div class="list-item">
+                <span class="list-image" style="background-image: url('#: app.ranking.getUserImage(id) #'); background-repeat: no-repeat;"></span>
+                <div class="list-detail">
+                	<p>#: id #</p>
+                	<strong>Score #: score #</strong>
                 </div>
-            </li>
-            <li>
-                <div class="list-item">
-                    <span class="list-image" style="background-image: url('styles/images/Icons/user.svg')"></span>
-                    <div class="list-detail">
-                    	<p>Username</p>
-                    	<strong>Score 88%</strong>
-                    </div>
-                </div>
-            </li>
-             <li>
-                <div class="list-item">
-                    <span class="list-image" style="background-image: url('styles/images/Icons/user.svg')"></span>
-                    <div class="list-detail">
-                    	<p>Username</p>
-                    	<strong>Score 88%</strong>
-                    </div>
-                </div>
-            </li>
-        </ul>
-        
-	 	<ul data-role="listview" id="ranking-list">
-             <li>
-                 <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Icons/user.svg')"></span>
-            		 <h2>Spielplan & Ergebnisse</h2>
-                 </div>
-             </li>
-             <li>
-                 <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Icons/user.svg')"></span>
-            		 <h2>Spielplan & Ergebnisse</h2>
-                 </div>
-             </li>
-             <li>
-                 <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Icons/user.svg')"></span>
-            		 <h2>Spielplan & Ergebnisse</h2>
-                 </div>
-             </li>
-             <li>
-                 <div class="list-item">
-                     <span class="list-image" style="background-image: url('styles/images/Icons/user.svg')"></span>
-            		 <h2>Spielplan & Ergebnisse</h2>
-                 </div>
-             </li>
-		 </ul>
-    </div>
-    
-    <!-- Rangliste & Preise -->
-    <div id="tabstrip-price"
-        data-role="view"
-        data-title="Rangliste & Preise"
-        data-transition="">
-        
-        <div data-role="header">
-            <div data-role="navbar">
-                <a data-role="backbutton" id="backbutton" data-align="left" href="#tabstrip-home"></a>
-            	<span data-role="view-title"></span>
             </div>
-        </div>
+        </script>
         
-        <div class="sub-navigation">
-            <a data-role="button" href="#tabstrip-ranking">Rangliste</a>
-        	<a data-role="button" class="selected-button" href="#tabstrip-price">Preise</a>
-        </div>
+	 	<!--<ul data-role="listview" id="ranking-top-list">
+            <li>
+                <div class="list-item">
+                    <span class="list-image" style="background-image: url('styles/images/Icons/user.svg')"></span>
+                    <div class="list-detail">
+                    	<p>Username</p>
+                    	<strong>Score 88%</strong>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="list-item">
+                    <span class="list-image" style="background-image: url('styles/images/Icons/user.svg')"></span>
+                    <div class="list-detail">
+                    	<p>Username</p>
+                    	<strong>Score 88%</strong>
+                    </div>
+                </div>
+            </li>
+             <li>
+                <div class="list-item">
+                    <span class="list-image" style="background-image: url('styles/images/Icons/user.svg')"></span>
+                    <div class="list-detail">
+                    	<p>Username</p>
+                    	<strong>Score 88%</strong>
+                    </div>
+                </div>
+            </li>
+        </ul>-->
         
-	 	
+        <script type="text/x-kendo-template" id="ranking-list-template">
+            <div class="list-item">
+                 <span class="list-image" style="background-image: url('#: app.ranking.getUserImage(id) #'); background-repeat: no-repeat;"></span>
+        		 <h2>#: id #</h2>
+                 <strong>Score #: score #</strong>
+             </div>
+        </script>
+        
+	 	<!--<ul data-role="listview" id="ranking-list">
+             <li>
+                 
+             </li>
+             <li>
+                 <div class="list-item">
+                     <span class="list-image" style="background-image: url('styles/images/Icons/user.svg')"></span>
+            		 <h2>Spielplan & Ergebnisse</h2>
+                 </div>
+             </li>
+             <li>
+                 <div class="list-item">
+                     <span class="list-image" style="background-image: url('styles/images/Icons/user.svg')"></span>
+            		 <h2>Spielplan & Ergebnisse</h2>
+                 </div>
+             </li>
+             <li>
+                 <div class="list-item">
+                     <span class="list-image" style="background-image: url('styles/images/Icons/user.svg')"></span>
+            		 <h2>Spielplan & Ergebnisse</h2>
+                 </div>
+             </li>
+		 </ul>-->
     </div>
     
     <!-- Deine Treffergenauigkeit -->
@@ -550,8 +547,7 @@
 		</div>
     </div>
 
-    
-    <!-- Regeln & Mehr -->
+    <!-- Passwort zurücksetzen -->
     <div id="tabstrip-pwreset"
         data-role="view"
         data-title="Passwort zurücksetzen"
