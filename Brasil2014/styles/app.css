@@ -495,6 +495,11 @@ p {
     transform: rotate(45deg);
 }
 
+.km-scroller-pull .km-template {
+    color: #FFF !important;
+    font-site: 16px;
+}
+
 .sub-navigation .km-button {
 	//padding: 0 !important;
 	background: rgba(0,0,0,0) !important;
