@@ -365,7 +365,7 @@ p {
 .score-group .list-item .game-info .game-result,
 .score-group .list-item .game-info .game-tip {
     font-style: normal;
-    font-size: 26px;
+    font-size: 24px;
     font-weight: 100;
     //display: inline-block;
 }
