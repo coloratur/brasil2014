@@ -44,6 +44,8 @@
             
             <input id="login" type="submit" data-role="button" data-bind="click: onLogin" value="Login" class="login-button" />
         </form>
+        
+        <a href="#tabstrip-pwreset">Passwort vergessen?</a>
     </div>
     
     <!-- Brasil 2014 -->
@@ -94,7 +96,7 @@
                  </a>
              </li>
              <li>
-                 <a href="#tabstrip-price" class="parent km-listview-link" data-role="listview-link">
+                 <a href="#tabstrip-ranking" class="parent km-listview-link" data-role="listview-link">
                      <div class="list-item">
                          <span class="list-image" style="background-image: url('styles/images/Icons/price.svg')"></span>
                 		 <h2>Rangliste & Preise</h2>
@@ -402,7 +404,7 @@
         
         <div class="sub-navigation">
             <a data-role="button" class="selected-button" href="#tabstrip-ranking">Rangliste</a>
-        	<a data-role="button" href="#tabstrip-price">Preise</a>
+        	<a data-role="button" href="#tabstrip-ranking" data-click="app.openPrices">Preise</a>
         </div>
         
 	 	<ul data-role="listview">
@@ -493,6 +495,36 @@
                     </li>
             </ul>
 		</div>
+    </div>
+
+    
+    <!-- Regeln & Mehr -->
+    <div id="tabstrip-pwreset"
+        data-role="view"
+        data-title="Passwort zurücksetzen"
+        data-transition="slide">
+        
+        <div data-role="header">
+            <div data-role="navbar">
+                <a data-role="backbutton" href="#login" data-align="left"></a>
+            	<span data-role="view-title"></span>
+            </div>
+        </div>
+        
+        <p>Bitte geben Sie Ihren Benutzernamen oder Ihre E-Mail-Adresse an. Sie werden daraufhin eine E-Mail erhalten, mit der Sie Ihr Passwort zurücksetzen können.</p>
+        
+        <form class="pwreset-form">
+            <ul data-role="listview" data-bind="">
+                <li>
+                    <label>
+                        <input type="text" id="tbUserIdOrEmail" placeholder="Username oder E-Mail" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+                    </label>
+                </li>
+            </ul>
+            
+            <input type="submit" data-role="button" data-click="app.requestPwReset" value="Absenden" />
+        </form>
+        
     </div>
 </body>
 </html>

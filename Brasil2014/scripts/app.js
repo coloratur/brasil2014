@@ -8,6 +8,49 @@ function showAlert(title, text) { alert(title + "\r\n" + text); };
     app.WebServiceURL = "http://wm2014.coloratur.com/Service.svc/";
     //app.WebServiceURL = "http://jarjarbinks.dev.webservice.wc2014.de/Service.svc/";
     
+    app.requestPwReset = function () {
+    	app.WS.invokeRequest(
+    		"RequestPasswordReset", 
+    		{ userIdOrEmail: $("#tbUserIdOrEmail").val() }, 
+    		"Lade...", 
+    		function (res) { 
+    			var result = JSON.parse(res);  
+
+    			if(typeof(result.RequestPasswordResetResult) === "object" && result.RequestPasswordResetResult.__type === "bool") {    				
+					console.log(result.RequestPasswordResetResult.value);
+                    if(result.RequestPasswordResetResult.value) {
+                        showAlert("Wir haben Ihnen eine E-Mail mit Anweisungen zum Zurücksetzen Ihres Passworts zugesendet.");
+                        
+                        app.application.navigate("#tabstrip-login", "slide");
+                    } else {   
+						showAlert("Es ist ein unerwarteter Fehler aufgetreten.");
+                    }
+    			} else if(typeof(result.RequestPasswordResetResult) === "object" && result.RequestPasswordResetResult.__type === "exception") {
+					if(result.RequestPasswordResetResult.type === "USER_NOT_FOUND")
+                    	showAlert("Der angegebene Benutzer wurde nicht gefunden.");
+                }                    
+    		},
+    		function (xhr) {
+					showAlert("Es ist ein unerwarteter Fehler aufgetreten.");
+    		}
+    	);
+    };
+    
+    app.logout = function() {
+        global.localStorage.removeItem("user");
+        global.localStorage.removeItem("authString");
+        
+        $("#tbUsername").val("");
+        $("#tbPassword").val("");
+        
+		app.application.navigate("#tabstrip-login", "slide");     
+    };
+    
+    app.openPrices = function () {
+        window.open(app.currentUser.userTenant.registrationUrl + "preise.pdf", "_blank");
+    };
+        
+    
     function WebService(url) {
     	this.url = url;
     	
@@ -55,16 +98,6 @@ function showAlert(title, text) { alert(title + "\r\n" + text); };
         app.application = new kendo.mobile.Application(document.body, { skin: "flat" });
         
         app.WS = new WebService(app.WebServiceURL);
-        
-        app.logout = function() {
-            global.localStorage.removeItem("user");
-            global.localStorage.removeItem("authString");
-            
-            $("#tbUsername").val("");
-            $("#tbPassword").val("");
-            
-			app.application.navigate("#tabstrip-login", "slide");     
-        };
         
         app._onCurrentUserLoaded = new Array();
         app.onCurrentUserLoaded = function(func) {
