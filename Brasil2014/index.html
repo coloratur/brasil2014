@@ -306,23 +306,23 @@
                  
                  <div class="game-info" id="game-info-#: id #">
             		<div class="game-date">
-            			
-                        <div style="#: resultType === null ? 'display: none;' : '' #">
-            				#: goalsTeam1 # : #: goalsTeam2 #
-            				<div style="#: resultType === 'REG' ? 'display: none;' : '' #">
-            
-            					#: goalsTeam1Final # : #: goalsTeam2Final #
-            					<br />
-            					#: resultType === 'AET' ? 'n.V.' : '' #
-            					#: resultType === 'APS' ? 'n.E.' : '' #
-            				
-            				</div>
-                        </div>
-            
             			#: dateString # (#: parseInt(new Date(parseInt(startDate)).getHours()) < 9 ? "0" + new Date(parseInt(startDate)).getHours() : new Date(parseInt(startDate)).getHours()  #:#: parseInt(new Date(parseInt(startDate)).getMinutes()) < 9 ? "0" + new Date(parseInt(startDate)).getMinutes() : new Date(parseInt(startDate)).getMinutes() #)
             			-
             			#: venue #
         			</div>
+            		<div class="game-result">
+            			<div style="#: resultType === null ? 'display: none;' : 'result' #">
+            				#: goalsTeam1 #:#: goalsTeam2 # / #: resultType === 'REG' ? "-" : goalsTeam1Final + ":" + goalsTeam2Final #
+            				
+            				<!--
+            				<div style="#: resultType === 'REG' ? 'display: none;' : 'result' #">
+            					#: goalsTeam1Final # : #: goalsTeam2Final #
+            					#: resultType === 'AET' ? '(n.V.)' : '' #
+            					#: resultType === 'APS' ? '(n.E.)' : '' #
+            				</div>
+            				-->
+                        </div>
+            		</div>
         			<div class="voting-container" style="#: resultType == null ? '' : 'display: none;' #">
 						<input type="number" id="goals-team1-#: id #" value="#: userBet != null ? userBet.goals1 : null #" data-matchId="#: id #" min="0" max="99" onchange="return app.matchList.saveBet(event);" />
 						<input type="number" id="goals-team2-#: id #" value="#: userBet != null ? userBet.goals2 : null #" data-matchId="#: id #" min="0" max="99" onchange="return app.matchList.saveBet(event);" />
@@ -423,8 +423,8 @@
         </div>
         
         <div class="sub-navigation">
-            <a data-role="button" href="#tabstrip-ranking">Rangliste</a>
-        	<a data-role="button" class="selected-button" href="#tabstrip-price">Preise</a>
+            <a data-role="button" class="selected-button" href="#tabstrip-ranking">Rangliste</a>
+        	<a data-role="button" href="#tabstrip-price">Preise</a>
         </div>
         
 	 	
