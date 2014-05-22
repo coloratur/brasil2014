@@ -45,7 +45,7 @@
             <input id="login" type="submit" data-role="button" data-bind="click: onLogin" value="Login" class="login-button" />
         </form>
         
-        <a href="#tabstrip-pwreset">Passwort vergessen?</a>
+        <div class="logout-button"><a href="#tabstrip-pwreset">Passwort vergessen?</a></div>
     </div>
     
     <!-- Brasil 2014 -->
@@ -351,7 +351,6 @@
         data-before-show="app.groupRanking.beforeShow"
         data-hide="app.groupRanking.hide"
         data-init="app.groupRanking.init"
-        data-transition="slide"
         class="ranking-group">
         
         <div data-role="header">
@@ -556,25 +555,26 @@
         
         <div data-role="header">
             <div data-role="navbar">
-                <a data-role="backbutton" href="#tabstrip-login" data-align="left"></a>
+                <a data-role="backbutton" id="backbutton"  href="#tabstrip-login" data-align="left"></a>
             	<span data-role="view-title"></span>
             </div>
         </div>
         
-        <p>Bitte geben Sie Ihren Benutzernamen oder Ihre E-Mail-Adresse an. Sie werden daraufhin eine E-Mail erhalten, mit der Sie Ihr Passwort zurücksetzen können.</p>
-        
-        <form class="pwreset-form">
-            <ul data-role="listview" data-bind="">
-                <li>
-                    <label>
-                        <input type="text" id="tbUserIdOrEmail" placeholder="Username oder E-Mail" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
-                    </label>
-                </li>
-            </ul>
+        <div class="content-container">
+            <p>Bitte geben Sie Ihren Benutzernamen oder Ihre E-Mail-Adresse an. Sie werden daraufhin eine E-Mail erhalten, mit der Sie Ihr Passwort zurücksetzen können.</p>
             
-            <input type="submit" data-role="button" data-click="app.requestPwReset" value="Absenden" />
-        </form>
-        
+            <form class="pwreset-form">
+                <ul data-role="listview" data-bind="">
+                    <li>
+                        <label>
+                            <input type="text" id="tbUserIdOrEmail" placeholder="Username oder E-Mail" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+                        </label>
+                    </li>
+                </ul>
+                
+                <input type="submit" data-role="button" data-click="app.requestPwReset" value="Absenden" class="logout-button"/>
+            </form>
+        </div>
     </div>
 </body>
 </html>

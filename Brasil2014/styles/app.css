@@ -87,6 +87,14 @@ h2 {
 	//margin: 0 15px !important;
 }
 
+.logout-button {
+    color: #FFF;
+    margin-top: 30px;
+	margin-left: 30px;
+	font-family: Roboto;
+	font-style: italic;
+}
+
 
 /* START VIEW STYLES */
 #top-list {
@@ -141,6 +149,58 @@ h2 {
 p {
     margin: 0 !important;
     padding: 0 !important;
+}
+
+
+/* PW RESET VIEW */
+#tabstrip-pwreset .pwreset-form {
+    position: absolute;
+	left: 30px;
+	right: 30px;
+	bottom: 30px;
+}
+
+
+
+#tabstrip-pwreset .content-container {
+    padding: 30px;
+    color: #FFF !important;
+    font-weight: 300 !important;
+    font-family: "Roboto" !important;
+}
+
+#tabstrip-pwreset .content-container ul {
+    padding: 0;
+    margin: 15px 0;
+}
+
+#tabstrip-pwreset .logout-button {
+    width: 100% !important;
+    height: 90px !important;
+    background-color: transparent !important;
+    border: 1px solid #FFF;
+    border-radius: 0  !important;
+    
+    margin-top: 0;
+    
+    font-family: "Roboto";
+    font-size: 20px !important;
+    font-weight: 300 !important;
+    font-style: italic !important;
+    //line-height: 90px !important;
+    text-align: center !important;
+    vertical-align: middle !important;
+    color: #FFF  !important;
+    margin: 0;
+}
+
+#tabstrip-pwreset .km-widget.km-listview.km-list li input { 
+    font-family: "Roboto";
+    font-size: 20px !important;
+    font-weight: 300 !important;
+    font-style: italic !important;
+    left: 15px;
+    width: 90% !important;
 }
 
 
