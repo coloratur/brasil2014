@@ -32,6 +32,10 @@ function rankingViewInit() {
                 }
             }
         },
+        hide: function(e) {
+			$('#ranking-top-list').remove();
+			$('#ranking-list').remove();
+ 		},
         afterShow: function(e) {
             $lvTop = $('<ul id="ranking-top-list"></ul>');
             
@@ -97,7 +101,7 @@ function rankingViewInit() {
                                 	data: function(res) {
                                     	var result = new Array();
                                         	
-                                        for(var i = 3; i < res.LoadUserRankingResult.users.length; i++) {
+                                        for(var i = 3; i < (res.LoadUserRankingResult.users.length > 50 ? 50 : res.LoadUserRankingResult.users.length) ; i++) {
                                             var user = res.LoadUserRankingResult.users[i];
                                             result.push(user);                                    
                                         }
