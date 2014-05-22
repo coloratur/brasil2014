@@ -63,7 +63,7 @@
             <li>
                 <a href="#tabstrip-score">
                     <div class="list-item">
-                        <span class="list-image" style="background-image: url('styles/images/Icons/user.png')"></span>
+                        <span class="list-image" id="user-image" style="background-repeat: no-repeat; background-image: url('styles/images/Icons/user.png')"></span>
                         <div class="list-detail">
                         	<p data-bind="text: userId" id="home-userId"></p>
                         	<strong>Score 88%</strong>
@@ -72,7 +72,7 @@
                 </a>
             </li>
             <li>
-                <a href="#match-list?today">
+                <a href="#match-list?today=1&fromHome=1">
                     <div class="list-item">
                         <span class="list-image" style="background-image: url('styles/images/Icons/tip.png')"></span>
                         <div class="list-detail">
@@ -443,6 +443,11 @@
                 <a data-role="backbutton" id="backbutton" data-align="left"></a>
             	<span data-role="view-title"></span>
             </div>
+        </div>
+        
+        <div class="sub-navigation">
+            <a data-role="button" class="selected-button" href="#tabstrip-rules">Regeln</a>
+        	<a data-role="button" href="#" data-click="app.logout">Logout</a>
         </div>
         
         <div class="content-container">

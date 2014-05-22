@@ -5,7 +5,7 @@
     MatchListViewModel = kendo.data.ObservableObject.extend({
        
     });
-console.log(global.localStorage);
+
     app.matchList = {
         viewModel: new MatchListViewModel(),
         init: function(e) {
@@ -31,7 +31,7 @@ console.log(global.localStorage);
                 dataSource: new kendo.data.DataSource({
             					transport: {
             						read: {
-                                        url: app.WebServiceURL + "LoadMatchesByStage",
+                                        url: app.WebServiceURL + ( e.view.params.today ? "LoadMatchesByDate" : "LoadMatchesByStage"),
                                         data: { },
                                         type: "POST",
                                         contentType: "application/json",
@@ -41,8 +41,12 @@ console.log(global.localStorage);
                                     },
             						parameterMap: function(data, type) {
             							data.authString = global.localStorage.getItem("authString");
-                                        data.sStage = e.view.params.group ? "GROUP" : e.view.params.stage;
-            
+                                        
+                                        if(e.view.params.today) {
+                                            data.unixTimeStamp = new Date().getTime() + "";
+                                        } else {
+                                        	data.sStage = e.view.params.group ? "GROUP" : e.view.params.stage;
+            							}
                                         return JSON.stringify(data);
             						} 
             					},
@@ -50,15 +54,20 @@ console.log(global.localStorage);
                                 	data: function(res) {
                                     	var result = new Array();
                                           	
-                                        	for(var i = 0; i < res.LoadMatchesByStageResult.matches.length; i++) {
-                                                var match = res.LoadMatchesByStageResult.matches[i];
-                                                
-                                                if(e.view.params.group && e.view.params.group == match.group) {
-                                                	result.push(match);                                    
-                                                } else if(e.view.params.group === undefined) {
-                                                    result.push(match);
+                                        	if(e.view.params.today) {
+                                                result = res.LoadMatchesByDateResult.matches;
+                                            } else {
+                                                for(var i = 0; i < res.LoadMatchesByStageResult.matches.length; i++) {
+                                                    var match = res.LoadMatchesByStageResult.matches[i];
+                                                    
+                                                    if(e.view.params.group && e.view.params.group == match.group) {
+                                                    	result.push(match);                                    
+                                                    } else if(e.view.params.group === undefined) {
+                                                        result.push(match);
+                                                    }
                                                 }
                                             }
+                                        	
                                             
                                             return result;
                                     }
@@ -69,41 +78,51 @@ console.log(global.localStorage);
                 template: $("#match-list-template").text()
             });
             
-            
-         	var group = e.view.params.group;
-            
-            if(group) {
-            	$("#match-list .sub-navigation").show();
-                this.header.find('[data-role="navbar"]').find('[data-role="view-title"]').html("Gruppe " + group);
-            	$("#navi-matches-list").attr("href", "#match-list?group=" + group);
-				$("#navi-ranking-list").attr("href", "#group-ranking?group=" + group);
-                
-                $("#match-list a[data-role='backbutton']").attr("href", "#tabstrip-group");
-            } else {
+            if(e.view.params.today) {
                 $("#match-list .sub-navigation").hide();
+                this.header.find('[data-role="navbar"]').find('[data-role="view-title"]').html("Spiele heute");
                 
-                var stage = "";
-                switch(e.view.params.stage){
-                    case "ROUND_OF_16": 
-                    	stage = "Achtelfinale";
-                    	break;
-                	case "QUARTER_FINALS": 
-                    	stage = "Viertelfinale";
-                    	break;
-                    case "SEMI_FINALS": 
-                    	stage = "Halbfinale";
-                    	break;
-                    case "THIRD_PLACE": 
-                    	stage = "Spiel um Platz 3";
-                    	break;
-                    case "FINAL": 
-                    	stage = "Finale";
-                    	break;
+                if(e.view.params.fromHome)
+                	$("#match-list a[data-role='backbutton']").attr("href", "#tabstrip-home");
+                else
+                	$("#match-list a[data-role='backbutton']").attr("href", "#tabstrip-schedule");
+            } else {
+            
+             	var group = e.view.params.group;
+                
+                if(group) {
+                	$("#match-list .sub-navigation").show();
+                    this.header.find('[data-role="navbar"]').find('[data-role="view-title"]').html("Gruppe " + group);
+                	$("#navi-matches-list").attr("href", "#match-list?group=" + group);
+    				$("#navi-ranking-list").attr("href", "#group-ranking?group=" + group);
+                    
+                    $("#match-list a[data-role='backbutton']").attr("href", "#tabstrip-group");
+                } else {
+                    $("#match-list .sub-navigation").hide();
+                    
+                    var stage = "";
+                    switch(e.view.params.stage){
+                        case "ROUND_OF_16": 
+                        	stage = "Achtelfinale";
+                        	break;
+                    	case "QUARTER_FINALS": 
+                        	stage = "Viertelfinale";
+                        	break;
+                        case "SEMI_FINALS": 
+                        	stage = "Halbfinale";
+                        	break;
+                        case "THIRD_PLACE": 
+                        	stage = "Spiel um Platz 3";
+                        	break;
+                        case "FINAL": 
+                        	stage = "Finale";
+                        	break;
+                    }
+                    
+                    this.header.find('[data-role="navbar"]').find('[data-role="view-title"]').html(stage);
+                    
+                    $("#match-list a[data-role='backbutton']").attr("href", "#tabstrip-schedule");
                 }
-                
-                this.header.find('[data-role="navbar"]').find('[data-role="view-title"]').html(stage);
-                
-                $("#match-list a[data-role='backbutton']").attr("href", "#tabstrip-schedule");
             }
             
         },

@@ -56,6 +56,13 @@ function showAlert(title, text) { alert(title + "\r\n" + text); };
         
         app.WS = new WebService(app.WebServiceURL);
         
+        app.logout = function() {
+            global.localStorage.removeItem("user");
+            global.localStorage.removeItem("authString");
+            
+			app.application.navigate("#tabstrip-login", "slide");     
+        };
+        
         app._onCurrentUserLoaded = new Array();
         app.onCurrentUserLoaded = function(func) {
             if(app.currentUser) {
@@ -84,9 +91,29 @@ function showAlert(title, text) { alert(title + "\r\n" + text); };
             				user = result.LoadUserPrivateResult;
                             app.currentUser = user;
                             
+                            global.localStorage.setItem("tenantColour", user.userTenant.colour);
+                            
                             app.currentUserLoaded();
                             
                             app.application.navigate("#tabstrip-home", "slide");
+                            
+                            var imageUrl = user.userTenant.registrationUrl + "user_images/" + user.id + ".jpg";
+                            
+                            $.get(imageUrl).fail(
+                                function() { 
+                        			imageUrl = user.userTenant.registrationUrl + "user_images/" + user.id + ".png";
+                                    
+                                    $.get(imageUrl).fail(
+                                        function() { 
+                                			imageUrl = undefined;
+                                		}
+                                    );
+                        		}
+                            );
+                            
+                            if(imageUrl) {
+                                $("#user-image").css("background-image", "url(" + imageUrl + ")");
+                            }
             			}
             		},
             		function (xhr) {
