@@ -169,6 +169,8 @@ function imageExists(image_url){
               
                             global.localStorage.setItem("tenantColour", user.userTenant.colour);
                             
+                            app.changeClientColor(user.userTenant.colour);
+                            
                             app.currentUserLoaded();
                             
                             app.application.navigate("#tabstrip-home", "slide");
