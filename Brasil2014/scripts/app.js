@@ -15,8 +15,8 @@ function imageExists(image_url){
 (function (global) {
     var app = global.app = global.app || {};
 
-    app.WebServiceURL = "http://wm2014.coloratur.com/Service.svc/";
-    //app.WebServiceURL = "http://jarjarbinks.dev.webservice.wc2014.de/Service.svc/";
+    //app.WebServiceURL = "http://wm2014.coloratur.com/Service.svc/";
+    app.WebServiceURL = "http://10.20.100.50/Service.svc/";
     
     app.requestPwReset = function () {
     	app.WS.invokeRequest(
@@ -80,14 +80,21 @@ function imageExists(image_url){
         $('.km-flat .km-popup .k-state-hover').css({'background-color': value});
         $('.km-flat .km-popup .k-state-focused').css({'background-color': value});
         $('.km-flat .km-popup .k-state-selected').css({'background-color': value});
-        $('.km-flat .km-actionsheet > li > a:active').css({'background-color': value});
-        $('.km-flat .km-actionsheet > li > a:hover').css({'background-color': value});
+        
         $('.km-flat li.km-state-active .km-listview-link').css({'background-color': value});
         $('.km-flat li.km-state-active .km-listview-label').css({'background-color': value});
         $('.km-flat .km-listview-label input[type=radio]:checked').css({'background-color': value});
         $('.km-flat .km-listview-label input[type=checkbox]:checked').css({'background-color': value});
         
         $('.km-flat .km-filter-wrap > input:focus').css({'border-color': value});
+       
+        $(document).on('mousedown', '.km-flat .km-list > li > a', function() {
+            $(this).css("background", value);
+        });
+        
+        $(document).on('mouseup', '.km-flat .km-list > li > a', function() {
+            $(this).css("background", 'none');
+        });
     }
         
     

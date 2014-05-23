@@ -563,7 +563,6 @@ p {
 .km-flat .km-pages .km-current-page,
 .km-flat .k-slider .k-draghandle,
 .km-flat .k-slider .k-draghandle:hover,
-.km-flat .km-tabstrip .km-state-active,
 .km-flat .km-scroller-refresh.km-load-more,
 .km-flat .km-popup .k-state-hover,
 .km-flat .km-popup .k-state-focused,
@@ -576,6 +575,10 @@ p {
 .km-flat .km-listview-label input[type=checkbox]:checked
 {
     background: #96aa39;
+}
+
+.km-flat .km-tabstrip .km-state-active {
+    background-color: rgba(255, 255, 255, 0.7);
 }
 
 .km-flat .km-filter-wrap > input:focus
@@ -617,6 +620,7 @@ p {
 .km-scroller-pull .km-template {
     color: #FFF !important;
     font-size: 16px;
+    display: none;
 }
 
 .sub-navigation .km-button {
