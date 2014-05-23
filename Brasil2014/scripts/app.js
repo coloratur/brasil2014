@@ -31,7 +31,7 @@ function imageExists(image_url){
                     if(result.RequestPasswordResetResult.value) {
                         showAlert("Wir haben Ihnen eine E-Mail mit Anweisungen zum Zurücksetzen Ihres Passworts zugesendet.");
                         
-                        app.application.navigate("#tabstrip-login", "slide");
+                        app.application.navigate("#tabstrip-login");
                     } else {   
 						showAlert("Es ist ein unerwarteter Fehler aufgetreten.");
                     }
@@ -53,7 +53,7 @@ function imageExists(image_url){
         $("#tbUsername").val("");
         $("#tbPassword").val("");
         
-		app.application.navigate("#tabstrip-login", "slide");     
+		app.application.navigate("#tabstrip-login");     
     };
     
     app.openPrices = function () {
@@ -196,7 +196,7 @@ function imageExists(image_url){
                             
                             app.currentUserLoaded();
                             
-                            app.application.navigate("#tabstrip-home", "slide");
+                            app.application.navigate("#tabstrip-home");
                             
                             $("#home-score").text("Score " + app.currentUser.score); 
                             $("#home-userId").text(app.currentUser.id);
