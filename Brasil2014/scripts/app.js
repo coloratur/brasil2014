@@ -16,7 +16,7 @@ function imageExists(image_url){
     var app = global.app = global.app || {};
 
     //app.WebServiceURL = "http://wm2014.coloratur.com/Service.svc/";
-    app.WebServiceURL = "http://jarjarbinks.dev.webservice.wc2014.de/Service.svc/";
+    app.WebServiceURL = "http://10.20.100.50/Service.svc/";
     
     app.requestPwReset = function () {
     	app.WS.invokeRequest(
@@ -58,6 +58,11 @@ function imageExists(image_url){
     
     app.openPrices = function () {
         window.open(app.currentUser.userTenant.registrationUrl + "preise.pdf", "_blank");
+    };
+    
+    app.setTenantColor = function() {
+        if(app.currentUser)
+				app.changeClientColor(app.currentUser.userTenant.colour); 
     };
     
     app.changeClientColor = function(value) {
