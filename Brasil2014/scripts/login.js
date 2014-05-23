@@ -30,7 +30,7 @@
         				global.localStorage.setItem("authString", result.AuthenticateUserResult.authString);
         				global.localStorage.setItem("user", username);
                                                
-						app.application.navigate("#tabstrip-home", "slide"); 
+						app.application.navigate("#tabstrip-home"); 
                         
         			} else {
         				global.localStorage.removeItem("authString");
