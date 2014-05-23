@@ -33,8 +33,11 @@ function rankingViewInit() {
             }
         },
         hide: function(e) {
-			$('#ranking-top-list').remove();
+            $('#ranking-list').data("kendoMobileListView").destroy();
 			$('#ranking-list').remove();
+            
+            $('#ranking-top-list').data("kendoMobileListView").destroy();
+			$('#ranking-top-list').remove();
  		},
         show: function(e) {
 			app.changeClientColor(app.currentUser.userTenant.colour);  

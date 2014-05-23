@@ -15,6 +15,7 @@
 			
     	},
         hide: function(e) {
+			$('#match-list-listview').data("kendoMobileListView").destroy();
 			$('#match-list-listview').remove();
             
             if($("#match-list .no-matches").length) {
@@ -64,7 +65,9 @@
                                                     var $noMatches = $("<div class='no-matches'></div>");
                                                     $noMatches.text("Heute finden keine Spiele statt!");
                                                     
-                                                    $("#match-list .sub-navigation").after($noMatches); 
+                                                    if($("#match-list .no-matches").length === 0) {
+	                                                    $("#match-list .sub-navigation").after($noMatches); 
+                                                    }
                                                 }
                                             } else {
                                                 for(var i = 0; i < res.LoadMatchesByStageResult.matches.length; i++) {

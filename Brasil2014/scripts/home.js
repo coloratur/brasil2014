@@ -12,7 +12,7 @@
                $("#home-score").text("Score " + app.currentUser.score);                
             });
             
-            $("#matches-today-open-bets").text("");
+            $("#matches-today-open-bets").text("-");
             
             app.WS.invokeRequest(
         		"LoadMatchesByDate", 
