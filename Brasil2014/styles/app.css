@@ -227,6 +227,16 @@ p {
     line-height: 40px;
 }
 
+#tabstrip-rules table {
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+#tabstrip-rules table td { 
+    font-size: 14px;
+}
 
 
 /* THEME */
@@ -552,6 +562,12 @@ p {
 .km-flat .km-switch-background
 {
     color: #96aa39;
+}
+
+.km-flat .km-scroller-pull {
+	left: 50%;
+	margin: 0 0 0 -25px;
+    background-color: #333 !important;
 }
 
 .km-flat .km-loader,
