@@ -36,7 +36,7 @@ h2 {
     position: absolute;
     left: 30px;
     right: 30px;
-    bottom: 30px;
+    bottom: 60px;
 }
 
 #tabstrip-login .login-button {
@@ -89,10 +89,12 @@ h2 {
 
 .logout-button {
     color: #FFF;
-    margin-top: 30px;
+    //margin-top: 30px;
 	margin-left: 30px;
 	font-family: Roboto;
 	font-style: italic;
+    position: absolute;
+    bottom: 20px;
 }
 
 
