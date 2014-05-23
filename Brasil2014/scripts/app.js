@@ -21,8 +21,8 @@ function imageExists(image_url){
 (function (global) {
     var app = global.app = global.app || {};
 
-    //app.WebServiceURL = "https://wm2014.coloratur.com/Service.svc/";
-    app.WebServiceURL = "http://10.20.100.50/Service.svc/";
+    app.WebServiceURL = "https://wm2014.coloratur.com/Service.svc/";
+    //app.WebServiceURL = "http://10.20.100.50/Service.svc/";
     
     app.requestPwReset = function () {
     	app.WS.invokeRequest(
