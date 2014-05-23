@@ -60,9 +60,15 @@ function imageExists(image_url){
         window.open(app.currentUser.userTenant.registrationUrl + "preise.pdf", "_blank");
     };
     
+    app.initView = function(e) {
+        app.setTenantColor();
+        e.view.scroller.reset();
+    }
+    
     app.setTenantColor = function() {
-        if(app.currentUser)
-				app.changeClientColor(app.currentUser.userTenant.colour); 
+        if(app.currentUser) {
+			app.changeClientColor(app.currentUser.userTenant.colour); 
+        }
     };
     
     app.changeClientColor = function(value) {

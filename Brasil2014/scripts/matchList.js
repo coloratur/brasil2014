@@ -23,7 +23,7 @@
             }
     	},
         show: function(e) {
-        	app.changeClientColor(app.currentUser.userTenant.colour);
+        	app.initView(e);
  		},
         afterShow: function(e) {
             
