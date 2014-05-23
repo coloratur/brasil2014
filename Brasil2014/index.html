@@ -52,8 +52,6 @@
             
             <input id="login" type="submit" data-role="button" data-bind="click: onLogin" value="Login" class="login-button" />
         </form>
-        
-        
     </div>
     
     <!-- Brasil 2014 -->
@@ -100,7 +98,7 @@
                  <a href="#tabstrip-schedule" class="parent km-listview-link" data-role="listview-link">
                      <div class="list-item">
                          <span class="list-image" style="background-image: url('styles/images/Icons/result.svg')"></span>
-                		 <h2>Spielplan & Ergebnisse</h2>
+                		 <h2>Spiele & Ergebnisse</h2>
                      </div>
                  </a>
              </li>
@@ -116,7 +114,7 @@
                  <a href="#tabstrip-score" class="parent km-listview-link" data-role="listview-link">
                      <div class="list-item">
                          <span class="list-image" style="background-image: url('styles/images/Icons/score.svg')"></span>
-                		 <h2>Deine Treffergenauigkeit</h2>
+                		 <h2>Treffergenauigkeit</h2>
                      </div>
                  </a>
              </li>
@@ -134,7 +132,7 @@
     <!-- Spielplan & Ergebnisse -->
     <div id="tabstrip-schedule"
         data-role="view"
-        data-title="Spielplan & Ergebnisse"
+        data-title="Spiele & Ergebnisse"
         data-show="app.initView"
         data-transition="">
         
@@ -498,7 +496,7 @@
     <!-- Deine Treffergenauigkeit -->
     <div id="tabstrip-score"
         data-role="view"
-        data-title="Deine Treffergenauigkeit"
+        data-title="Treffergenauigkeit"
         data-show="app.initView"
         data-hide="app.scoring.hide"
         data-after-show="app.scoring.afterShow"
@@ -648,7 +646,7 @@
                     </li>
                 </ul>
                 
-                <input type="submit" data-role="button" data-click="app.requestPwReset" value="Absenden" class="logout-button"/>
+                <input type="submit" data-role="button" data-click="app.requestPwReset" value="Absenden" class="pwrest-button"/>
             </form>
         </div>
     </div>

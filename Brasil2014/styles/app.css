@@ -204,7 +204,7 @@ p {
     margin: 15px 0;
 }
 
-#tabstrip-pwreset .logout-button {
+#tabstrip-pwreset .pwrest-button {
     width: 100% !important;
     height: 90px !important;
     background-color: transparent !important;
@@ -217,11 +217,9 @@ p {
     font-size: 20px !important;
     font-weight: 300 !important;
     font-style: italic !important;
-    //line-height: 90px !important;
     text-align: center !important;
     vertical-align: middle !important;
     color: #FFF  !important;
-    margin: 0;
 }
 
 #tabstrip-pwreset .km-widget.km-listview.km-list li input { 
@@ -232,6 +230,24 @@ p {
     left: 15px;
     width: 90% !important;
 }
+
+#tabstrip-pwreset .km-widget.km-listview.km-list {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+#tabstrip-pwreset .km-widget.km-listview.km-list li {
+    margin-bottom: 15px !important;
+    padding: 0 15px !important;
+}
+
+
+
+
+
+
+
+
 
 
 /* INFO VIEW */

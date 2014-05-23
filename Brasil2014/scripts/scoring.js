@@ -56,13 +56,13 @@
                         }
 
                         this.g.beginPath();
-                        this.g.strokeStyle = r ? this.o.fgColor : this.fgColor ;
+                        this.g.strokeStyle = r ? this.fgColor : this.fgColor ;
                         this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, sat, eat, false);
                         this.g.stroke();
 
                         this.g.lineWidth = 2;
                         this.g.beginPath();
-                        this.g.strokeStyle = this.o.fgColor;
+                        this.g.strokeStyle = '#FFF';
                         this.g.arc(this.xy, this.xy, this.radius - this.lineWidth + 1 + this.lineWidth * 2 / 3, 0, 2 * Math.PI, false);
                         this.g.stroke();
 
