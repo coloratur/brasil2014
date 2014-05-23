@@ -60,6 +60,11 @@ function imageExists(image_url){
         window.open(app.currentUser.userTenant.registrationUrl + "preise.pdf", "_blank");
     };
     
+    app.setTenantColor = function() {
+        if(app.currentUser)
+				app.changeClientColor(app.currentUser.userTenant.colour); 
+    };
+    
     app.changeClientColor = function(value) {
         $('.km-flat .km-header .km-navbar').css({'background-color': value});
         $('.km-flat .km-switch-handle').css({'background-color': value});

@@ -35,12 +35,12 @@
             <ul data-role="listview" data-bind="">
                 <li>
                     <label>
-                        <input type="text" id="tbUsername" placeholder="Username" data-bind="value: username" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+                        <input type="text" id="tbUsername" placeholder="Nickname" data-bind="value: username" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
                     </label>
                 </li>
                 <li>
                     <label>                        
-                        <input type="password" id="tbPassword" placeholder="Password" data-bind="value: password" />
+                        <input type="password" id="tbPassword" placeholder="Passwort" data-bind="value: password" />
                     </label>
                 </li>
             </ul>
@@ -56,7 +56,7 @@
         data-role="view"
         data-title="Brasil 2014"
         data-transition="slide"
-        data-show="app.home.show"
+        data-show="app.setTenantColor"
         data-after-show="app.home.afterShow">
         
         <div data-role="header">
@@ -130,7 +130,7 @@
     <div id="tabstrip-schedule"
         data-role="view"
         data-title="Spielplan & Ergebnisse"
-        data-after-show="app.changeClientColor(app.currentUser.userTenant.colour)"
+        data-show="app.setTenantColor"
         data-transition="slide">
         
         <div data-role="header">
@@ -204,7 +204,7 @@
     <div id="tabstrip-group"
         data-role="view"
         data-title="Vorrunde"
-        data-show="app.changeClientColor(app.currentUser.userTenant.colour)"
+        data-show="app.setTenantColor"
         data-transition="slide">
         
         <div data-role="header">
@@ -494,7 +494,7 @@
     <div id="tabstrip-score"
         data-role="view"
         data-title="Deine Treffergenauigkeit"
-        data-show="app.changeClientColor(app.currentUser.userTenant.colour)"
+        data-show="app.setTenantColor"
         data-transition="slide">
         
         <div data-role="header">
@@ -509,7 +509,7 @@
     <div id="tabstrip-rules"
         data-role="view"
         data-title="Regeln & Mehr"
-        data-show="app.changeClientColor(app.currentUser.userTenant.colour)"
+        data-show="app.setTenantColor"
         data-transition="slide">
         
         <div data-role="header">
@@ -570,13 +570,13 @@
         </div>
         
         <div class="content-container">
-            <p>Bitte geben Sie Ihren Benutzernamen oder Ihre E-Mail-Adresse an. Sie werden daraufhin eine E-Mail erhalten, mit der Sie Ihr Passwort zurücksetzen können.</p>
+            <p>Bitte geben Sie Ihren Nicknamen oder Ihre E-Mail-Adresse an. Sie werden daraufhin eine E-Mail erhalten, mit der Sie Ihr Passwort zurücksetzen können.</p>
             
             <form class="pwreset-form">
                 <ul data-role="listview" data-bind="">
                     <li>
                         <label>
-                            <input type="text" id="tbUserIdOrEmail" placeholder="Username oder E-Mail" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+                            <input type="text" id="tbUserIdOrEmail" placeholder="Nickname oder E-Mail" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
                         </label>
                     </li>
                 </ul>
