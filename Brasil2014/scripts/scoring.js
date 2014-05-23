@@ -43,7 +43,7 @@
                     data: [{
                         value: 75,
                         category: "Treffer",
-                        color: '#FF0000'
+                        color: app.currentUser.userTenant.colour
                     }, {
                         value: 25,
                         category: "Tendenz",
@@ -55,40 +55,6 @@
             });
             
             $('#score-value').html('75%');
-            
-            
-            /*
-            $("#chart").kendoRadialGauge({
-
-                pointer: {
-                    value: 80
-                },
-                scale: {
-                    minorUnit: 5,
-                    startAngle: -30,
-                    endAngle: 210,
-                    max: 180
-                },
-                labels: {
-                    position: "inside"
-                },
-                ranges: [
-                    {
-                        from: 80,
-                        to: 120,
-                        color: "#ffc700"
-                    }, {
-                        from: 120,
-                        to: 150,
-                        color: "#ff7a00"
-                    }, {
-                        from: 150,
-                        to: 180,
-                        color: "#c20000"
-                    }
-                ]
-            });
-            */
         }
     };
 })(window);

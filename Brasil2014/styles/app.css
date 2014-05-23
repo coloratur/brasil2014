@@ -224,6 +224,19 @@ p {
 }
 
 
+/* INFO VIEW */
+#tabstrip-infos .content-container {
+    padding: 20px;
+	color: #FFF !important;
+    font-weight: 300 !important;
+    font-family: "Roboto" !important;
+}
+
+#tabstrip-infos .content-container img {
+    width: 100%;
+    height: auto;
+}
+
 
 /* RULES VIEW */
 #tabstrip-rules .content-container {

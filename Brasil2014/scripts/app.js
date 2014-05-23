@@ -70,20 +70,21 @@ function imageExists(image_url){
 		app.initView(e);
         
         $("#tabstrip-infos .content-container").html('<div>' + 
-        app.currentUser.userTenant.name + '<br />' + 
+        '<img src="' + app.currentUser.userTenant.logo + '" />' + '<br /><br />' + 
+        '<strong>' + app.currentUser.userTenant.name + '</strong><br /><br />' + 
         app.currentUser.userTenant.street + '<br />' + 
-        app.currentUser.userTenant.city + '<br />' + 
-        app.currentUser.userTenant.zip + '<br />' + 
-        app.currentUser.userTenant.country + '<br />' + 
+        app.currentUser.userTenant.zip + ' ' + app.currentUser.userTenant.city + '<br />' + 
+        app.currentUser.userTenant.country + '<br /><br />' + 
+        app.currentUser.userTenant.phone + '<br />' +
         app.currentUser.userTenant.email + '<br />' + 
-        app.currentUser.userTenant.web + '<br />' + 
-        app.currentUser.userTenant.phone + '<br />' + 
-        app.currentUser.userTenant.fax + '<br />' + 
-        '<img src="' + app.currentUser.userTenant.logo + '" />' + '<br />' + 
-        app.currentUser.userTenant.contactPersonEmail + '<br />' + 
-        app.currentUser.userTenant.contactPersonFirstName + '<br />' + 
-        app.currentUser.userTenant.contactPersonLastName + '<br />' + 
-        app.currentUser.userTenant.contactPersonPhone + '<br />' + 
+        app.currentUser.userTenant.web + 
+         
+        //app.currentUser.userTenant.fax + '<br />' + 
+        
+        //app.currentUser.userTenant.contactPersonEmail + '<br />' + 
+        //app.currentUser.userTenant.contactPersonFirstName + '<br />' + 
+        //app.currentUser.userTenant.contactPersonLastName + '<br />' + 
+        //app.currentUser.userTenant.contactPersonPhone + '<br />' + 
         '</div>');
     };
     
