@@ -15,8 +15,8 @@ function imageExists(image_url){
 (function (global) {
     var app = global.app = global.app || {};
 
-    //app.WebServiceURL = "https://wm2014.coloratur.com/Service.svc/";
-    app.WebServiceURL = "http://10.20.100.50/Service.svc/";
+    app.WebServiceURL = "https://wm2014.coloratur.com/Service.svc/";
+    //app.WebServiceURL = "http://10.20.100.50/Service.svc/";
     
     app.requestPwReset = function () {
     	app.WS.invokeRequest(
@@ -58,6 +58,27 @@ function imageExists(image_url){
     
     app.openPrices = function () {
         window.open(app.currentUser.userTenant.registrationUrl + "preise.pdf", "_blank");
+    };
+    
+    app.initInfo = function(e) {
+		app.initView(e);
+        
+        $("#tabstrip-infos .content-container").html('<div>' + 
+        app.currentUser.userTenant.name + '<br />' + 
+        app.currentUser.userTenant.street + '<br />' + 
+        app.currentUser.userTenant.city + '<br />' + 
+        app.currentUser.userTenant.zip + '<br />' + 
+        app.currentUser.userTenant.country + '<br />' + 
+        app.currentUser.userTenant.email + '<br />' + 
+        app.currentUser.userTenant.web + '<br />' + 
+        app.currentUser.userTenant.phone + '<br />' + 
+        app.currentUser.userTenant.fax + '<br />' + 
+        '<img src="' + app.currentUser.userTenant.logo + '" />' + '<br />' + 
+        app.currentUser.userTenant.contactPersonEmail + '<br />' + 
+        app.currentUser.userTenant.contactPersonFirstName + '<br />' + 
+        app.currentUser.userTenant.contactPersonLastName + '<br />' + 
+        app.currentUser.userTenant.contactPersonPhone + '<br />' + 
+        '</div>');
     };
     
     app.initView = function(e) {
@@ -197,8 +218,6 @@ function imageExists(image_url){
                             
                             app.currentUserLoaded();
                             
-                            app.application.navigate("#tabstrip-home");
-                            
                             $("#home-score").text("Score " + app.currentUser.score); 
                             $("#home-userId").text(app.currentUser.id);
 
@@ -207,6 +226,8 @@ function imageExists(image_url){
                             if(imgUrl) {
                             	$("#user-image").css("background-image", "url(" + imgUrl + ")");
                             }
+                            
+                            app.application.navigate("#tabstrip-home");
             			}
             		},
             		function (xhr) {
