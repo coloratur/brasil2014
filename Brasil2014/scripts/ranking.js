@@ -62,7 +62,7 @@ function rankingViewInit() {
                                 	data: function(res) {
                                     	var result = new Array();
                                         	
-                                        for(var i = 0; i < 3; i++) {
+                                        for(var i = 0; i < (res.LoadUserRankingResult.users.length > 3 ? 3 : res.LoadUserRankingResult.users.length); i++) {
                                             var user = res.LoadUserRankingResult.users[i];
                                             result.push(user);                                    
                                         }

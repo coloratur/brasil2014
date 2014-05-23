@@ -16,14 +16,14 @@
     	},
         hide: function(e) {
 			$('#match-list-listview').remove();
+            
+            if($("#match-list .no-matches").length) {
+                $("#match-list .no-matches").remove();
+            }
     	},
         show: function(e) {
  		},
         afterShow: function(e) {
-            
-            if($("#match-list .sub-navigation .no-matches").length) {
-                $("#match-list .sub-navigation .no-matches").remove();
-            }
             
             $lv = $('<ul id="match-list-listview"></ul>');
             
