@@ -7,6 +7,15 @@
 			app.initView(e);
         },
         afterShow: function(e) {
+            
+            $("#chart").after("<div>" + 
+            "Rang: " + app.currentUser.rank + "<br />" + 
+            "Punkte: " + app.currentUser.score + "<br />" + 
+            "Spiele insgesamt: " + app.currentUser.matchCountTotal + "<br />" + 
+            "Treffer: " + app.currentUser.matchCountCorrect + "<br />" + 
+            "Tendenz: " + app.currentUser.matchCountTendency + "<br />" + 
+            "</div>");
+            
             $("#chart").kendoChart({
                 legend: {
                     visible: false
