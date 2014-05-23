@@ -142,6 +142,9 @@
             var goals1 = $("#goals-team1-" + matchId).val();
             var goals2 = $("#goals-team2-" + matchId).val();
             
+            if(!goals1 || !goals2)
+            	return;
+            
             app.WS.invokeRequest(
         		"PlaceBet", 
         		{ authString: global.localStorage.getItem("authString"), goals1: goals1, goals2: goals2, matchId: matchId }, 
@@ -168,9 +171,10 @@
                         }
         			}
                     
+                    showAlert("Es ist ein Fehler aufgetreten.");
         		},
         		function (xhr) {        			
-        			
+                    showAlert("Es ist ein Fehler aufgetreten.");
         		}
         	);
         }
