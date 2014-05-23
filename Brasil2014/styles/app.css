@@ -155,8 +155,18 @@ p {
 
 
 /* SCORING VIEW */
-#chart {
-    margin-top: 40px;
+#tabstrip-score .content-container {
+    //position: absolute;
+    text-align: center;
+    padding: 30px;
+}
+
+#tabstrip-score .scoring-details {
+    color: #FFF;
+    font-size: 20px;
+    font-family: Roboto !important;
+    font-weight: 100;
+    margin-top: 30px;
 }
 
 #score-value {
