@@ -143,10 +143,13 @@ function imageExists(image_url){
                             
                             app.application.navigate("#tabstrip-home", "slide");
                             
-                            var imgUrl = app.ranking.getUserImage(user.id);
-                            
+                            $("#home-score").text("Score " + app.currentUser.score); 
+                            $("#home-userId").text(app.currentUser.id);
+
+                            var imgUrl = app.ranking.getUserImage(app.currentUser.id);
+
                             if(imgUrl) {
-                                $("#user-image").css("background-image", "url(" + imgUrl + ")");
+                            	$("#user-image").css("background-image", "url(" + imgUrl + ")");
                             }
             			}
             		},

@@ -21,6 +21,10 @@
  		},
         afterShow: function(e) {
             
+            if($("#match-list .sub-navigation .no-matches").length) {
+                $("#match-list .sub-navigation .no-matches").remove();
+            }
+            
             $lv = $('<ul id="match-list-listview"></ul>');
             
             $("#match-list .sub-navigation").after($lv);
@@ -54,6 +58,13 @@
                                           	
                                         	if(e.view.params.today) {
                                                 result = res.LoadMatchesByDateResult.matches;
+                                                
+                                                if(result.length === 0) {
+                                                    var $noMatches = $("<div class='no-matches'></div>");
+                                                    $noMatches.text("Heute finden keine Spiele statt!");
+                                                    
+                                                    $("#match-list .sub-navigation").after($noMatches); 
+                                                }
                                             } else {
                                                 for(var i = 0; i < res.LoadMatchesByStageResult.matches.length; i++) {
                                                     var match = res.LoadMatchesByStageResult.matches[i];

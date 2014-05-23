@@ -29,8 +29,6 @@
         			if(typeof(result.AuthenticateUserResult) === "object" && result.AuthenticateUserResult.__type == "userCredentials") {
         				global.localStorage.setItem("authString", result.AuthenticateUserResult.authString);
         				global.localStorage.setItem("user", username);
-                        
-                        app._loadCurrentUser();
                                                
 						app.application.navigate("#tabstrip-home", "slide"); 
                         
@@ -76,6 +74,9 @@
     });
 
     app.loginService = {
-        viewModel: new LoginViewModel()
+        viewModel: new LoginViewModel(),
+        afterShow: function () {
+            
+        }
     };
 })(window);

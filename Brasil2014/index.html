@@ -26,6 +26,7 @@
         data-role="view"
         data-title=""
         data-model="app.loginService.viewModel"
+        data-after-show="app.loginService.afterShow"
         data-transition="slide">
         
         <form class="login-form" data-bind="events: { keyup: checkEnter }">
@@ -53,7 +54,8 @@
         data-role="view"
         data-title="Brasil 2014"
         data-transition="slide"
-        data-show="app.home.show">
+        data-show="app.home.show"
+        data-after-show="app.home.afterShow">
         
         <div data-role="header">
             <div data-role="navbar">
@@ -67,8 +69,8 @@
                     <div class="list-item">
                         <span class="list-image" id="user-image" style="background-repeat: no-repeat; background-image: url('styles/images/Icons/user.svg')"></span>
                         <div class="list-detail">
-                        	<p data-bind="text: userId" id="home-userId"></p>
-                        	<strong>Score 88%</strong>
+                        	<p id="home-userId"></p>
+                        	<strong id="home-score"></strong>
                         </div>
                     </div>
                 </a>
@@ -78,8 +80,8 @@
                     <div class="list-item">
                         <span class="list-image" style="background-image: url('styles/images/Icons/tip.svg')"></span>
                         <div class="list-detail">
-                            <p>Tip abgeben</p>
-                            <strong>4 von 8 Tipps offen</strong>
+                            <p>Spiele heute</p>
+                            <strong id="matches-today-open-bets"></strong>
                         </div>
                     </div>
                 </a>
