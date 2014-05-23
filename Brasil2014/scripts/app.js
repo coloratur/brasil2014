@@ -59,6 +59,36 @@ function imageExists(image_url){
     app.openPrices = function () {
         window.open(app.currentUser.userTenant.registrationUrl + "preise.pdf", "_blank");
     };
+    
+    app.changeClientColor = function(value) {
+        $('.km-flat .km-header .km-navbar').css({'background-color': value});
+        $('.km-flat .km-switch-handle').css({'background-color': value});
+		$('.km-flat .k-slider-selectione').css({'background-color': value});
+		$('.km-flat .km-switch-background').css({'background-color': value});
+        
+        $('.km-flat .km-loader').css({'background-color': value});
+		$('.km-flat .km-rowinsert').css({'background-color': value});
+        $('.km-flat .km-state-active').css({'background-color': value});
+        $('.km-flat .km-scroller-pull').css({'background-color': value});
+        $('.km-flat .k-slider-selection').css({'background-color': value});
+        $('.km-flat .km-touch-scrollbar').css({'background-color': value});
+        $('.km-flat .km-pages .km-current-page').css({'background-color': value});
+        $('.km-flat .k-slider .k-draghandle').css({'background-color': value});
+        $('.km-flat .k-slider .k-draghandle:hover').css({'background-color': value});
+        $('.km-flat .km-tabstrip .km-state-active').css({'background-color': value});
+        $('.km-flat .km-scroller-refresh.km-load-more').css({'background-color': value});
+        $('.km-flat .km-popup .k-state-hover').css({'background-color': value});
+        $('.km-flat .km-popup .k-state-focused').css({'background-color': value});
+        $('.km-flat .km-popup .k-state-selected').css({'background-color': value});
+        $('.km-flat .km-actionsheet > li > a:active').css({'background-color': value});
+        $('.km-flat .km-actionsheet > li > a:hover').css({'background-color': value});
+        $('.km-flat li.km-state-active .km-listview-link').css({'background-color': value});
+        $('.km-flat li.km-state-active .km-listview-label').css({'background-color': value});
+        $('.km-flat .km-listview-label input[type=radio]:checked').css({'background-color': value});
+        $('.km-flat .km-listview-label input[type=checkbox]:checked').css({'background-color': value});
+        
+        $('.km-flat .km-filter-wrap > input:focus').css({'border-color': value});
+    }
         
     
     function WebService(url) {
