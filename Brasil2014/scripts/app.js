@@ -1,6 +1,12 @@
 // global functions
 function hasNetworkConnection() { return true; };
-function showAlert(title, text) { alert(title + "\r\n" + text); };
+function showAlert(title, text) { 
+    if(text) {
+    	alert(title + "\r\n" + text); 
+    } else {
+    	alert(title); 
+    }
+};
 
 function imageExists(image_url){
 
@@ -15,8 +21,8 @@ function imageExists(image_url){
 (function (global) {
     var app = global.app = global.app || {};
 
-    app.WebServiceURL = "https://wm2014.coloratur.com/Service.svc/";
-    //app.WebServiceURL = "http://10.20.100.50/Service.svc/";
+    //app.WebServiceURL = "https://wm2014.coloratur.com/Service.svc/";
+    app.WebServiceURL = "http://10.20.100.50/Service.svc/";
     
     app.requestPwReset = function () {
     	app.WS.invokeRequest(
@@ -57,7 +63,7 @@ function imageExists(image_url){
     };
     
     app.openPrices = function () {
-        window.open(app.currentUser.userTenant.registrationUrl + "preise.pdf", "_blank");
+        window.open(app.currentUser.userTenant.registrationUrl + "preise.pdf", "_system");
     };
     
     app.initInfo = function(e) {

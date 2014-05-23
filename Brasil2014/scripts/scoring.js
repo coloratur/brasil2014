@@ -6,9 +6,13 @@
         show: function(e) {
 			app.initView(e);
         },
+        hide: function(e) {
+            $("#chart .scoring-details").remove();
+        },
         afterShow: function(e) {
             
-            $("#chart").after("<div>" + 
+            // todo: delete this div in the hide event
+            $("#chart").after("<div class='scoring-details'>" + 
             "Rang: " + app.currentUser.rank + "<br />" + 
             "Punkte: " + app.currentUser.score + "<br />" + 
             "Spiele insgesamt: " + app.currentUser.matchCountTotal + "<br />" + 
