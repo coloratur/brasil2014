@@ -19,17 +19,21 @@
                     labels: {
                         template: "#= category # - #= kendo.format('{0:P}', percentage)#",
                         position: "outsideEnd",
-                        visible: false,
-                        background: "transparent"
+                        visible: true,
+                        background: "transparent",
+                        align: "column"
                     }
                 },
                 series: [{
                     type: "donut",
+                    startAngle: 90,
                     data: [{
                         value: 75,
+                        category: "Treffer",
                         color: '#FF0000'
                     }, {
                         value: 25,
+                        category: "Tendenz",
                         opacity: 0.5,
                         color: '#FFF'
                     }],
