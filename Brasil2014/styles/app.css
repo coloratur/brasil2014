@@ -543,12 +543,14 @@ p {
 }
 
 #ranking-top-list li {
-    width: 32.4%;
-	display: inline-block;
+    width: 31.9%;
+    float: left;
+    margin-right: 6px;
+    margin-bottom: 2px !important;
 }
 
 #ranking-top-list li:last-child {
-    float: right;
+    margin-right: 0px !important;
 }
 
 
@@ -566,6 +568,10 @@ p {
     height: 90px;
     
     background-color: transparent;
+}
+
+#ranking-list .list-item h2 {
+    line-height: 70px !important;
 }
 
 #ranking-top-list .list-item .list-detail {
@@ -590,8 +596,33 @@ p {
 }
 
 #ranking-list .list-item .list-image {
-    width: 70px;
+    width: 32%;
     height: 70px;
+}
+
+#ranking-list .list-item .user-data {
+    margin-left: 37%;
+    margin-right: 15px;
+	padding-top: 13px;
+}
+
+#ranking-list .list-item .user-data .user-name {
+    font-size: 20px;
+    font-weight: 300;
+    display: inline-block;
+}
+
+#ranking-list .list-item .user-data .user-ranking {
+    font-size: 20px;
+    font-weight: 300;
+    display: inline-block;
+    float: right;
+}
+
+#ranking-list .list-item .user-data .user-score {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
 }
 
 #match-list .no-matches {
