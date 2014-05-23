@@ -15,7 +15,7 @@
 
     	},
         show: function(e) {
-			app.changeClientColor(app.currentUser.userTenant.colour); 
+			app.initView(e);
  		},
         hide: function(e) {
 			$('#group-ranking-listview').data("kendoMobileListView").destroy();

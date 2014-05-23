@@ -40,7 +40,7 @@ function rankingViewInit() {
 			$('#ranking-top-list').remove();
  		},
         show: function(e) {
-			app.changeClientColor(app.currentUser.userTenant.colour);  
+			app.initView(e);
         },
         afterShow: function(e) {
             $lvTop = $('<ul id="ranking-top-list"></ul>');
