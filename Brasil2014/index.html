@@ -4,18 +4,21 @@
     <title></title>
     <meta charset="utf-8" />
     <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
+    <link href="kendo/styles/kendo.dataviz.flat.min.css" rel="stylesheet" />
     <link href="styles/app.css" rel="stylesheet" />
     <link href="styles/fonts.css" rel="stylesheet" />
 
     <script src="cordova.js"></script>
     <script src="kendo/js/jquery.min.js"></script>
-    <script src="kendo/js/kendo.mobile.min.js"></script>
+    <!--<script src="kendo/js/kendo.mobile.min.js"></script>-->
+    <script src="kendo/js/kendo.all.min.js"></script>
  
     <script src="scripts/app.js"></script>
     
     <script src="scripts/login.js"></script>
     <script src="scripts/home.js"></script>
     <script src="scripts/ranking.js"></script>
+    <script src="scripts/scoring.js"></script>
     <script src="scripts/groupRanking.js"></script>
     <script src="scripts/matchList.js"></script>
       
@@ -495,6 +498,7 @@
         data-role="view"
         data-title="Deine Treffergenauigkeit"
         data-show="app.initView"
+        data-after-show="app.scoring.afterShow"
         data-transition="">
         
         <div data-role="header">
@@ -503,6 +507,9 @@
             	<span data-role="view-title"></span>
             </div>
         </div>
+        
+        <div id="chart"></div>
+        <div id="score-value"></div>
     </div>
     
     <!-- Regeln & Mehr -->
