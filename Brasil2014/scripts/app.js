@@ -99,6 +99,7 @@ function imageExists(image_url){
         
         $('.km-flat .km-filter-wrap > input:focus').css({'border-color': value});
        
+        /*
         $(document).on('mousedown', '.km-flat .km-list > li > a', function() {
             $(this).css("background", value);
         });
@@ -110,7 +111,7 @@ function imageExists(image_url){
          $(document).on('mouseout', '.km-flat .km-list > li > a', function() {
             $(this).css("background", 'none');
         });
-        
+        */
     }
         
     
