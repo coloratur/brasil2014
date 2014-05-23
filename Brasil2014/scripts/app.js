@@ -100,6 +100,11 @@ function imageExists(image_url){
         $(document).on('mouseup', '.km-flat .km-list > li > a', function() {
             $(this).css("background", 'none');
         });
+        
+         $(document).on('mouseout', '.km-flat .km-list > li > a', function() {
+            $(this).css("background", 'none');
+        });
+        
     }
         
     
