@@ -590,7 +590,7 @@ p {
 .km-flat .km-listview-label input[type=radio]:checked,
 .km-flat .km-listview-label input[type=checkbox]:checked
 {
-    background: #96aa39;
+    background: #505050;
 }
 
 .km-flat .km-tabstrip .km-state-active {
