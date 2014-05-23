@@ -22,6 +22,7 @@
             }
     	},
         show: function(e) {
+        	app.changeClientColor(app.currentUser.userTenant.colour);
  		},
         afterShow: function(e) {
             

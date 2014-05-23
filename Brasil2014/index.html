@@ -128,6 +128,7 @@
     <div id="tabstrip-schedule"
         data-role="view"
         data-title="Spielplan & Ergebnisse"
+        data-after-show="app.changeClientColor(app.currentUser.userTenant.colour)"
         data-transition="slide">
         
         <div data-role="header">
@@ -201,6 +202,7 @@
     <div id="tabstrip-group"
         data-role="view"
         data-title="Vorrunde"
+        data-show="app.changeClientColor(app.currentUser.userTenant.colour)"
         data-transition="slide">
         
         <div data-role="header">
@@ -398,6 +400,7 @@
         data-title="Rangliste & Preise"
         data-after-show="app.ranking.afterShow"
         data-hide="app.ranking.hide"
+        data-show="app.ranking.show"
         data-transition="slide">
         
         <div data-role="header">
@@ -489,6 +492,7 @@
     <div id="tabstrip-score"
         data-role="view"
         data-title="Deine Treffergenauigkeit"
+        data-show="app.changeClientColor(app.currentUser.userTenant.colour)"
         data-transition="slide">
         
         <div data-role="header">
@@ -503,6 +507,7 @@
     <div id="tabstrip-rules"
         data-role="view"
         data-title="Regeln & Mehr"
+        data-show="app.changeClientColor(app.currentUser.userTenant.colour)"
         data-transition="slide">
         
         <div data-role="header">

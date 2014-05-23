@@ -15,6 +15,7 @@
 
     	},
         show: function(e) {
+			app.changeClientColor(app.currentUser.userTenant.colour); 
  		},
         hide: function(e) {
 			$('#group-ranking-listview').remove();

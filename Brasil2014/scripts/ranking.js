@@ -36,6 +36,9 @@ function rankingViewInit() {
 			$('#ranking-top-list').remove();
 			$('#ranking-list').remove();
  		},
+        show: function(e) {
+			app.changeClientColor(app.currentUser.userTenant.colour);  
+        },
         afterShow: function(e) {
             $lvTop = $('<ul id="ranking-top-list"></ul>');
             

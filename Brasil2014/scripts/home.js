@@ -46,7 +46,7 @@
         	);
         },
         show: function() {
-            
+			app.changeClientColor(app.currentUser.userTenant.colour); 
         }
     };
 })(window);
