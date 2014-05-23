@@ -525,6 +525,11 @@ p {
     height: 70px;
 }
 
+#match-list .no-matches {
+    color: #FFF;
+    padding: 30px;
+}
+
 .table {
     float: right;
     width: 65%;
@@ -654,3 +659,9 @@ p {
     border-right: 0 !important;
 }
 
+
+/* iOS 6 */
+.km-ios6 *:not(.km-tabstrip):not(.km-buttongroup)>.km-button, 
+.km-tablet .km-ios *:not(.km-tabstrip):not(.km-buttongroup)>.km-button { 
+    background-image: none !important;
+}
