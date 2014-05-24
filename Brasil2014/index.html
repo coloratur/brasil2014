@@ -328,7 +328,7 @@
             				/
             				<span class="game-user-bet #: ((userBet && userBet.goals1 == goalsTeam1 && userBet.goals2 == goalsTeam2) ? 'tip-success' : (((userBet && userBet.goals1 > userBet.goals2 && goalsTeam1 > goalsTeam2) || (userBet && userBet.goals2 > userBet.goals1 && goalsTeam2 > goalsTeam1) || (userBet&& userBet.goals1 == userBet.goals2 && goalsTeam1 == goalsTeam2))) ? 'tip-tendency' : 'tip-error') #">#: userBet == null ? "-" : userBet.goals1 + ":" + userBet.goals2 #</span>
             				
-            				<div style="font-size: 18px; #: resultType === 'REG' ? 'display: none;' : '' #">
+            				<div class="result-nv" style="#: resultType === 'REG' ? 'display: none;' : '' #">
             					#: goalsTeam1Final # : #: goalsTeam2Final #
             					#: resultType === 'AET' ? '(n.V.)' : '' #
             					#: resultType === 'APS' ? '(n.E.)' : '' #
