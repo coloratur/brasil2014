@@ -13,7 +13,7 @@
     <iOSStatusBarStyle>Hidden</iOSStatusBarStyle>
     <AndroidHardwareAcceleration>false</AndroidHardwareAcceleration>
     <WP8SupportedResolutions>ID_RESOLUTION_WVGA;ID_RESOLUTION_WXGA;ID_RESOLUTION_HD720P</WP8SupportedResolutions>
-    <BundleVersion>0.8</BundleVersion>
+    <BundleVersion>1.0</BundleVersion>
     <DisplayName>Brasil 2014</DisplayName>
     <Author>COLORATUR GmbH</Author>
     <Description>Brasil2014</Description>
