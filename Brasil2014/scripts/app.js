@@ -23,6 +23,7 @@ function imageExists(image_url){
 
     app.WebServiceURL = "https://wm2014.coloratur.com/Service.svc/";
     //app.WebServiceURL = "http://10.20.100.50/Service.svc/";
+    //app.WebServiceURL = "http://192.168.2.119/Service.svc/";
     
     app.requestPwReset = function () {
     	app.WS.invokeRequest(
