@@ -101,17 +101,18 @@ h2 {
 /* START VIEW STYLES */
 #top-list {
     width: 100%;
-	display: inline-block;
 	padding-bottom: 0;
 }
 
 #top-list li {
-    width: 49%;
-	display: inline-block;
+    width: 49.999999%;
+    float: left;
+    padding-right: 2.5px !important;
 }
 
 #top-list li:last-child {
-    float: right;
+    padding-right: 0 !important;
+    padding-left: 2.5px !important;
 }
 
 #user-image {
@@ -123,8 +124,12 @@ h2 {
 }
 
 #top-list li {
-    background-color: #f6f6f6;
+    background: none;
     height: auto;
+}
+
+#top-list .list-item {
+    background-color: #f6f6f6;
 }
 
 #top-list .list-item .list-image {
@@ -135,6 +140,9 @@ h2 {
     width: 70px;
     height: 120px;
     //height: 70px;
+    
+    width: 100% !important;
+	background-size: contain;
     
     background-color: transparent !important;
     background-repeat: no-repeat;
@@ -150,6 +158,13 @@ h2 {
 	//margin-top: 15px;
     
     font-style: normal;
+    
+    line-height: 16px;
+}
+
+#home-score,
+#matches-today-open-bets {
+    font-weight: 600;
 }
 
 #top-list .km-listview-link:after {
@@ -158,6 +173,10 @@ h2 {
 
 #start-list {
     padding-top: 0;
+}
+
+#start-list li {
+    width: 100%;
 }
 
 p {
@@ -563,25 +582,32 @@ p {
 /* RANKING VIEW */
 #ranking-top-list {
     width: 100%;
-	display: inline-block;
 	padding-bottom: 0;
 }
 
 #ranking-top-list li {
-    width: 31.95%;
+    width: 33.33333%;
     float: left;
-    margin-right: 6px;
-    margin-bottom: 2px !important;
+    padding-left: 2.5px !important;
+    padding-right: 2.5px !important;
+}
+
+#ranking-top-list li:first-child {
+    padding-left: 0 !important;
 }
 
 #ranking-top-list li:last-child {
-    margin-right: 0px !important;
+    padding-right: 0 !important;
 }
 
 
 #ranking-top-list li {
-    background-color: #f6f6f6;
+    background: none;
     height: auto;
+}
+
+#ranking-top-list .list-item {
+	background-color: #f6f6f6;
 }
 
 #ranking-top-list .list-item .list-image {
