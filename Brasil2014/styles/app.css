@@ -162,6 +162,11 @@ h2 {
     line-height: 16px;
 }
 
+#home-userId {
+   white-space: nowrap;
+	overflow: hidden;
+}
+
 #home-score,
 #matches-today-open-bets {
     font-weight: 600;
@@ -637,6 +642,25 @@ p {
     font-style: normal;
 }
 
+#ranking-top-list .list-item .list-detail .user-name {
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+#ranking-top-list .list-item .list-detail .user-score {
+	font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    display: inline-block;
+}
+
+#ranking-top-list .list-item .list-detail .user-ranking {
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-block;
+    float: right;
+}
+
 #ranking-top-list .km-listview-link:after {
     display: none;
 }
@@ -647,6 +671,8 @@ p {
 
 #ranking-list li {
     height: 70px;
+    float: left;
+	width: 100%;
 }
 
 #ranking-list .list-item .list-image {
@@ -668,6 +694,9 @@ p {
     font-size: 20px;
     font-weight: 300;
     display: inline-block;
+    white-space: nowrap;
+	overflow: hidden;
+    max-width: 80%;
 }
 
 #ranking-list .list-item .user-data .user-ranking {
