@@ -112,6 +112,8 @@ h2 {
     background-repeat: no-repeat;
     background-position: center;
     margin-buttom: 10px;
+    height: 40px;
+	width: 40px;
 }
 
 #top-list {
