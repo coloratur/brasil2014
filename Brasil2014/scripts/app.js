@@ -74,7 +74,7 @@ function imageExists(image_url){
 		app.initView(e);
         
         $("#tabstrip-infos .content-container").html('<div>' + 
-        '<img src="' + app.currentUser.userTenant.logo + '" />' + '<br /><br />' + 
+        '<div class="image-container"><img src="' + app.currentUser.userTenant.logo + '" /></div>' + 
         '<strong>' + app.currentUser.userTenant.name + '</strong><br /><br />' + 
         app.currentUser.userTenant.street + '<br />' + 
         app.currentUser.userTenant.zip + ' ' + app.currentUser.userTenant.city + '<br />' + 
