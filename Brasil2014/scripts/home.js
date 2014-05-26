@@ -29,7 +29,7 @@
                         for(var i = 0; i < result.LoadMatchesByDateResult.matches.length; i++) {
                          	var match = result.LoadMatchesByDateResult.matches[i];
 							
-                            if(!match.userBet && match.resultType == null)
+                            if(!match.userBet && match.resultType == null && new Date().getTime() <= startDate)
                             	matchesTodayOpen++;
                         }
                         
