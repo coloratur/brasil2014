@@ -150,8 +150,6 @@
             var goals2Old = $("#goals-team2-" + matchId).data("oldvalue");
             
             if(goals1 == "" || goals2 == "") {
-                $("#goals-team1-" + matchId).val(goals1Old);
-                $("#goals-team2-" + matchId).val(goals2Old);
             	return;
             }
             
@@ -171,8 +169,8 @@
         			if(typeof(result.PlaceBetResult) === "object" && result.PlaceBetResult.__type == "bool") {
                         if(result.PlaceBetResult.value) {
         					
-                            $("#goals-team1-" + matchId).data(goals1);
-                            $("#goals-team2-" + matchId).data(goals2);
+                            $("#goals-team1-" + matchId).data("oldvalue", goals1);
+                            $("#goals-team2-" + matchId).data("oldvalue", goals2);
                             
                             if($("#game-info-" + matchId + " .saved-label").length === 0) {
                                 var $saved = $("<div class='saved-label'></div>");
