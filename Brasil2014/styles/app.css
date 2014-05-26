@@ -294,6 +294,12 @@ p {
     font-family: "Roboto" !important;
 }
 
+#tabstrip-infos .content-container .image-container {
+    background-color: #FFF;
+    margin-bottom: 30px;
+    padding: 30px;
+}
+
 #tabstrip-infos .content-container img {
     width: 100%;
     height: auto;
