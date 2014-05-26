@@ -140,17 +140,25 @@
             
         },
         saveBet: function(e) {
-        	
+
         	var matchId = $(e.srcElement).data("matchid");
             
-            if($("#goals-team1-" + matchId).val() == "" || $("#goals-team2-" + matchId).val() == "")
-            	return;
+            var goals1 = $("#goals-team1-" + matchId).val();
+            var goals2 = $("#goals-team2-" + matchId).val();
             
-            var goals1 = parseInt($("#goals-team1-" + matchId).val());
-            var goals2 = parseInt($("#goals-team2-" + matchId).val());
+            var goals1Old = $("#goals-team1-" + matchId).data("oldvalue");
+            var goals2Old = $("#goals-team2-" + matchId).data("oldvalue");
+            
+            if(goals1 == "" || goals2 == "") {
+                $("#goals-team1-" + matchId).val(goals1Old);
+                $("#goals-team2-" + matchId).val(goals2Old);
+            	return;
+            }
             
             if(!isPositiveInteger(goals1) || !isPositiveInteger(goals2) || goals1 > 99 || goals2 > 99) {
                 showAlert("Keine gültige Zahl");
+                $("#goals-team1-" + matchId).val(goals1Old);
+                $("#goals-team2-" + matchId).val(goals2Old);
                 return;
             }
             
@@ -163,6 +171,9 @@
         			if(typeof(result.PlaceBetResult) === "object" && result.PlaceBetResult.__type == "bool") {
                         if(result.PlaceBetResult.value) {
         					
+                            $("#goals-team1-" + matchId).data(goals1);
+                            $("#goals-team2-" + matchId).data(goals2);
+                            
                             if($("#game-info-" + matchId + " .saved-label").length === 0) {
                                 var $saved = $("<div class='saved-label'></div>");
                                 $saved.text("Gespeichert!");
@@ -180,9 +191,15 @@
                         }
         			}
                     
+                    $("#goals-team1-" + matchId).val(goals1Old);
+                	$("#goals-team2-" + matchId).val(goals2Old);
+                    
                     showAlert("Es ist ein Fehler aufgetreten.");
         		},
-        		function (xhr) {        			
+        		function (xhr) {        	
+                    $("#goals-team1-" + matchId).val(goals1Old);
+                	$("#goals-team2-" + matchId).val(goals2Old);
+                    
                     showAlert("Es ist ein Fehler aufgetreten.");
         		}
         	);
