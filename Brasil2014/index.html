@@ -335,11 +335,11 @@
             				</div>
                         </div>
             		</div>
-        			<div class="voting-container #: (resultType == null && new Date().getTime() > startDate) ? 'game-live' : '' #">
-						<input type="number" #: new Date().getTime() > startDate ? 'readonly="readonly"' : '' # id="goals-team1-#: id #" value="#: userBet != null ? userBet.goals1 : null #" data-oldValue="#: userBet != null ? userBet.goals1 : null #" style="#: resultType == null ? '' : 'display: none;' #" data-matchId="#: id #" min="0" max="99" onchange="return app.matchList.saveBet(event);" />
+        			<div class="voting-container #: (resultType == null && new Date().getTime() > startDate) ? 'game-live' : '' #" style="#: resultType == null ? '' : 'display: none;' #">
+						<input type="number" #: new Date().getTime() > startDate ? 'readonly="readonly"' : '' # id="goals-team1-#: id #" value="#: userBet != null ? userBet.goals1 : null #" data-oldValue="#: userBet != null ? userBet.goals1 : null #" data-matchId="#: id #" min="0" max="99" onchange="return app.matchList.saveBet(event);" />
 						<input type="number" #: new Date().getTime() > startDate ? 'readonly="readonly"' : '' # id="goals-team2-#: id #" value="#: userBet != null ? userBet.goals2 : null #" data-oldValue="#: userBet != null ? userBet.goals2 : null #" data-matchId="#: id #" min="0" max="99" onchange="return app.matchList.saveBet(event);" />
         			</div>
-                    <div style="#: (resultType == null && new Date().getTime() > startDate) ? '' : 'display: none;' #" class="saved-label">
+                    <div style="#: (resultType == null && new Date().getTime() > startDate) ? '' : 'display: none;' #" class="live-label">
                     LIVE
                     </div>
                  </div>
