@@ -480,6 +480,19 @@ p {
 	font-weight: 500;
 }
 
+.score-group .list-item .voting-container.game-live {
+    opacity: 0.5;
+}
+
+.score-group .list-item .game-info .live-label {
+    color: #c94a43;
+    font-weight: 600;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
 .score-group .list-item .vote-button {
     border: 0;
     border-radius: 0;
