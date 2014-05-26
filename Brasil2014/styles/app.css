@@ -100,6 +100,20 @@ h2 {
 
 
 /* START VIEW STYLES */
+#tabstrip-home .km-view-title {
+    position: relative;
+    margin-left: 15px;
+}
+
+#home-button {
+    border: 0;
+    background-size: 100%;
+    background-color: transparent !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-buttom: 10px;
+}
+
 #top-list {
     width: 100%;
 	padding-bottom: 0;
