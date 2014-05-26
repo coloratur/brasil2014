@@ -226,7 +226,7 @@ function imageExists(image_url){
                             
                             app.currentUserLoaded();
                             
-                            $("#home-score").text("Score " + app.currentUser.score); 
+                            $("#home-score").text("Score: " + app.currentUser.score); 
                             $("#home-userId").text(app.currentUser.id);
 
                             var imgUrl = app.ranking.getUserImage(app.currentUser.id);
