@@ -208,6 +208,7 @@ function imageExists(image_url){
             for(var i = 0; i < app._onCurrentUserLoaded.length; i++) {
                 app._onCurrentUserLoaded[i]();
             }
+            app._onCurrentUserLoaded = new Array();
         };
         
         app._loadCurrentUser = function() {
