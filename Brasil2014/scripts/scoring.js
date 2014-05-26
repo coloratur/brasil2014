@@ -8,8 +8,12 @@
         },
         hide: function(e) {
             $("#tabstrip-score .content-container .scoring-details").remove();
+            $($("#tabstrip-score #chart").parent()[0]).remove();
         },
         afterShow: function(e) {
+            
+            $("#tabstrip-score .content-container").prepend('<input type="text" class="knob" id="chart" />');
+            
             app.onCurrentUserLoaded(function() {
             	(function() {	
                     $("#tabstrip-score .content-container").append("<div class='scoring-details'>" + 
@@ -55,7 +59,7 @@
                                 this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, sa, ea, false);
                                 this.g.stroke();
                             }
-
+                            
                             this.g.beginPath();
                             this.g.strokeStyle = r ? this.fgColor : this.fgColor ;
                             this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, sat, eat, false);
@@ -87,6 +91,5 @@
                 }).call(this);
             });
         }
-            
     };
 })(window);
