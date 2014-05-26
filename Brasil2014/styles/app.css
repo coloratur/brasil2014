@@ -481,7 +481,7 @@ p {
 }
 
 .score-group .list-item .voting-container.game-live {
-    opacity: 0.5;
+    opacity: 0.3;
 }
 
 .score-group .list-item .game-info .live-label {
