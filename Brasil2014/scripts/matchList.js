@@ -143,6 +143,9 @@
         	
         	var matchId = $(e.srcElement).data("matchid");
             
+            if($("#goals-team1-" + matchId).val() == "" || $("#goals-team2-" + matchId).val() == "")
+            	return;
+            
             var goals1 = parseInt($("#goals-team1-" + matchId).val());
             var goals2 = parseInt($("#goals-team2-" + matchId).val());
             
