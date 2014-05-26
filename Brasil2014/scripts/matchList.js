@@ -143,11 +143,13 @@
         	
         	var matchId = $(e.srcElement).data("matchid");
             
-            var goals1 = $("#goals-team1-" + matchId).val();
-            var goals2 = $("#goals-team2-" + matchId).val();
+            var goals1 = parseInt($("#goals-team1-" + matchId).val());
+            var goals2 = parseInt($("#goals-team2-" + matchId).val());
             
-            if(!goals1 || !goals2)
-            	return;
+            if(!isPositiveInteger(goals1) || !isPositiveInteger(goals2) || goals1 > 99 || goals2 > 99) {
+                showAlert("Keine gültige Zahl");
+                return;
+            }
             
             app.WS.invokeRequest(
         		"PlaceBet", 

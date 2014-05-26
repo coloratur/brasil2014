@@ -8,6 +8,10 @@ function showAlert(title, text) {
     }
 };
 
+function isPositiveInteger(n) {
+    return 0 === n % (!isNaN(parseFloat(n)) && 0 <= ~~n);
+}
+
 function imageExists(image_url){
 
     var http = new XMLHttpRequest();
@@ -21,8 +25,8 @@ function imageExists(image_url){
 (function (global) {
     var app = global.app = global.app || {};
 
-    app.WebServiceURL = "https://wm2014.coloratur.com/Service.svc/";
-    //app.WebServiceURL = "http://10.20.100.50/Service.svc/";
+    //app.WebServiceURL = "https://wm2014.coloratur.com/Service.svc/";
+    app.WebServiceURL = "http://10.20.100.50/Service.svc/";
     //app.WebServiceURL = "http://192.168.2.119/Service.svc/";
     
     app.requestPwReset = function () {
@@ -33,8 +37,7 @@ function imageExists(image_url){
     		function (res) { 
     			var result = JSON.parse(res);  
 
-    			if(typeof(result.RequestPasswordResetResult) === "object" && result.RequestPasswordResetResult.__type === "bool") {    				
-					console.log(result.RequestPasswordResetResult.value);
+    			if(typeof(result.RequestPasswordResetResult) === "object" && result.RequestPasswordResetResult.__type === "bool") {
                     if(result.RequestPasswordResetResult.value) {
                         showAlert("Wir haben Ihnen eine E-Mail mit Anweisungen zum Zurücksetzen Ihres Passworts zugesendet.");
                         
