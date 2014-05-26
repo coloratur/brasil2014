@@ -59,7 +59,7 @@
                                 this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, sa, ea, false);
                                 this.g.stroke();
                             }
-                            
+
                             this.g.beginPath();
                             this.g.strokeStyle = r ? this.fgColor : this.fgColor ;
                             this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, sat, eat, false);
