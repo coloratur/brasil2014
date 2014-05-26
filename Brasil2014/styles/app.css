@@ -365,9 +365,10 @@ p {
 }
 
 .km-navbar .km-view-title {
+    position: absolute;
     text-align: left;
     color: #FFF;
-    margin-left: 15px;
+    margin-left: 40px;
     padding: 5px 0;
     
     font-family: "Roboto";
@@ -815,6 +816,7 @@ p {
 #backbutton {
     background-color: transparent;
     border: 0;
+    width: 200px;
 }
 
 .km-badge {
