@@ -72,7 +72,7 @@
             	$({
             		value: 0
             	}).animate({
-            		value: (app.currentUser.matchCountCorrect/app.currentUser.matchCountTotal)
+            		value: (app.currentUser.matchCountCorrect/app.currentUser.matchCountTotal)*100
             	}, {
             		duration: 2000,
             		easing: 'swing',
