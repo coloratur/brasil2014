@@ -323,7 +323,7 @@
             			#: venue #
         			</div>
             		<div class="game-result">
-            			<div style="#: resultType === null ? 'display: none;' : 'result' #">
+            			<div style="#: resultType === null ? 'display: none;' : '' #">
             				<span>#: goalsTeam1 #:#: goalsTeam2 # </span>
             				/
             				<span class="game-user-bet #: ((userBet && userBet.goals1 == goalsTeam1 && userBet.goals2 == goalsTeam2) ? 'tip-success' : (((userBet && userBet.goals1 > userBet.goals2 && goalsTeam1 > goalsTeam2) || (userBet && userBet.goals2 > userBet.goals1 && goalsTeam2 > goalsTeam1) || (userBet&& userBet.goals1 == userBet.goals2 && goalsTeam1 == goalsTeam2))) ? 'tip-tendency' : 'tip-error') #">#: userBet == null ? "-" : userBet.goals1 + ":" + userBet.goals2 #</span>
