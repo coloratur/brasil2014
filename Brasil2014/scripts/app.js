@@ -188,7 +188,11 @@ function imageExists(image_url){
 		}
 		
 		showAlert = function (title, text) {
-			navigator.notification.alert(text, function () { }, title, "OK");
+            if(text) {
+                navigator.notification.alert(text, function () { }, title, "OK");
+            } else {
+                navigator.notification.alert(title, function () { }, "", "OK");
+            }
 		}
         
         app.application = new kendo.mobile.Application(document.body, { skin: "flat" });

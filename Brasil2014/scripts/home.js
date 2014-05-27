@@ -4,6 +4,11 @@
     app.home = {
         afterShow: function() {
 		
+            if(!app._loadCurrentUser) {
+                showAlert("Es ist ein unerwarteter Fehler aufgetreten.");
+                return;
+            }
+            
             app.currentUser = undefined;
             //app._onCurrentUserLoaded = undefined;
             app._loadCurrentUser();
